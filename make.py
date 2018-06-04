@@ -16,7 +16,7 @@ footers, and sidebars.
 
 import re
 
-files = ["ltm.html"]
+files = ["ltm.html", "style.css"]
 directory = "public"
 
 for name in files:
