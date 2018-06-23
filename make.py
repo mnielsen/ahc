@@ -15,10 +15,15 @@ footers, and sidebars.
 """
 
 import re
+import subprocess
 
 files = ["ltm.html", "style.css"]
+directories_to_copy = ["assets"]
 directory = "public"
 
+for directory_to_copy in directories_to_copy:
+    subprocess.call(["cp", "-r", directory_to_copy, directory])
+    
 for name in files:
     f = open(name, "r")
     text = f.read()

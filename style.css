@@ -59,12 +59,20 @@ body {
     margin: 5px 0px 5px 40px;
 }
 
+#sidebar {
+    position: absolute;
+    left: 72%;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    font: 14px Georgia;
+    line-height: 1.4;
+}
+
 .marginnote {
     position: absolute;
     left: 72%;
     right: 2%;
-    font-size: small;
-    
+    font-size: x-small;
 }
 
 .equation {
@@ -98,6 +106,17 @@ a:hover {
     color: #000;
 }
 
-
+.quote_right {
+    float: right;
+    font: 22px Verdana;
+    font-style: italic;
+    width: 75%;
+    padding: 5px 5px 5px 20px;
+    margin: 5px -43% 5px 15px;
+    line-height: 1.4em;
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px #ddd;
+}
 
 

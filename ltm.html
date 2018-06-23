@@ -2,6 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="citation_title" content="Augmenting Long-term Memory">
+    <meta name="citation_author" content="Nielsen, Michael">
+    <meta name="citation_publication_date" content="2018">
+    <meta name="citation_fulltext_html_url" content="http://augmentingcognition.com/ltm.html">
+    <meta name="citation_fulltext_world_readable" content="">
+
     <title>Augmenting Long-term Memory</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
@@ -18,46 +25,27 @@
 
     <div id="container">
       
-    <span class="marginnote">The core assertion underlying this essay
-    is really that memory is far, far more important than people think
-    to cognition. In particular, it's the basis on which people build
-    up the chunks (recoding) that are the basis of truly effective
-    action. It's far more important to problem solving than people
-    think. It's far more important to creativity than people think
-    ("speed of associative thought", in Littlewood's phrase). It's at
-    the absolute foundation of undersrtanding. Basically, spaced
-    repetition is very special, because it makes absolutely everything
-    else about your cognition much more effective. It's a way of
-    getting Fermi's magic memory.
-      <br><br>Rewrite the start. Memroy sometimes gets a bad
-    rap. People will disparage rote memory. <br><br>Need to settle on
-    a broad name for the approach. SHould call it spaced
-    repetition. Emphasize that it's rather incomplete - more is going
-    on. But we need a name.<br><br>It'd be good to identify and
-    emphasize the core beliefs motivating this chapter. One is
-    above. Another is that spaced repetition is good for much more
-    advanced types of understanding than just lists of countries, etc,
-    of the conventional type.
-    </span>
-
+      {% sidebar.html %}
+      
     <p>
       One day in the mid-1920s, a Moscow newspaper reporter named
-      Solomon Shereshevsky entered the laboratory of a young Russian
-      psychologist named Alexander Luria. Shereshevsky explained to
-      Luria that his boss at the newspaper was surprised that
-      Shereshevsky never took notes, but remembered all he was told,
-      and had suggested he get his memory checked.
+      Solomon Shereshevsky entered the laboratory of the psychologist
+      Alexander Luria. Shereshevsky explained to Luria that his boss
+      at the newspaper was surprised he didn't need to take any notes,
+      but somehow still remembered all he was told, and had suggested
+      he get his memory checked.
     </p>
 
     <p>
       Luria began testing Shereshevsky's memory. He began with simple
       tests, short strings of words and of numbers. Shereshevsky
-      remembered these with ease, and Luria gradually increased the
+      remembered these with ease, and so Luria gradually increased the
       length of the strings. But no matter how long they got,
       Shereshevsky could recite them back.  Fascinated, Luria went on
-      to study Shereshevsky's memory for the next 30 years.  In his
-      1968 book &ldquo;The Mind of a Mnemonist&rdquo; Luria reported
-      that:
+      to study Shereshevsky's memory for the next 30 years.  In a book
+      summing up his research*<span class="marginnote">* Alexander
+      Luria, &ldquo;The Mind of a Mnemonist&rdquo;, Harvard University
+      Press (1968).</span>, Luria reported that:
     </p>
 
     <blockquote>
@@ -76,11 +64,23 @@
     <p>
       Such stories are fascinating. Memory is fundamental to our
       thinking, and there is something seductive about the notion of
-      having a perfect memory. Many computer pioneers have wondered if
-      computers can be used as tools to help improve everybody's
-      memories. One of the most influential vision documents in the
-      history of computing was Vannevar Bush's 1945 proposal for a
-      mechanical memory extender, the memex. Bush wrote:
+      having a perfect memory.  At the same time, many people feel
+      ambivalent about their own memory. I've often heard people say
+      &ldquo;I don't have a very good memory&rdquo;, sometimes
+      sheepishly, sometimes apologetically, sometimes even defiantly.
+    </p>
+
+    <p>
+      Given how central memory is to our thinking, it's natural to ask
+      whether computers can somehow be used as tools to help improve
+      our memory. This question turns out to be highly generative of
+      good new ideas: indeed, pursuing it has led to many of the most
+      important vision documents in the history of computing. One
+      early example was Vannevar Bush's 1945
+      proposal*<span class="marginnote">* Vannevar
+      Bush, <a href="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">As
+      We May Think</a>, The Atlantic (1945).</span> for a mechanical
+      memory extender, the memex. Bush wrote:
     </p>
 
     <blockquote>
@@ -91,18 +91,26 @@
     </blockquote>
 
     <p>
-      The memex vision inspired many later pioneers, including Ted
-      Nelson's idea of hypertext, Douglas Engelbart's ideas about
-      augmentation, and, indirectly, Tim Berners-Lee's conception of
-      the world wide web. In his proposal for the web, Berners-Lee
-      describes the need for his employer (the particle physics
-      organization CERN) to develop a kind of collective institutional
-      memory,
+      The memex vision inspired many later computer pioneers,
+      including Douglas Engelbart's ideas about augmentation, Ted
+      Nelson's ideas about hypertext, and, indirectly, Tim
+      Berners-Lee's conception of the world wide
+      web*<span class="marginnote">* See, for example: Douglas
+      Engelbart, <a href="assets/Engelbart1962.pdf">Augmenting Human
+      Intellect</a> (1962); Ted
+      Nelson, <a href="https://dl.acm.org/citation.cfm?id=806036">Complex
+      information processing: a file structure for the complex, the
+      changing and the indeterminate</a> (1965); and Tim
+      Berners-Lee, <a href="https://w3.org/History/1989/proposal.html">Information
+      Management: a Proposal</a> (1989).</span>. In his proposal for
+      the web, Berners-Lee describes the need for his employer (the
+      particle physics organization CERN) to develop a kind of
+      collective institutional memory,
     </p>
 
     <blockquote>
       a pool of information to develop which could grow and evolve
-      with the organisation and the projects it describes.
+      with the organization and the projects it describes.
     </blockquote>
 
 
@@ -117,72 +125,91 @@
       memory has been an extremely generative vision for computing.
     </p>
 
+      <p>
+	In this essay we investigate personal memory systems, that is,
+	systems designed to improve the long-term memory of a single
+	person. In the first part of the essay I describe my own
+	experience using such a system, named Anki. As we'll see, Anki
+	can be used to remember almost anything! That is, Anki makes
+	memory a <em>choice</em>, rather than a haphazard event, to be
+	left to chance. I'll discuss how to use Anki to understand
+	research papers, books, and much else. And I'll describe
+	numerous patterns and anti-patterns for Anki use. While Anki
+	is an extremely simple program, it's possible to develop Anki
+	useage as a virtuoso skill, a skill aimed at understanding
+	complex material, not just memorizing simple facts. The first
+	part of the essay can be thought of as a how-to guide aimed at
+	helping develop such a skill.
+      </p>
+
+      <p>
+	The second part of the essay discusses the principles
+	underlying personal memory systems in general. Many people
+	treat memory a little disparagingly as a cognitive skill: for
+	instance, people will often talk of &ldquo;rote memory&rdquo;
+	as though it's somehow inferior to more advanced kinds of
+	understanding. I'll argue against this point of view, and in
+	favour of memory as absolutely central to problem-solving and
+	creative skills. Also in this part, we'll review the role of
+	cognitive science in building personal memory systems, and
+	speculate briefly on the development of novel personal memory
+	systems. One idea will be described in much more detail in a
+	future essay: <a href="taylip.html">Toward a Young Lady's
+	Illustrated Primer</a>.
+      </p>
+
+      <h2>Part I: How to remember almost anything: the Anki
+      system</h2>
+
     <p>
-      In this chapter we'll focus on personal memory systems, i.e.,
-      systems which, unlike the web or many wikis, are meant to be
-      used by just a single person, not collectively. And we'll focus
-      on systems which help users form long-term memories, unlike a
-      system like a notebook, which is an external memory storage
-      system.  In other words, the systems examined in this chapter
-      actually change the way we internalize memories.  As we'll see,
-      these systems are based on extremely powerful ideas, ideas that
-      can be developed much more extensively. Later in the book we'll
-      examine other kinds of memory system.
+      I'll begin with an account of my own experience with a personal
+      memory system
+      named <a href="https://apps.ankiweb.net/">Anki</a>*<span class="marginnote">*
+      I've no affiliation at all with Anki. Other similar systems
+      include <a href="https://mnemosyne-proj.org">Mnemosyne</a>
+      and <a href="https://supermemo.com">SuperMemo</a>. My limited
+      use suggests Mnemosyne is very similar to Anki.  SuperMemo runs
+      only on Windows, and I haven't had an opportunity to use it,
+      though I have been influenced by essays on
+      the <a href="https://supermemo.com">SuperMemo website</a>. As
+      will become clear, these systems are powerful, and the early
+      parts of this essay will sound like an enthusiastic sales
+      pitch. Later, we'll discuss some shortcomings, and systems which
+      may be large improvements,at least in some regards.</span>. At
+      first glance, Anki seems nothing more than a computerized
+      flashcard program. You enter a question:
     </p>
 
-    <h3>Anki: A personal view</h3>
+   <img src="assets/Anki_question.png">
 
-    <span clas="marginnote">Issues: calling it spaced repetition (it's
-    often called that, but it really combines several different
-    ideas).</span>
-    
     <p>
-      At the risk of being self-indulgent, I'll begin my discussion
-      with an account of my own experience with a particular memory
-      system. This is the
-      program <a href="https://apps.ankiweb.net/">Anki</a>*<span class="marginnote">*
-      I've no affiliation at all with Anki.</span>, a clever flashcard
-      system which I've used extensively over the past few years. (I
-      couldn't have written this book without it.)  It seems useful to
-      describe my experience, with the caveat that it is just my
-      experience, and others may find it doesn't work for them in the
-      same way. Later in the chapter we'll abstract away, and consider
-      broader issues.
+      And a corresponding answer:
+    </p>
+
+    <img src="assets/Anki_answer.png">
+
+    <p>
+      Later you'll be asked to review the card: that is, shown the
+      question, and asked whether you know the answer or not.
     </p>
 
     <p>
-      At first glance, Anki looks like a computerized implementation
-      of the kind of flashcards you may have used in elementary
-      school. You enter a question:
-    </p>
-
-    XXX
-
-    <p>
-      And an answer:
-    </p>
-
-    XXX
-
-    <p>
-      Then, later, you're shown the question and asked whether you
-      know the answer. After you first enter a card, you'll be quizzed
-      on that card frequently, but if you get the answer right, the
-      interval between repeats of the card quickly slows down. So a
-      one-day gap between repeats becomes a two-day gap, then a
-      five-day gap, then a fortnight gap, and so on.  But if you ever
-      miss the answer, you'll return to the original schedule.
+      What makes Anki better than conventional flashcards is that it
+      manages the review schedule. If you can answer a question
+      correctly, the time interval between reviews gradually
+      expands. So a one-day gap between reviews becomes two days, then
+      six days, then a fortnight, and so on. The idea is that the
+      information is becoming more firmly embedded in your memory, and
+      so requires less frequent review. But if you ever miss an
+      answer, the schedule resets, and you again have to build up the
+      time interval between reviews.
     </p>
 
     <p>
-      Okay, while it's nice that the computer gradually increases the
-      time between reviews, it perhaps doesn't seem like that big a
-      deal.
-    </p>
-
-    <p>
-      The punchline is that this is a <em>vastly</em> more efficient
-      way to remember the information.
+      While it's obviously useful that the computer manages the
+      interval between reviews, it perhaps doesn't seem like that big
+      a deal.  The punchline is that this turns out to be
+      a <em>vastly</em> more efficient way to remember information.
     </p>
 
     <p>
@@ -190,123 +217,110 @@
     </p>
 
     <p>
-      On average, it takes me about 8 seconds to review each
-      card. Suppose I was using regular flashcards, and reviewing them
-      (say) once a week. If I wanted to remember something for the
-      next 20 years, I'd need 20 years times 52 weeks per year times 8
-      seconds per card each week. That's a total review time of 8,320
-      seconds per card, which is a little over 2 hours for each card.
+      To answer that question, let's do some rough time estimates.  On
+      average, it takes me about 8 seconds to review a card. Suppose I
+      was using conventional flashcards, and reviewing them (say) once
+      a week. If I wanted to remember something for the next 20 years,
+      I'd need 20 years times 52 weeks per year times 8 seconds per
+      card. That works out to a total review time of just over 2 hours
+      for each card.
     </p>
 
     <p>
-      With Anki's gradually increasing spacing, you start out
-      reviewing daily, but that quickly rises to weekly, then monthly,
-      then every few months, and eventually out past a year. At this
-      point, the <em>average</em> time between cards for me is 1.2
-      years, and that's still rising rapidly, because a sizeable
-      fraction of questions have been in my Anki system no more than a
-      few months.
-    </p>
-
-    <p>
-      In fact, I estimate that for an average card, over 20 years I'd
-      only need roughly 4 to 7 minutes of total review
-      time<span class="marginnote">Here's a ballpark analysis.  Anki
-      initially requires 2 reviews, then rises to an interval of 1
-      day. For my cards, the typical rise after that is by a factor of
-      about 2.4.  On average, I get somewhat better than 1 in 12 cards
-      wrong, so by the 12th card we're up to about 2.4<sup>9</sup>
-      days between reviews. If you sum that up, it means the average
-      time between errors is about 12 years. That may well be too high
-      &ndash; I haven't been using Anki for that long, and it's
-      possible the error rates rise later.  However, as I noted above,
-      the mean time between card reviews is already 1.2 years, and
-      that's rising rapidly.  A mean time of 1.2 years between reviews
-      corresponds to at least 2 years between failures.  Let's say a
-      conservative estimate is a mean time between failures of between
-      4 and 7 years.  If it's 4 years, then over 20 years that'd mean
-      reviewing roughly 5 failures * 10 reviews per period = 50 times,
-      for a total of 50 * 8 seconds = 400 seconds, or about 7 minutes.
-      If it's 7 years, then over 20 years that means roughly three
-      failures, and reviewing 3 failures * 11 reviews per period = 33
-      times, for a total of 33 * 8 seconds &approx; 260 seconds, or
-      just over 4 minutes. This neglects difficult cards that require
-      much more frequent resetting, but is likely not far off for most
-      cards. The analysis is quite sensitive to the mean time between
-      failure &ndash; small changes to assumptions make a big
-      difference.</span>, because of the rapid rise in spacing, and
-      allowing for occasional forgetting, resetting the time interval.
-      That's a factor of more than 20 in savings. So the spaced
-      repetition system is vastly better.
+      By contrast, Anki's ever-expanding review intervals quickly rise
+      past a month and then out past a year. Indeed, for my personal
+      set of Anki cards the average interval between reviews is
+      currently 1.2 years, and rising.  In
+      an <a href="#Anki_analysis">appendix</a> below I estimate that
+      for an average card, I'll only need 4 to 7 minutes of total
+      review time over the entire 20 years.  Those estimates allow for
+      occasional failed reviews, resetting the time interval.  That's
+      a factor of more than 20 in savings over the more than 2 hours
+      required with conventional flashcards!
     </p>
 
     <p>
       I therefore have two rules of thumb. First, if memorizing a fact
       seems worth 10 minutes of my time in the future, then I do
-      it. Second, and superseding the first, if a fact seems striking
-      then into Anki it goes, <em>regardless of whether it seems worth
-      10 minutes of my future time or
-      not</em>*<span class="marginnote">* I first saw an analysis
-      along these lines in Gwern Branwen's review of spaced
-      repetition: Gwern
+      it*<span class="marginnote">* I first saw an analysis along
+      these lines in Gwern Branwen's review of spaced repetition:
+      Gwern
       Branwen, <a href="https://www.gwern.net/Spaced-repetition">Spaced-Repetition</a>. His
       numbers are slightly more optimistic than mine &ndash; he
       arrives at a 5-minute rule of thumb, rather than 10 &ndash; but
-      broadly consistent.</span>. The reason for the exception is that
-      many of the most important things we know are things we've no
-      idea are going to be important. This doesn't mean we should
-      memorize everything. But it seems worth developing taste in what
-      to memorize.
+      broadly consistent.</span>. Second, and superseding the first,
+      if a fact seems striking then into Anki it goes, regardless of
+      whether it seems worth 10 minutes of my future time or not. The
+      reason for the exception is that many of the most important
+      things we know are things we're not sure are going to be
+      important, but which our intuitions tell us matter. This doesn't
+      mean we should memorize everything. But it's worth cultivating
+      taste in what to memorize.
     </p>
 
     <p>
-      The single biggest change in using Anki is that it means memory
-      is no longer a haphazard event, to be left to chance. Rather, I
-      can guarantee I will remember something, with minimal
-      effort. That is, Anki <em>makes memory a choice</em>.  This fact
-      is transformative, and I'll come back to it below.
+      The single biggest change that Anki brings about is that it
+      means memory is no longer a haphazard event, to be left to
+      chance. Rather, it guarantees I will remember something, with
+      minimal effort. That is, Anki <em>makes memory a choice</em>.
+      This fact is, as we shall see, transformative.
     </p>
 
     <p>
-      I've used Anki to create 10,000 cards over about 2 and a half
-      years. That included a 7-month break when I made very few new
-      cards. When I'm keeping up with my card review, it usually takes
-      about 15 to 20 minutes per day. If it routinely rises much above
-      20 minutes it usually means that I'm adding cards too rapidly,
-      and need to slow down. Alternately, it sometimes means I'm
-      behind on my cards, of which more below.
+      What can Anki be used for? I use Anki in all parts of my
+      life. Professionally, I use it to learn from papers and books;
+      to learn from talks and conferences; to help recall interesting
+      things learned in conversation; and to remember key observations
+      made while doing my everyday work. Personally, I use it to
+      remember all kinds of facts relevant to my family and social
+      life; about my city and travel; and about my hobbies. In later
+      sections of the essay I will describe some of the most useful
+      patterns, and patterns to avoid.
     </p>
 
     <p>
-      At a practical level, I mostly use the desktop Anki client for
-      entering cards. And I use the mobile
-      client*<span class="marginnote">* The desktop client is free,
-      but the mobile client is, at the time of writing, 25 dollars.
-      Many people balk at that as &ldquo;too
-      expensive&rdquo;. Personally, I've found the value to me is many
+      I've used Anki to create roughly 11,000 cards over about 2 and a
+      half years of regular use. That includes a 7-month break when I
+      made very few new cards. When I'm keeping up with my card
+      review, it takes about 15 to 20 minutes per day. If it routinely
+      rises to much more than 20 minutes it usually means I'm adding
+      cards too rapidly, and need to slow down. Alternately, it
+      sometimes means I'm behind on my card review, of which more
+      below.
+    </p>
+
+    <p>
+      At a practical level, I use the desktop Anki client for entering
+      new cards, and the mobile client*<span class="marginnote">* The
+      desktop client is free, but the mobile client is, at the time of
+      writing, 25 dollars.  Many people balk at that as &ldquo;too
+      expensive&rdquo;. Personally, I've found the value is several
       orders of magnitude beyond that. Anki is probably more valuable
-      to me than a car would be.</span> for reviewing. I review my
-      Anki cards while walking to get my morning coffee, while waiting
-      in line, on transit, and so on. I find it meditative.
+      to me than a car would be, and it's certainly worth more than a
+      days' rent or a restaurant meal, both of which would usually
+      exceed 25 dollars in my home city of San Francisco.</span> for
+      reviewing. I review my Anki cards while walking to get my
+      morning coffee, while waiting in line, on transit, and so on. I
+      find it meditative.
     </p>
 
     <p>
-      I had trouble getting started with Anki. Over the years I tried
-      it several times, each time quickly abandoning the system. In
-      retrospect, there are some substantial barriers to get over if
-      you want to make it a habit.
+      I had trouble getting started with Anki. Several acquaintances
+      highly recommended it, and over the years I made multiple
+      attempts to use it, each time quickly abandoning the attempt. In
+      retrospect, there are substantial barriers to get over if you
+      want to make it a habit.
     </p>
 
     <p>
-      What made Anki finally &ldquo;take&rdqo; for me, turning it into
-      a habit, was a rather ludicrous project, one I took on in part
-      as a joke. I'd been frustrated for years at never really
-      learning the Unix command line. I'd only ever learned the most
-      basic commands. Learning the command line is a superpower for
-      people who program, so it seemed highly desirable to know
-      it. So, for fun, I wondered if it might be possible to use Anki
-      to essentially completely memorize a (short!) book on the Unix
-      command line.
+      What made Anki finally &ldquo;take&rdquo; for me, turning it
+      into a habit, was a project I took on as a joke. I'd been
+      frustrated for years at never really learning the Unix command
+      line. I'd only ever learned the most basic commands. Learning
+      the command line is a superpower for people who program, so it
+      seemed highly desirable to know well. So, for fun, I wondered if
+      it might be possible to use Anki to essentially completely
+      memorize a (short!) book about the Unix command line.
     </p>
 
     <p>
@@ -316,23 +330,23 @@
     <p>
       I chose O'Reilly Media's &ldquo;Macintosh Terminal Pocket
       Guide&rdquo;, by Daniel Barrett. I don't mean I literally
-      memorized the entire text of the book. But I did memorize most
+      memorized the entire text of the book. But I did memorize much
       of the conceptual knowledge in the book, as well as the names
-      and syntax and options for most of the commands described in the
-      book. The exceptions were things I simply couldn't imagine ever
-      using. But I did memorize almost everything I could imagine
-      using. In the end I covered about 70 to 80 percent of the book,
-      skipping or skimming some sections that didn't seem very
-      relevant to me. Still, my knowledge of the command line
-      increased enormously.
+      and syntax and options for most of the commands in the book. The
+      exceptions were things I had no frame of reference to imagine
+      using. But I did memorize most things I could imagine using. In
+      the end I covered perhaps 70 percent of the book, skipping or
+      skimming some sections that didn't seem relevant to me. Still,
+      my knowledge of the command line increased enormously.
     </p>
 
     <p>
-      Choosing this somewhat silly (albeit extremely useful) goal gave
-      me a great deal of confidence in Anki. It was extremely
-      exciting, making it obvious that Anki would make it easy to do
-      meaningful things that would formerly have been quite difficult.
-      This made it much easier to build an Anki habit.
+      Choosing this somewhat ludicrous, albeit extremely useful, goal
+      gave me a great deal of confidence in Anki. It was extremely
+      exciting, making it obvious that Anki would make it easy to
+      learn things that would formerly have been quite difficult.
+      This confidence, in turn, made it much easier to build an Anki
+      habit.
     </p>
 
     <p>
@@ -344,304 +358,77 @@
       motivating project helped me get over that barrier.
     </p>
 
-    <p>
-      Now, an important caveat is that there's a big difference
-      between remembering a fact and mastering a process.  It's one
-      thing to remember a Unix command when cued by an Anki question;
-      it's quite another to recognize an opportunity to use the
-      command, and to type it out in the context of the command
-      line. And it's yet another thing to find novel, creative ways of
-      combining the commands you know to solve challenging problems.
-    </p>
+
+    <h3>Using Anki to thoroughly read a research paper in an
+    unfamiliar field</h3>
 
     <p>
-      Put another way: to really internalize a process, it's not
-      enough just to review Anki cards. You need to carry out the
-      process, in context.
-    </p>
-
-    <p>
-      With that said, I've found the transfer process is relatively
-      easy. I use the command line often enough that I have plenty of
-      opportunities to use my new knowledge in context. That said,
-      it'd be good to better understand when the transfer works and
-      when it doesn't. Even better would be a memory system that
-      integrates into your actual working environment. For instance,
-      it could query you on Unix commands, while placing you at an
-      actual command line. And so on.
-    </p>
-
-    <p>
-      I've tried one experiment in this vein: miming the action of
-      typing commands while I review my cards. But my subjetive
-      impression was that it doesn't work so well, and it was
-      certainly annoying. So I stopped.
-    </p>
-
-
-    <p>
-      I use Anki for almost everything. For remembering friends' and
-      colleagues' food preferences. For remembering facts about my
-      city. Everything from &ldquo;What's the best item on the menu at
-      [restaurant]?&rdquo; to &ldquo;What fraction of people in San
-      Francisco speak English as the main language at home?&rdquo;
-      (According to my data: 55%). For remembering striking claims
-      that people have made: &ldquo;Has [hypertext pioneer] Ted Nelson
-      claimed that link structure and document structure should be
-      kept separate?&rdquo; (A: Yes).
-    </p>
-
-    <p>
-      On their own, such facts are trivia. But as part of a larger web
-      of related questions they're amazingly useful. I'll come back to
-      this point in more detail later.
-    </p>
-
-    <h3>Example: Using Anki to learn APIs</h3>
-    
-    <p>
-      As the discussion of the command line above suggested, I find
-      Anki exceptionally helpful for learning new APIs.  Here's the
-      pattern which works for me, and a few warnings about patterns
-      that don't work.
-    </p>
-
-    <p>
-      It begins with me realizing that there's some API I'd like to
-      use in a project. Now, some of the time, I just want to use the
-      API a little &ndash; say, 50-100 lines, or perhaps a bunch of
-      1-10 line code snippets. In that case it's a mistake to worry
-      too much about really learning the API. You're better off just
-      winging it, adapting snippets from elsewhere, consulting the
-      docs as needed.
-    </p>
-
-    <p>
-      But suppose I know I will use the API more seriously in a
-      project.  For instance, for my
-      essay <a href="http://cognitivemedium.com/tat/">Thought as a
-      Technology</a> I wanted to build some prototypes using 3d
-      graphics, and I decided I would need to learn the basics of
-      the <a href="https://threejs.org/">three.js</a> Javascript
-      library.
-    </p>
-
-    <p>
-      One very tempting failure mode is to think &ldquo;Oh, I should
-      master the API first&rdquo;, to dive into tutorials or the
-      documentation. Apart from a (very!) quick skim of a tutorial or
-      the documentation, that's a mistake. A much better approach is
-      to find a small, functioning piece of code that does something
-      related to the project I intend to build. It doesn't need to be
-      similar to the whole project, but it should ideally implement
-      one or two common features, and be no more than a few hundred
-      lines long. I get that code running, then I can start making
-      small tweaks, adding bits of functionality I need, taking out
-      bits that I don't, and trying to understand and even improve the
-      existing code.
-    </p>
-
-    <p>
-      The great thing about this is that I need only change 1 to 5
-      lines of code at a time, and it still runs. But I can also see
-      meaningful progress toward my goals, and that's tremendously
-      exciting. To use a metaphor from machine learning, it's like
-      doing gradient descent in the space of meaningful, exciting
-      projects.
-    </p>
-
-    <p>
-      Of course, while doing this, I'll constantly be looking up
-      things in the docs, on StackOverflow, and so on. I'll also be
-      reading and understanding pieces of the code I've started
-      from. It's tempting to try to Ankify all of this, but it's a
-      mistake: it takes too much time, and you Ankify too much that
-      later turns out to be pointless.  However, when something seems
-      like it's clearly a central concept, or you know you'd like to
-      reuse it often, it's worth adding to Anki. In this way, you
-      gradually build up a knowledge base of things you can use in
-      real, live projects. And, slowly, you start to get better and
-      better.
-    </p>
-
-    <p>
-      Once you're making real progress on your project, and confident
-      you've made a good choice of API, then it makes sense to work
-      through a tutorial. Indeed, don't just find one tutorial &ndash;
-      if you can, find several. Dip a little into each, and try to
-      find out one that leaps out as &ldquo;Oh, I'm learning quickly
-      from this.&rdquo;. And then, work through it. I do Ankify at
-      this stage, but try to keep it relatively light. It's tempting
-      (and possible) to Ankify everything, but that slows you down
-      enormously. It's much better to only Ankify material
-      you <em>know</em> you'll need repeatedly. The usual sign of this
-      is that you can already see you need it right now, at the
-      current stage of your project.  That goes double if you can see
-      you'll need it repeatedly in the future. On the first pass, I
-      tend to be conservative, preferring to Ankify less
-      material. Then, once I've gone through it once, I go back over
-      it again, this time Ankifying everything I'm likely to need
-      later. This second pass is actually quite rapid &ndash; usually
-      much faster than the first pass &ndash; but I find that on the
-      second pass I have much more context, and my judgement about
-      what to Ankify tends to be much better.
-    </p>
-
-    <p>
-      You can continue doing this, bouncing back and forth between
-      your project and using Anki as you work through tutorials and
-      documentation. In the very earliest stages you'll spend quite a
-      bit of time in the docs, just getting basic syntax right. After
-      that you should spend most of your time on your project. But I
-      find it helpful to spend a substantial fraction of time on
-      Ankifying good-quality material, particularly material closely
-      related to the project.  This means tutorials, documentation, as
-      well as material that comes up while reading code &ndash; code
-      from others, and even code you've written yourself. Indeed, I've
-      occasionally Ankified the APIs for code I've personally written,
-      if they're likely to be useful in the future. Just because I
-      wrote something doesn't mean I'll automatically remember it in
-      future!
-    </p>
-
-    <p>
-      So: don't jump into Ankifying tutorials and so on straight
-      away. Wait, and do it in tandem with serious work on your
-      project. I must admit, part of the reason I advise this is
-      because I find the advice hard to take myself, and I always
-      regret not following it. I start a new project, think &ldquo;Oh,
-      I need such-and-such an API&rdquo;, and then dive into a
-      tutorial, spending hours on it. But I struggle and struggle and,
-      frankly, make very slow progress. Until I remember to start with
-      some working code, and immediately find things are working much
-      better. I then swear to never use the tutorial-first approach
-      again. Unfortunately, in practice, it's quite seductive.
-    </p>
-
-    <p>
-      Another failure mode is to think &ldquo;Oh, I might want to
-      learn such-and-such an API one day, so I should start adding
-      cards, just in case.&rdquo;
-    </p>
-
-    <p>
-      Don't do this.
-    </p>
-
-    <p>
-      It's tempting, especially for a certain kind of person &ndash;
-      the kind of person who likes to stockpile knowledge against some
-      (largely theoretical) day when they'll get to use it. But you
-      will learn far more (and far more quickly) if you're
-      simultaneously using the API seriously in a project.  Using the
-      API to create something new helps you identify what is truly
-      important to remember from the API. And it also &ndash; this is
-      just my speculation here &ndash; sends a signal to your brain
-      saying &ldquo;this really matter&rdquo;. And while it's just
-      speculation, I think this helps your memory quite a bit. And so,
-      seriously, if you're tempted to do highly speculative
-      Ankification, please just don't. And if you find yourself
-      starting, stop.
-    </p>
-
-    <p>
-      A partial failure mode that I've repeatedly noticed is orphan
-      APIs. That is, I'll start to use a new API for a project. I'll
-      Ankify some material along the way. Then the project will
-      finish, and I won't quickly have another project that uses the
-      same API. Later on, when I'm no longer using the API, and have
-      no immediate plans to, I'll sometimes find the cards a little
-      strange. My mind won't engage &ndash; sometimes, there's even a
-      slight rejection, a sort of half-conscious &ldquo;why am I
-      learning this useless stuff?&rdquo; I just no longer find the
-      cards as interesting as when I was using the API actively.
-    </p>
-
-    <p>
-      This is a difficult situation. I think the best rule of thumb is
-      that if it seems likely that you're not going to use the API
-      again, then delete the cards when they come up. But if it seems
-      highly likely you'll want to use the API in the next year or so,
-      keep them in the deck. It's not a perfect solution, since it
-      means you really do slightly disconnect from the cards. But it's
-      an okay compromise solution.
-    </p>
-
-    <h3>Ankifying papers and books</h3>
-
-    <p>
-      I find Anki particularly helpful for reading papers and books.
-    </p>
-
-    <p>
-      As an example, let me use my experience reading the first
-      AlphaGo paper.  AlphaGo, you may recall, was the computer system
-      from Google DeepMind that was first the program to beat the
-      world's strongest players of the game Go. DeepMind first
-      announced AlphaGo in a paper*<span class="marginnote">David
-      Silver, Aja Huang, Chris J. Maddison, Arthur Guez <em>et
+      I find Anki helpful for reading research papers, particularly in
+      fields outside my expertise. As an example of how this can work,
+      I'll describe my experience reading a 2016
+      paper*<span class="marginnote">* David Silver, Aja Huang, Chris
+      J. Maddison, Arthur Guez <em>et
       al</em>, <a href="assets/Silver2016a.pdf">Mastering the game of
       Go with deep neural networks and tree search</a>, Nature
-      (2016).</span>  published in 2016 in the
-      journal <em>Nature</em>.
+      (2016).</span> describing AlphaGo, the computer system from
+      Google DeepMind that beat some of the world's strongest players
+      of the game Go.
     </p>
 
     <p>
-      I thought AlphaGo was extremely interesting, and I suggested
+      After the match where AlphaGo beat Lee Sedol, one of the
+      strongest human Go players in history, I suggested
       to <a href="https://www.quantamagazine.org/">Quanta Magazine</a>
-      that I write an article for them about
-      it*<span class="marginnote">Michael
+      that I write an article for them about the
+      system*<span class="marginnote">* Michael
       A. Nielsen, <a href="https://www.quantamagazine.org/is-alphago-really-such-a-big-deal-20160329/">Is
-      AlphaGo Really Such a Big Deal?</a>, Quanta (2016).</span>.
+      AlphaGo Really Such a Big Deal?</a>, Quanta
+      (2016).</span>. AlphaGo was a hot media topic at the time, and
+      the most common angle in stories was human interest, viewing
+      AlphaGo as part of a long-standing human-versus-machine
+      narrative, with a few technical details filled in, mostly as
+      color.</p>
+
+    <p>
+      For my article, I had a different angle. Through the 1990s and
+      first decade of the 2000s, I believed human-or-better general
+      artificial intelligence was far away. The reason was that over
+      that time researchers made only slow progress building systems
+      to do intuitive pattern matching, of the kind that underlies
+      human cognition in areas such as human vision and human speech
+      recognition, as well as in playing games such as Go. Despite
+      enormous effort by AI researchers, many pattern-matching feats
+      which humans find effortless remained impossible for machines.
     </p>
 
     <p>
-      Now, AlphaGo was a hot topic at the time, and many articles were
-      written about it. It's easy to see why: it was a compelling
-      spectacle, part of a long-standing human-versus-machine
-      narrative. But my reasons for finding AlphaGo interesting were
-      somewhat unusual.
-    </p>
-
-    <p>
-      For decades, I'd thought human-or-better general artificial
-      intelligence was far away. And, when asked why I believed that,
-      I always gave the same reason: researchers had made no
-      compelling progress in buildng systems that could do intuitive
-      pattern-matching, the kind that underies so much human
-      cognition, from how we see to how we play games like Go. Many
-      pattern-matching feats which humans find effortless remained
-      impossible for machines.
-    </p>
-
-    <p>
-      For a long time, we made only very slow progress on this. But
-      around 2011 or so, progress began to speed up, driven by
-      advances in deep neural networks.  Machine visions systems
-      rapidly went from being hopeless to being comparable to human
-      beings for at least certain limited types of task.  By the time
+      While we made only very slow progress on this set of problems
+      for a long time, around 2011 progress began to speed up, driven
+      by advances in deep neural networks. For instance, machine
+      vision systems rapidly went from being hopeless to being
+      comparable to human beings for certain tasks.  By the time
       AlphaGo was released, it was no longer correct to say we had no
       idea how to build computer systems to do intuitive pattern
-      matching. While we still hadn't nailed the problem, we were
-      making rapid progress. AlphaGo was a part of that story, and I
-      wanted my article to explore this angle of capturing human
-      intuition.
+      matching. While we hadn't yet nailed the problem, we were making
+      rapid progress. AlphaGo was a big part of that story, and I
+      wanted my article to explore this notion of building computer
+      systems to capture human intuition.
     </p>
 
     <p>
-      While excited, I knew writing such an article would be
-      difficult. It was going to require a much deeper understanding
-      of AlphaGo than a typical journalistic article. Fortunately, I
-      knew a fair amount about neural networks &ndash; I'd written a
-      book about them*<span class="marginnote">* Michael
+      While excited, writing such an article was going to be
+      difficult. It was going to require a deeper understanding of the
+      technical details of AlphaGo than a typical journalistic
+      article. Fortunately, I knew a fair amount about the general
+      area of neural networks &ndash; I'd written a book about
+      them*<span class="marginnote">* Michael
       A. Nielsen, <a href="http://neuralnetworksanddeeplearning.com">"Neural
       Networks and Deep Learning"</a>, Determination Press
       (2015).</span>. But I knew nothing about the game Go, or about
-      the specific technology AlphaGo used, based on a set of ideas
-      known as reinforcement learning. I was going to need to learn
-      this material from scratch, and to write a good article I was
-      going to need to really dig in and understand the underlying
-      technical material.
+      many of the ideas used by AlphaGo, based on a field known as
+      reinforcement learning. I was going to need to learn this
+      material from scratch, and to write a good article I was going
+      to need to really understand the underlying technical material.
     </p>
 
     <p>
@@ -650,25 +437,25 @@
 
     <p>
       I began with the
-      AlphaGo <a href="assets/Silver2016a.pdf">article</a> itself. I
+      AlphaGo <a href="assets/Silver2016a.pdf">paper</a> itself. I
       began reading it quickly, almost skimming. I wasn't looking for
       a comprehensive understanding. Rather, I was doing two
       things. One, I was trying to simply identify the most important
-      ideas in the paper. What were the key techniques I'd need to
-      learn about? Second, there was a kind of hoovering process,
-      looking for basic facts that I could understand easily, and that
-      would obviously benefit me. Things like basic terminology, the
-      rules of Go, and so on.
+      ideas in the paper. What were the names of the key techniques
+      I'd need to learn about? Second, there was a kind of hoovering
+      process, looking for basic facts that I could understand easily,
+      and that would obviously benefit me. Things like basic
+      terminology, the rules of Go, and so on.
     </p>
 
     <p>
       Here's a few examples of the kind of question I entered into
       Anki at this stage: &ldquo;What's the size of a Go
       board?&rdquo;; &ldquo;Who plays first in Go?&rdquo;; &ldquo;How
-      many training games did AlphaGo use?&rdquo;; &ldquo;Where did
-      AlphaGo get its training data?&rdquo;; &ldquo;What were the
-      names of the two main types of neural network AlphaGo
-      used?&rdquo;
+      many human training games did AlphaGo learn from?&rdquo;;
+      &ldquo;Where did AlphaGo get its training data?&rdquo;;
+      &ldquo;What were the names of the two main types of neural
+      network AlphaGo used?&rdquo;
     </p>
 
     <p>
@@ -682,154 +469,249 @@
     </p>
 
     <p>
-      I made several passes over the paper in this way, each time
-      getting deeper and deeper. At this stage I still wasn't trying
-      to obtain anything like a complete understanding of
-      AlphaGo. Rather, I was trying to build up a solid background.
-      At all times, if something wasn't easy to understand, I didn't
-      worry about it, I just keep moving. But over time, the range of
-      things that were easy to understand grew and grew.
+      I made several rapid passes over the paper in this way, each
+      time getting deeper and deeper. At this stage I wasn't trying to
+      obtain anything like a complete understanding of
+      AlphaGo. Rather, I was trying to build up my background
+      understanding.  At all times, if something wasn't easy to
+      understand, I didn't worry about it, I just keep moving. But
+      over time, the range of things that were easy to understand grew
+      and grew. I found myself adding questions about the types of
+      features used as inputs to AlphaGo's neural networks, basic
+      facts about the structure of the networks, and so on.
     </p>
 
     <p>
-      After a few such rapid passes over the paper, I went back and
-      attempted a thorough read. This time I intended to understand
-      AlphaGo in detail.  By now I understood much of the background
-      context, and it was relatively easy to do a thorough read,
-      certainly far easier than coming into the paper cold. Don't get
-      me wrong: it was still challenging. But it was far easier than
-      it would have been otherwise.
+      After five or six such passes over the paper, I went back and
+      attempted a thorough read. This time the purpose was to
+      understand AlphaGo in detail.  By now I understood much of the
+      background context, and it was relatively easy to do a thorough
+      read, certainly far easier than coming into the paper
+      cold. Don't get me wrong: it was still challenging. But it was
+      far easier than it would have been otherwise.
     </p>
 
     <p>
-      After making one serious pass over the AlphaGo paper, I made a
-      second pass, in a similar vein. Yet more fell into place. By
-      this time, I understood the AlphaGo system well. Many of the
-      questions I was putting into Anki were high level, and in some
-      cases suggested further research directions. I certainly
+      After doing one thorough pass over the AlphaGo paper, I made a
+      second thorough pass, in a similar vein. Yet more fell into
+      place. By this time, I understood the AlphaGo system well. Many
+      of the questions I was putting into Anki were high level, and in
+      some cases suggested further research directions. I certainly
       understood AlphaGo well enough that I was confident I could
       write the sections of my article dealing with it. (In practice,
       my article ranged over several systems, not just AlphaGo, and I
       had to learn about those as well, using a similar process,
-      though I didn't go as deep.) I contined to add questions as I
-      wrote my article. But by this point the hardest work had been
-      done.
+      though I didn't go as deep.) I continued to add questions as I
+      wrote my article, ending up adding perhaps 400-500 questions in
+      total. But by this point the hardest work had been done.
     </p>
 
     <p>
       The entire process took a few days of my time, spread over a
       couple of weeks. That's a lot of work, but it also meant that
-      I'd gone into a new technical area, and emerged with a
-      reasonably thorough understanding of an outstanding recent
-      result in that area. With a little more work, I expect I would
-      have begun having original research ideas in the area. In that
-      sense, I got a large payoff for relatively little effort.
+      I'd gone into a relatively unfamiliar technical area, and
+      emerged with a reasonably thorough understanding of an
+      outstanding recent research result in that area. With a little
+      more work, I expect I would have begun having original research
+      ideas in the area. In that sense, I got a large payoff for
+      relatively little effort.
     </p>
       
     <p>
-      Of course, instead of using Anki I could have written
-      conventional notes. But using Anki gave me confidence I would
-      retain the understanding over the long term.  When DeepMind
-      later released papers describing AlphaGo Zero and
-      AlphaZero*<span class="marginnote">* For AlphaGo Zero, see:
-      David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis
-      Antonoglou <em>et
+      Of course, instead of using Anki I could have taken conventional
+      notes, using a similar process to build up an understanding of
+      the paper. But using Anki gave me confidence I would retain much
+      of the understanding over the long term.  A year or so later
+      DeepMind released papers describing followup systems, known as
+      AlphaGo Zero and AlphaZero*<span class="marginnote">* For
+      AlphaGo Zero, see: David Silver, Julian Schrittwieser, Karen
+      Simonyan, Ioannis Antonoglou <em>et
       al</em>, <a href="assets/Silver2017a.pdf">Mastering the game of
       Go without human knowledge</a>, Nature (2017). For AlphaZero,
       see: David Silver, Thomas Hubert, Julian Schrittwieser, Ioannis
       Antonoglou <em>et
       al</em>, <a href="https://arxiv.org/abs/1712.01815">Mastering
       Chess and Shogi by Self-Play with a General Reinforcement
-      Learning Algorithm</a> (2017).</span> I found I could read those
-      papers with ease. I didn't attempt to master them to the same
-      extent as the AlphaGo paper, but I found I could get a pretty
-      good understanding of the papers in less than hour.
+      Learning Algorithm</a> (2017).</span>. Despite the fact that I'd
+      thought little about AlphaGo or reinforcement learning in the
+      intervening time, I found I could read those followup papers
+      with ease. While I didn't attempt to understand those papers as
+      thoroughly as the initial AlphaGo paper, I found I could get a
+      pretty good understanding of the papers in less than hour. I'd
+      retained much of my earlier understanding!
     </p>
 
     <p>
-      Furthermore, this process gave me a reasonable grounding in
-      modern deep reinforcement learning. This is an immensely
-      important field, of great use in robotics, and many researchers
-      believe it will play an important role in achieving general
-      artificial intelligence. In a few days I'd gone from knowing
-      nothing about deep reinforcement learning to a durable
-      understanding of a key paper in the field, a paper that made use
-      of many techniques that were used across the entire field. I was
-      a long way from being an expert on deep reinforcement learning,
-      but this kind of understanding is a good foundation on which to
-      build expertise.
+      By contrast, had I used conventional note-taking in my original
+      reading of the AlphaGo paper, my understanding would have
+      rapidly evaporated, and it would have taken much longer to read
+      the later papers. And so using Anki in this way gives confidence
+      you will retain understanding over the long term. This
+      confidence, in turn, makes the initial act of understanding more
+      pleasurable, since you believe you're learning something for the
+      long haul, not something you'll forget in a day or a week.
+    </p>
+
+    <span class="quote_right">OK, but what does one do with it?
+    &hellip; [N]ow that I have all this power &ndash; a mechanical
+    golem that will never forget and never let me forget whatever I
+    chose to &ndash; what do I choose to remember?
+    &ndash; <a href="https://www.gwern.net/Spaced-repetition">Gwern
+    Branwen</a>
+    </span>
+      
+    <p>
+      Overall, this process gave me a reasonable grounding in modern
+      deep reinforcement learning. This is an immensely important
+      field, of great use in robotics, and many researchers believe it
+      will play an important role in achieving general artificial
+      intelligence. With a few days work I'd gone from knowing nothing
+      about deep reinforcement learning to a durable understanding of
+      a key paper in the field, a paper that made use of many
+      techniques that were used across the entire field. Of course, I
+      was still a long way from being an expert.  There were many
+      important details about AlphaGo I hadn't understood, and I would
+      have had to do far more work to build my own system in the area.
+      But this foundational kind of understanding is a good basis on
+      which to build deeper expertise.
+    </p>
+
+      <p>
+	It's notable that I was reading the AlphaGo paper in support
+	of a creative project of my own, namely, writing an article
+	for Quanta Magazine. This is an important pattern: when
+	possible, it's extremely helpful if Anki is used in service to
+	some personal creative project.
+      </p>
+
+      <p>
+	It's tempting instead to use Anki to stockpile knowledge
+	against some future day, to think &ldquo;Oh, I should learn
+	about the geography of Africa, or learn about World War II, or
+	[&hellip;]&rdquo;. These are goals which, for me, are
+	intellectually appealing, but which I'm not emotionally
+	invested in.  I've tried this a bunch of times. It tends to
+	generate cold and lifeless Anki questions, questions which are
+	hard to connect to, and where it's hard to really, deeply
+	internalize the answers. The problem is somehow in that
+	initial idea I &ldquo;should&rdquo; learn about these things:
+	intellectually, it seems like a good idea, but I've little
+	emotional commitment.
+      </p>
+
+      <span class="quote_right">Study hard what interests you the most
+      in the most undisciplined, irreverent and original manner
+      possible. &ndash; Richard Feynman
+      </span>
+      
+      <p>
+	By contrast, when I'm reading in support of some creative
+	project, I ask much better Anki questions.  I find it easier
+	to connect to the questions and answers emotionally. I simply
+	care more about them, and that makes a difference.  So while
+	it's tempting to use Anki cards to study in preparation for
+	some (possibly hypothetical) future use, I strongly advise
+	against it. If you can, it's much better to find a way to use
+	Anki as part of some creative project.
+      </p>
+      
+	
+    <h3>Using Anki to do shallow reads of papers</h3>
+    
+    <p>
+      Most of my Anki-based reading is much shallower than my read of
+      the AlphaGo paper. Rather than spending days on a paper, I'll
+      typically spend 10 to 60 minutes. Here's a few notes on some
+      patterns I've found useful in shallow reading.
     </p>
 
     <p>
-      Most of my Anki-based reading is not nearly as deep as my read
-      of the AlphaGo paper. For the most part it's done as part of the
-      background research for some project. I will find a new article,
+      I usually do such reading as part of the background research for
+      some project. I will find a new article (or set of articles),
       and typically spend a few minutes assessing it. Does the article
-      seem likely to contain enough insight &ndash; new questions, new
-      ideas, new methods, new results &ndash; relevant to my project?
-      If so, I'll usually spend 10 to 60 minutes reading it. This
-      doesn't mean reading the whole thing. Rather, I'll add to Anki
-      questions about the core claims and core questions. It's
-      particularly helpful to extract questions from the abstract,
-      introduction, conclusion, figures, and figure
-      captions. Typically I will extract anywhere from 5 to 20 Anki
-      questions from the paper. I'm reluctant to extract fewer than 5
-      or so &ndash; it leaves the paper as a kind of isolated orphan
-      in the system, and it can become difficult to connect to those
-      questions.
+      seem likely to contain substantial insight or provocation
+      relevant to my project &ndash; new questions, new ideas, new
+      methods, new results?  If so, I'll usually spend roughly 10 to
+      60 minutes reading it.
     </p>
 
     <p>
-      Beware this process, though! One major failure mode is if you
-      Ankify misleading work. This is worse than doing nothing: you're
-      actively making yourself stupider.
+      This doesn't mean reading every word in the paper. Rather, I'll
+      add to Anki questions about the core claims and core questions
+      of the paper. It's particularly helpful to extract Anki
+      questions from the abstract, introduction, conclusion, figures,
+      and figure captions. Typically I will extract anywhere from 5 to
+      20 Anki questions from the paper. It's usually a bad idea to
+      extract fewer than 5 questions &ndash; doing so tends to leave
+      the paper as a kind of isolated orphan in my memory.  Later I
+      find it difficult to feel much connection to those
+      questions. Put another way: if a paper is so uninteresting that
+      it's not possible to add 5 good questions about it, it's usually
+      better to add no questions at all.
     </p>
 
     <p>
-      How to avoid that?
+      One failure mode of this process is if you Ankify misleading
+      work. Many papers contain wrong or misleading statements, and if
+      you commit such items to memory, you're actively making yourself
+      stupider. 
     </p>
 
     <p>
-      For instance, I'll add a question like: &ldquo;What do Jones and
-      Weinberg 2011*<span class="marginnote">* Benjamin F. Jones and
-      Bruce A. Weinberg, <a href="assets/Jones2011a.pdf">Age Dynamics
-      in Scientific Creativity</a>, Proceedings of the National
-      Academy of Sciences (2011).</span> claim is the average age at
-      which physics Nobelists made their discovery, over
-      1980-2011?&rdquo; (Answer: 48).  Often I'll add variant
-      questions, like: &ldquo;Which paper claimed that physics
-      Nobelists made their great discovery at age 48, over
-      1980-2011?&rdquo; And so on.
+      How to avoid Ankifying misleading work?
+    </p>
+
+    <p>
+      As an example, let me describe how I Ankified a recent paper I
+      read. It's a paper by the economists Benjamin Jones and Bruce
+      Weinberg*<span class="marginnote">* Benjamin F. Jones and Bruce
+      A. Weinberg, <a href="assets/Jones2011a.pdf">Age Dynamics in
+      Scientific Creativity</a>, Proceedings of the National Academy
+      of Sciences (2011).</span>, which studies the ages at which
+      scientists make their greatest discoveries. I should say at the
+      outset: I have no reason to think the paper is misleading! But
+      it's also worth being cautious.  As an example of that caution,
+      one of the questions I added to Anki was: &ldquo;What does Jones
+      2011 claim is the average age at which physics Nobelists made
+      their prizewinning discovery, over 1980-2011?&rdquo; (Answer: 48).
+      Another variant question was: &ldquo;Which paper claimed that
+      physics Nobelists made their prizewinning discovery at age 48,
+      over the period 1980-2011?&rdquo; (Answer: Jones 2011).  And so
+      on.
     </p>
 
     <p>
       Such questions qualify the underlying claim: we now know it was
-      a claim made by Jones and Weinberg 2011, and that we're relying
-      on the quality of Jones and Weinberg's data analysis. If I'm
-      particularly concerned, I may add one or more questions about
-      what makes such work difficult, e.g.: &ldquo;What's one
-      challenge in determining the age of Nobel winners in Jones and
-      Weinberg 2011?&rdquo; Good answers include: the difficulty of
-      figuring out which paper contained the Nobel-winning work; the
-      fact that publication of papers is sometimes delayed by years;
-      that sometimes work is spread over multiple papers; and so
-      on. All this reminds me that if Jones and Weinberg were sloppy,
-      or simply made an understandable mistake, their numbers might be
-      off. Now, for this particular paper, I don't expect the analysis
-      will be far off. But it's worth being careful in framing
-      questions so you're not misleading yourself. I haven't examined
-      Jones and Weinberg's analysis carefully enough to regard it as a
-      fact that the average age of those Nobelists is 48. But it is a
-      fact that Jones and Weinberg 2011 claimed it was 48. Those are
-      quite different.
+      a claim made in Jones 2011, and that we're relying on the
+      quality of Jones and Weinberg's data analysis. In fact, I
+      haven't examined that analysis carefully enough to regard it as
+      a fact that the average age of those Nobelists is 48. But it is
+      certainly a fact that their paper claimed it was 48. Those are
+      different things, and the latter is the right thing to Ankify.
     </p>
 
-    ZZZ
+    <p>
+      If I'm particularly concerned about the quality of the analysis,
+      I may add one or more questions about what makes such work
+      difficult, e.g.: &ldquo;What's one challenge in determining the
+      age of Nobel winners at the time of their discovery, as
+      discussed in Jones 2011?&rdquo; Good answers include: the
+      difficulty of figuring out which paper contained the
+      Nobel-winning work; the fact that publication of papers is
+      sometimes delayed by years; that sometimes work is spread over
+      multiple papers; and so on. Thinking about such challenges
+      reminds me that if Jones and Weinberg were sloppy, or simply
+      made an understandable mistake, their numbers might be off.
+      Now, it so happens that for this particular paper, I don't
+      expect the analysis will be far off. And so I didn't Ankify any
+      such question.  But it's worth being careful in framing
+      questions so you're not misleading yourself.
+    </p>
     
     <p>
-      Another useful pattern is Ankifying figures. For instance, again
-      from Jones and Weinberg 2011, here's a graph showing the age of
-      physics Nobelists when they made their discovery:
+      Another useful pattern while reading papers is Ankifying
+      figures. For instance, here's a graph from Jones 2011 showing
+      the age of physics Nobelists when they made their discovery:
     </p>
 
     <center>
@@ -837,135 +719,146 @@
     </center>
     
     <p>
-      I have an Anki question that simply says &ldquo;Visualize the
+      I have an Anki question which simply says: &ldquo;Visualize the
       graph Jones 2011 made of the age at which physics Nobelists make
-      their Nobel-winning discovery&rdquo;. The answer is the image
+      their prizewinning discovery&rdquo;. The answer is the image
       shown above, and I count myself as successful if my mental image
-      is roughly along those lines.  I could optionally deepen my
-      engagement with the graph, by adding questions such as:
-      &ldquo;In Jones 2011's graph of physics prizewinning
-      discoveries, what is the peak probability of having made major
-      achievement by age 40?&rdquo; Indeed, one could easily add
-      dozens of questions about this graph. I haven't done that,
-      because of the time commitment associated to such questions. But
-      I do find the broad shape of the graph fascinating, and it's
-      also fascinating and useful to know the graph exists, and can be
-      consulted if I want more details.
+      is roughly along those lines. I could deepen my engagement with
+      the graph, by adding questions such as: &ldquo;In Jones 2011's
+      graph of physics prizewinning discoveries, what is the peak
+      probability of great achievement by age 40 [i.e., the highest
+      point in the blue line in the graph above]?&rdquo; (Answer:
+      about 0.8.)  Indeed, one could easily add dozens of interesting
+      questions about this graph. I haven't done that, because of the
+      time commitment associated to such questions. But I do find the
+      broad shape of the graph fascinating, and it's also useful to
+      know the graph exists, and where to consult it if I want more
+      details.
     </p>
 
     <p>
       I said above that I typically spend 10 to 60 minutes Ankifying a
-      paper, with the time depending on my judgement of the value I'm
-      getting from the paper. However, if I'm learning a tremendous
-      amount, and finding it extremely interesting, I keep reading and
-      Ankifying. Really good resources are worth investing time
+      paper, with the duration depending on my judgment of the value
+      I'm getting from the paper. However, if I'm learning a
+      tremendous amount, and finding it interesting, I keep reading
+      and Ankifying. Really good resources are worth investing time
       in. But most papers don't fit this pattern, and you quickly
       saturate. If you feel you could easily find something more
-      rewarding to read, switch over. Indeed, it's worth deliberately
+      rewarding to read, switch over. It's worth deliberately
       practicing such switches, to avoid building a counter-productive
       habit of completionism in your reading. It's nearly always
       possible to read deeper into a paper, but that doesn't mean you
-      can't be getting more value elsewhere.
+      can't easily be getting more value elsewhere.  It's a failure
+      mode to spend too long reading unimportant papers.
     </p>
 
     <p>
-      A failure mode here is to spend too long reading relatively less
-      important papers. This most commonly happens when I'm new to a
-      field. A paper may not be very good, but it may use many
-      important techniques common to the field. Because those
-      techniques are new to me, I find myself Ankifying lots of
-      associated material.
+      The exception to this rule is when I'm new to a field. A paper
+      may not be very good, but it may use many important techniques
+      common to the field. Because those techniques are new to me, I
+      find myself Ankifying lots of associated material.
     </p>
 
-    <p>
-      This pattern is okay. For one thing, those techniques are likely
-      to show up repeatedly in multiple papers, so it doesn't much
-      matter when I Ankify them. With that said, if I find this
-      pattern occurring repeatedly within a field, it usually means I
-      need to refocus on truly key papers, and not get so bogged down
-      in less important papers.
+      <p>
+	This pattern is okay, in moderation. For one thing, those
+	techniques are likely to show up in multiple papers, so it
+	doesn't much matter when I Ankify them. With that said, if I
+	find this pattern occurring repeatedly, it usually means I
+	need to refocus on truly key papers, and not get so bogged
+	down in less important papers.
     </p>
 
-    <p>
-      In the last few paragraphs I've discussed how I do relatively
-      shallow reads of papers, rather than the deep dive I did into
-      AlphaGo. Naturally, most of my reading is of this shallower
-      type, since it's so much faster. However, it's not a good idea
-      to only do shallow reading. To really grok a field, you need to
-      engage deeply with key papers &ndash; papers like the AlphaGo
-      paper. What you get from deep engagement with important papers
-      is more significant than any single fact or technique: you get a
-      sense for what a powerful result in the area looks like. It
-      helps you imbibe the healthiest norms and standards of the
-      field. It helps you internalize how to ask good questions in the
-      field, and how to put techniques together. You begin to
-      understand what made something like AlphaGo a breakthrough
-      &ndash; and also its limitations, and the sense in which it was
-      really a natural evolution in the field. Such things aren't
-      captured individually by any single Anki question. But they
-      begin to be captured collectively by the questions one asks when
-      engaged deeply enough with key papers.
-    </p>
+    <h3>Syntopic reading using Anki</h3>
+    
+      <p>
+	I've talked about how to use Anki to do shallow reads of
+	papers, and rather deeper reads of papers. There's also a
+	sense in which it's possible to use Anki not just to read
+	papers, but to &ldquo;read&rdquo; the entire research
+	literature of a field.  Here's how I do it.
+      </p>
 
-    <p>
-      By following these patterns, I can often rapidly get a pretty
-      good picture of an entire field. Usually I begin with a truly
-      important paper, a paper establishing a result that got me
-      interested in the field in the first place. I do a deep read of
-      that paper. Later, I'll do deep reads of other key papers in the
-      field &ndash; ideally, I'll read the best 5-10 papers in the
-      field. But, interspersed, I also do shallower reads of a large
-      number of less important (though still good) papers.
-    </p>
+      <p>
+	You might suppose the foundation would be a shallow read of a
+	large number of papers. In fact, it's the opposite: to really
+	grok an unfamiliar field, you need to engage deeply with key
+	papers &ndash; papers like the AlphaGo paper. What you get
+	from deep engagement with important papers is more significant
+	than any single fact or technique: you get a sense for what a
+	powerful result in the field looks like. It helps you imbibe
+	the healthiest norms and standards of the field. It helps you
+	internalize how to ask good questions in the field, and how to
+	put techniques together. You begin to understand what made
+	something like AlphaGo a breakthrough &ndash; and also its
+	limitations, and the sense in which it was really a natural
+	evolution of the field. Such things aren't captured
+	individually by any single Anki question. But they begin to be
+	captured collectively by the questions one asks when engaged
+	deeply enough with key papers.
+      </p>
 
-    <p>
-      You may wonder why I don't just focus on only the most important
-      papers. Part of the reason is mundane: it can be hard to tell
-      what the most important papers are!  Shallow reads of multiple
-      papers can help you figure out what the key papers are, without
-      spending too much time doing deep reads of papers that turn out
-      not to be so important. But there's also a culture that one
-      imbibes reading the more bread-and-butter papers of a field: a
-      sense for what routine progress looks like, for the praxis of
-      the field. That's valuable too, especially for building up an
-      overall picture of where the field is at, and to stimulate
-      questions on my own part. Indeed, while I don't recommend
-      spending most of your time reading bad papers, it's very
-      possible to have a good conversation with a very bad
-      paper. Stimulus is found an unexpected places.
-    </p>
+      <p>
+	So, to get a picture of an entire field, I usually begin with
+	a truly important paper, ideally a paper establishing a result
+	that got me interested in the field in the first place. I do a
+	thorough read of that paper, along the lines of what I
+	described for AlphaGo. Later, I do thorough reads of other key
+	papers in the field &ndash; ideally, I read the best 5-10
+	papers in the field. But, interspersed, I also do shallower
+	reads of a much larger number of less important (though still
+	good) papers. That typically means anywhere from tens to
+	hundreds of such papers.
+      </p>
 
-    <p>
-      Over time, this is a form of what Mortimer Adler and Charles van
-      Doren dubbed <em>synoptic
-      reading</em>*<span class="marginnote">* In their marvellous
-      &ldquo;How to Read a Book&rdquo;, which I highly recommed:
-      Mortimer J. Adler and Charles van Doren, &ldquo;How to Read a
-      Book: The Classic Guide to Intelligent Reading&rdquo;
-      (1972)</span>. I build up an understanding of an entire
-      literature: what's been done, what's not yet been done. I start
-      to identify open problems, questions that I'd personally like
-      answered, but which don't yet seem to have been answered. I
-      identify tricks, observations that seem pregnant with
-      possibility, but whose import I don't yet know. And, sometimes,
-      I identify what seem to me to be field-wide blind spots. I add
-      questions about all these to Anki as well. In this way, Anki
-      becomes a medium supporting my creative research. It has some
-      shortcomings as such a medium, since it's not designed primarily
-      to support creative work. I'll come back to this point
-      later. But even without being designed in such a way, it's
-      exceptionally helpful as a creative support.
-    </p>
+      <p>
+	You may wonder why I don't just focus on only the most
+	important papers. Part of the reason is mundane: it can be
+	hard to tell what the most important papers are. Shallow reads
+	of many papers can help you figure out what the key papers
+	are, without spending too much time doing deeper reads of
+	papers that turn out not to be so important. But there's also
+	a culture that one imbibes reading the bread-and-butter papers
+	of a field: a sense for what routine progress looks like, for
+	the praxis of the field. That's valuable too, especially for
+	building up an overall picture of where the field is at, and
+	to stimulate questions on my own part. Indeed, while I don't
+	recommend spending a large fraction of your time reading bad
+	papers, it's certainly possible to have a good conversation
+	with a very bad paper. Stimulus is found an unexpected places.
+      </p>
 
+      <p>
+	Over time, this is a form of what Mortimer Adler and Charles
+	van Doren dubbed <em>syntopic
+	reading</em>*<span class="marginnote">* In their marvelous
+	&ldquo;How to Read a Book&rdquo;: Mortimer J. Adler and
+	Charles van Doren, &ldquo;How to Read a Book: The Classic
+	Guide to Intelligent Reading&rdquo; (1972)</span>. I build up
+	an understanding of an entire literature: what's been done,
+	what's not yet been done. I start to identify open problems,
+	questions that I'd personally like answered, but which don't
+	yet seem to have been answered. I identify tricks,
+	observations that seem pregnant with possibility, but whose
+	import I don't yet know. And, sometimes, I identify what seem
+	to me to be field-wide blind spots. I add questions about all
+	these to Anki as well. In this way, Anki is a medium
+	supporting my creative research. It has some shortcomings as
+	such a medium, since it's not designed with supporting
+	creative work in mind &ndash; it's not equipped for lengthy,
+	free-form exploration inside a scratch space. But even without
+	being designed in such a way, it's helpful as a creative
+	support.
+      </p>
+      
     <p>
-      Anki is especially helpful in learning subjects which are new to
-      me. With a subject I already know well, my curiosity and my
-      model of the subject are often already so strong that it's
-      extremely easy to integrate new facts. But when that's not true,
-      it can be difficult. The great English mathematician John
-      Edensor Littlewood wrote*<span class="marginnote">* In
-      &ldquo;Littlewood's miscellany&rdquo;, edited by Béla Bollobás
-      (1986).</span>:
+      I've been describing how I use Anki to learn subjects which are
+      largely new to me.  By contrast, with a subject I already know
+      well, my curiosity and my model of the subject are often already
+      so strong that it's rather easier to integrate new facts. I
+      still find Anki useful, but it's most useful in new areas.  The
+      great English mathematician John Edensor Littlewood
+      wrote*<span class="marginnote">* In &ldquo;Littlewood's
+      miscellany&rdquo;, edited by Béla Bollobás (1986).</span>:
     </p>
 
     <blockquote>
@@ -974,20 +867,21 @@
     </blockquote>
 
     <p>
-      I used to find learning new areas similarly difficult. It wasn't
-      insurmountable: with enough emotional effort I could do it. But
-      without a lot of drive, it was extremely difficult to make a lot
-      of material in a new field stick. Anki solves that problem. In a
-      sense, it's an emotional prosthetic, helping create the drive I
-      need to achieve understanding. I can simply <em>decide</em> I'm
-      going to read deeply into a new area, and retain and make sense
-      of what I learn. This seems to work for almost all areas of
-      understanding. Of course, it works best in areas which, while
-      &ldquo;new&rdquo; to me, are reasonably adjacent to something I
-      already know well. And so this sometimes gives me the sense of
-      gradually exploring out from the borders of what I already
-      know. But it's also possible to branch out to more distant
-      areas.
+      This captures something of the immense emotional effort I used
+      to find required to learn new areas. Without a lot of drive, it
+      was extremely difficult to make a lot of material in a new field
+      stick. Anki does a great deal to solve that problem. In a sense,
+      it's an emotional prosthetic, actually helping create the drive
+      I need to achieve understanding. It doesn't do the entire job on
+      its own &ndash; as I remarked earlier, it's very helpful to have
+      other commitments (like a creative project, or people depending
+      on me) to help create that drive.  Nonetheless, Anki helps give
+      me a sense that I can simply <em>decide</em> I'm going to read
+      deeply into a new area, and retain and make sense of what I
+      learn. This seems to work for almost all areas of conceptual
+      understanding*<span class="marginnote">* There are many types of
+      motor skills and problem-solving skills I haven't tried using
+	Anki for, and I'm not sure if it could be adapted.</span>.
     </p>
 
     <p>
@@ -998,87 +892,17 @@
       the area. That doubt, in turn, made it less likely that I would
       succeed. Now I have confidence that I can just go into a new
       field and quickly attain a good, relatively deep understanding,
-      an understanding that will be durable. That confidence makes
-      reading exceedingly pleasurable, almost addictingly so.
+      an understanding that will be durable. That confidence often makes
+      reading exceedingly pleasurable.
     </p>
 
-    <p>
-      There's a slight downside to this pleasure: it's easy to get too
-      involved in just the pleasure of the reading. Now, of course, if
-      the pleasure is the primary point, then there's no problem at
-      all. But if you're using Anki for work, it can be easy to
-      confuse acquiring knowledge with making a useful
-      contribution. Just because you've memorized a lot of facts
-      doesn't mean you're doing good creative work in an area.
-    </p>
-
-    <p>
-      For these reasons, I believe Anki use should be used primarily
-      in service to a larger creative project. This pattern helps keep
-      you focused on creative contribution, and also acts as a kind of
-      guide, helpfing you pick out particularly good questions, and
-      ignoring the unimportant.
-    </p>
-
-    <p>
-      Nearly everything I've said about Ankifying papers applies also
-      to other resources: books, videos, conversations, events, and
-      places.
-    </p>
-
-    <p>
-      One caution is with books: reading an entire book is a
-      substantial commitment, and adding Anki questions regularly can
-      slow you down a lot. It's worth keeping this in mind when
-      deciding how much to Ankify. Sometimes a book is so dense with
-      great material that it's worth taking the time to add lots of
-      questions. But unmindfully Ankifying everything in sight is a
-      bad habit.
-    </p>
-
-    <p>
-      What you Ankify is not a trivial choice: Ankify things that
-      serve your long-term goals. In some measure we become what we
-      pay attention to, so we must be careful what we pay attention
-      to*<span class="marginnote">* With apologies to Kurt
-      Vonnegut.</span>. This is always true, but Anki makes it
-      especially true.
-    </p>
-
-    <p>
-      With all that said, one fun pattern is to go back to my old,
-      pre-Anki notes on books, and to Ankify them. This can often be
-      done quickly, and gives me a greater return on the time I've
-      invested in now mostly-forgotten
-      books*<span class="marginnote">* Some friends of mine complain
-      that books are often over-padded essays.  I've sometimes
-      wondered if one benefit of this kind of padding isn't that it
-      enforces a kind of spaced repetition, along Anki-like lines,
-      since it means readers take some weeks to read the book.  This
-      is perhaps an inefficient way to memorize the main points of the
-      book, but may well be better than having no memory at
-      all.</span>.
-    </p>
-
-    <p>
-      Something I haven't yet figured out is how to integrate Anki use
-      with note taking for a project. In practice I find it extremely
-      helpful to do both. I instinctively and unsystematically do some
-      things as notes, others as Anki questions, and still other
-      things as both. Overall, it works okay, but my sense is that it
-      could be a lot better if I applied more systematic thought and
-      experimentation. Part of the problem is that I don't have a very
-      good system for note-taking, period! If I worked more on that, I
-      suspect the whole thing would get a lot better. Still, it works
-      okay.
-    </p>
 
     <h3>More patterns of Anki use</h3>
 
 
     <p>
-      Having looked at the use of Anki for reading technical papers
-      and books, let's return to general patterns of use.
+      Having looked at the use of Anki for reading technical papers,
+      let's return to general patterns of use.
     </p>
 
     <p>
@@ -1086,46 +910,49 @@
       possible:</strong> That is, both the question and answer express
       just one idea. As an example, when I was learning the Unix
       command line, I originally had a question: &ldquo;How to create
-      a soft link from linkname to filename?&rdquo; The answer was:
-      &ldquo;ln -s filename linkname&rdquo;. Unfortunately, I
-      routinely got this question wrong.
+      a soft link from <code>linkname</code>
+      to <code>filename</code>?&rdquo; The answer was: &ldquo;<code>ln
+      -s filename linkname</code>&rdquo;. Unfortunately, I routinely
+      got this question wrong.
     </p>
 
     <p>
       The solution was to break the question into two pieces. One
       piece was: &ldquo;What's the basic command and option to create
-      a Unix soft link?&rdquo: Answer: &ldquo;ln -s
-      &hellip;&rdquo;. And the second piece was: &ldquo;When creating
-      a Unix soft link, in what order do linkname and filename
-      go?&rdquo; Answer: &ldquo;filename linkname&rdquo;.
+      a Unix soft link?&rdquo; Answer: &ldquo;<code>ln -s
+      &hellip;</code>&rdquo;. And the second piece was: &ldquo;When
+      creating a Unix soft link, in what order do <code>linkname</code> and
+      <code>filename</code> go?&rdquo; Answer: &ldquo;<code>filename
+	linkname</code>&rdquo;.
     </p>
 
     <p>
-      I got an enormous improvement by breaking this single question
-      into two more atomic pieces. It turned a question I routinely
-      got wrong into two questions I routinely got
+      Breaking this question into more atomic pieces turned a question
+      I routinely got wrong into two questions I routinely got
       right*<span class="marginnote">* An even more atomic version
       would be to break the first question into &ldquo;What's the Unix
       command to create a link?&rdquo; and &ldquo;What's the option to
-      the ln command to create a soft link?&rdquo; In practice, I've
-      known for years that ln is the command to create a link, and so
-      this wasn't necessary.</span>. Most of all: when I wanted to
-      create a Unix soft link in practice, I knew how to do it.
+      the <code>ln</code> command to create a soft link?&rdquo; In
+      practice, I've known for years that <code>ln</code> is the
+      command to create a link, and so this wasn't
+      necessary.</span>. Most of all: when I wanted to create a Unix
+      soft link in practice, I knew how to do it.
     </p>
 
     <p>
-      I'm not exactly sure what's reponsible for this effect. But I
-      suspect it's partly about focus. With the atomic questions my
-      mind knows exactly where to focus. When I made a mistake with
-      the combined question, I was always a little fuzzy about where
-      the issue was. That meant I didn't focus sharply enough on the
-      mistake. And so I didn't learn as much from my failure.
+      I'm not sure what's responsible for this effect. I suspect it's
+      partly about focus.  When I made mistakes with the combined
+      question, I was often a little fuzzy about where exactly my
+      mistake was. That meant I didn't focus sharply enough on the
+      mistake, and do didn't learn as much from my failure. When I
+      fail with the atomic questions my mind knows exactly where to
+      focus.
     </p>
 
     <p>
-      In general, you often get benefit from breaking Anki questions
-      down to be more atomic. It's an extremely powerful pattern for
-      question refactoring.
+      In general, I find that you often get substantial benefit from
+      breaking Anki questions down to be more atomic. It's a powerful
+      pattern for question refactoring.
     </p>
 
     <p>
@@ -1148,49 +975,47 @@
     <p>
       Incidentally, just because a question is atomic doesn't mean it
       can't involve quite complex, high-level concepts. Consider the
-      following question: &ldquo;What is the dr<sup>2</sup> term in
-      the Robertson-Walker metric?&rdquo; Answer:
-      dr<sup>2</sup>/(1-kr^2). Now, unless you've studied general
-      relativity that question probably seems quite opaque. It's a
-      sophisticated question, assuming you know what the
-      Robertson-Walker metric is, what dr<sup>2</sup> means, what k
-      means, and so on. But conditional on that background knowledge,
-      it's quite an atomic question and answer. Part of effective Anki
-      use is to break very complex ideas down into very simple atomic
-      questions.
+      following question, from the field of general relativity:
+      &ldquo;What is the <em>dr<sup>2</sup></em> term in the
+      Robertson-Walker metric?&rdquo; Answer:
+      <em>dr<sup>2</sup>/(1-kr^2)</em>. Now, unless you've studied
+      general relativity that question probably seems quite
+      opaque. It's a sophisticated question, assuming you know what
+      the Robertson-Walker metric is, what <em>dr<sup>2</sup></em> means, what
+      <em>k</em> means, and so on. But conditional on that background
+      knowledge, it's quite an atomic question and answer.
     </p>
 
     <p>
-      When you use Anki in this way, you begin to habitually break
-      things down into atomic questions. This sharply crystallizes all
-      the distinct things you've learned. Personally, I find that
-      crystallization satisfying, for reasons I (ironically) find
-      difficult to articulate. But one real benefit is that later Iz
-      often find those atomic ideas can be put together in ways I
-      didn't initially anticipate.
+      One benefit of using Anki in this way is that you begin to
+      habitually break things down into atomic questions. This sharply
+      crystallizes the distinct things you've learned. Personally, I
+      find that crystallization satisfying, for reasons I (ironically)
+      find difficult to articulate. But one real benefit is that later
+      I often find those atomic ideas can be put together in ways I
+      didn't initially anticipate. And so it's well worth going to the
+      trouble.
     </p>
 
     <p>
-      <strong>Try to avoid orphan questions:</strong> Suppose you're
-      reading online and you stumble across a great article about the
-      grooming habits of the Albanian mongoose, a subject you never
+      <strong>Avoid orphan questions:</strong> Suppose you're reading
+      online and stumble across a great article about the grooming
+      habits of the Albanian giant mongoose, a subject you never
       previously knew you were interested in, but which turns out to
       be fascinating. Pretty soon you've Ankified 5 to 10
-      questions. That's great, but experience shows that in a few
-      months time it is likely that those questions will feel rather
-      stale and disconnected from everything else. At least
-      subjectively &ndash; I don't have statistics &ndash; I'm sure I
-      get them wrong much more frequently. And I believe part of the
-      reason is that I've lost much of the interest I originally
-      felt. I just don't have enough context.
+      questions. That's great, but my experience suggests that in a
+      few months you'll likely find those questions rather stale and
+      disconnected, and frequently get them wrong. I believe the
+      reason is that those questions are too far from my other
+      interests, and I've lost the context that made me interested.
     </p>
 
     <p>
       I call these <em>orphan questions</em>, because they're not
-      closely related to anything else in your memory. It's not bad to
+      closely related to anything else in my memory. It's not bad to
       have a few orphan questions in Anki &ndash; it can be difficult
-      to know what will turn out to be a passing interest, and what
-      will grow into a substantial interest, connected to many of your
+      to know what will turn out to be only of passing interest, and
+      what will grow into a substantial interest, connected to your
       other interests. But if a substantial minority of your questions
       are orphans, that's a sign you should concentrate more on
       Ankifying questions related to your main creative projects, and
@@ -1203,11 +1028,11 @@
       else. Suppose, for instance, I'm reading an article on a new
       subject, and I learn an idea that seems particularly useful. I
       make it a rule to never put in one question. Rather, I try to
-      put at least two in, preferably three or more. That's usually
-      enough that it's at least the nucleus of a bit of useful
+      put at least two questions in, preferably three or more. That's
+      usually enough that it's at least the nucleus of a bit of useful
       knowledge. If it's a lonely orphan, inevitably I get the
-      question wrong all the time, and it's just a waste to have
-      entered it.
+      question wrong all the time, and it's a waste to have entered it
+      at all.
     </p>
       
     <p>
@@ -1219,60 +1044,61 @@
       context. For instance, both my Emacs and Unix command line decks
       had very similar questions, along the lines of: &ldquo;How to
       delete a word?&rdquo; Those questions need to be rewritten,
-      e.g. as: &ldquo;In Emacs, how to delete a word?&rdquo;</span>
-      been merging my decks and subdecks into one big deck. The world
-      isn't divided up, and I believe it's doing me good to collide
+      e.g. as: &ldquo;In Emacs, how to delete a word?&rdquo; (This, by
+      the way, may seem a strange question for a long-time Emacs user
+      such as myself. In fact, I've used Anki to help me change the
+      way I delete words in Emacs, which is why I have an Anki
+      question on the subject. I have made a bunch of improvements to
+      my Emacs workflow this way.)</span>  merged my decks and
+      subdecks into one big deck. The world isn't divided up into
+      neatly separated components, and I believe it's good to collide
       very different types of questions. One moment Anki is asking me
       a question about the temperature chicken should be cooked
-      to. The next: a question about the JavaScript API. Is this doing
-      me any real good? I'm not sure. But I don't think it does any
-      harm, and I hope it is creatively stimulating, and that it helps
-      me apply my knowledge in unusual contexts. 
+      to. The next: a question about the JavaScript API. Is this
+      mixing doing me any real good? I'm not sure. But I don't think
+      it does any harm, and hope it is creatively stimulating, and
+      helps me apply my knowledge in unusual contexts.
     </p>
 
     <p>
-      <strong>Why I don't share decks:</strong> I'm often asked
-      whether I'd be willing to share my Anki decks. I'm not. Very
-      early on I realized it would be very useful to put personal
-      information in my decks. I don't mean anything terribly personal
-      &ndash; I'd never put deep, dark secrets in there. Nor do I put
-      anything requiring security, like a password. But I do put the
-      kind of things I wouldn't sling about casually.
+      <strong>Don't share decks:</strong> I'm often asked whether I'd
+      be willing to share my Anki decks. I'm not. Very early on I
+      realized it would be very useful to put personal information in
+      Anki. I don't mean anything terribly personal &ndash; I'd never
+      put deep, dark secrets in there. Nor do I put anything requiring
+      security, like passwords. But I do put some things I wouldn't
+      sling about casually.
     </p>
 
     <p>
       As an example, I've a (very short!) list of superficially
-      charming and impressive colleagues who I would never want to
-      work with, because I've seen them treat other people badly. It's
-      helpful to Ankify some details of that treatment, so I can
-      clearly remember why that person should be avoided. Now, this
+      charming and impressive colleagues who I would never work with,
+      because I've consistently seen them treat other people
+      badly. It's helpful to Ankify some details of that treatment, so
+      I can clearly remember why that person should be avoided. This
       isn't the kind of information that is right to spread casually:
       I may have misinterpreted the other person's actions, or have
       misunderstood the context they were operating in. But it's
-      useful for me to have in Anki.
+      personally useful for me to have in Anki.
     </p>
 
     <p>
-      <strong>Using other people's decks:</strong> More generally, I
-      haven't made much use of other people's decks. The most
-      important reason is the great value I find in making cards
-      myself.
+      <strong>Construct your own decks:</strong> The Anki site
+      has <a href="https://ankiweb.net/shared/decks/">many shared
+      decks</a>, but I've found only a little use for them. The most
+      important reason is that making Anki cards is an act of
+      understanding in itself.  That is, figuring out good questions
+      to ask, and good answers, is part of what it means to understand
+      a new subject well. To use someone else's cards is to forgo much
+      of that understanding.
     </p>
 
     <p>
-      I find making Anki cards an act of understanding in itself.
-      That is, figuring out good questions to ask, and good answers,
-      is part of what it means to understand a new subject well. To
-      use someone else's cards would be to forgo much of that
-      understanding.
-    </p>
-
-    <p>
-      It's also possible that the actual act of constructing the cards
-      may help with memory. Memory researchers have repeatedly found
-      that the more elaborately you encode a memory, the stronger the
-      memory will be. By elaborative encoding, they mean essentially
-      the richness of the associations you form.
+      I believe the act of constructing the cards actually helps with
+      memory. Memory researchers have repeatedly found that the more
+      elaborately you encode a memory, the stronger the memory will
+      be. By elaborative encoding, they mean essentially the richness
+      of the associations you form.
     </p>
 
     <p>
@@ -1282,56 +1108,62 @@
       remembering it is to relate that fact to others. For instance, I
       personally find it fascinating that Telstar was put into orbit
       the year <em>before</em> the introduction of ASCII, arguably the
-      first modern digital standard for communicating text. Keeping
-      that kind of connection in mind is an example of an elaborative
-      encoding.
+      first modern digital standard for communicating text. Humanity
+      had a telecommunications satellite before we had a digital
+      standard for communicating text! Finding that kind of connection
+      is an example of an elaborative encoding.
     </p>
 
     <p>
-      I believe the act of constructing an Anki card is itself nearly
-      always a form of elaborative encoding. It forces you to think
-      through alternate forms of the question, to consider the best
-      possible answers, and so on. I believe this is true for even the
-      most elementary cards. And it certainly becomes true if you
-      construct more complex cards, cards relating the basic fact to
-      be remembered to other ideas (like the Telstar-ASCII link),
+      The act of constructing an Anki card is itself nearly always a
+      form of elaborative encoding. It forces you to think through
+      alternate forms of the question, to consider the best possible
+      answers, and so on. I believe this is true for even the most
+      elementary cards. And it certainly becomes true if you construct
+      more complex cards, cards relating the basic fact to be
+      remembered to other ideas (like the Telstar-ASCII link),
       gradually building up a web of richly interrelated ideas.
     </p>
 
     <p>
-      With all that said, I do wonder if there's not some practice of
-      deck-sharing which is valuable. There are communities of medical
+      With all that said, there are some valuable deck-sharing
+      practices. For instance, there are communities of medical
       students who find value in sharing and sometimes collaboratively
       constructing decks*<span class="marginnote">* See
       the <a href="https://www.reddit.com/r/medicalschoolanki/">MedicalSchoolAnki
       subreddit</a>, which contains frequent discussion of the best
       decks, how to use them, as well as ever-changing canon of best
-      decks to use for different purposes. More generally, the Anki
-      site has <a href="https://ankiweb.net/shared/decks/">many shared
-      decks</a>.</span>. There are, of course, different levels of
-      deck quality. And perhaps there is value in using a very
-      high-quality deck constructed by someone else. If nothing else,
-      perhaps by using such a deck you'll learn good new patterns for
+      decks to use for different purposes. See also the paper: Michael
+      Hart-Matyas <em>et
+      al</em>, <a href="assets/Hart-Matyas2018.pdf">Twelve tips for
+      medical students to establish a collaborative flashcard
+      project</a>, Medical Teacher (2018).</span>. Perhaps there is
+      value in using a very high-quality deck constructed by someone
+      else. If nothing else, you may learn good new patterns for
       questions, patterns that will help you construct better
-      questions in future.
+      questions in future. I've also found value in
+      shared <a href="https://ankiweb.net/shared/info/685421036">art
+      decks</a>, asking questions such as who painted a particular
+      painting. But for deeper kinds of understanding, I've found
+      shared decks of minimal use.
     </p>
 
     <p>
-      <strong>Getting 95% of the value of Anki from 5% of the
+      <strong>95% of the value of Anki comes from 5% of the
       features:</strong> I don't use most of Anki's features. Anki has
-      ways of auto-generating cards, tagging features, a plugin
-      ecosystem, and much else. In practice, I rarely use those
+      ways of auto-generating cards, of tagging cards, a plugin
+      ecosystem, and much else. In practice, I rarely use any of these
       features. My cards are always one of two types: the majority are
-      simple question and answer, and a substantial minority are
-      what's called a <em>cloze</em>: a kind of fill-in-the-blanks
-      test. For instance, I'll use clozes to test myself on favourite
-      quotes:
+      simple question and answer; a substantial minority are what's
+      called a <em>cloze</em>: a kind of fill-in-the-blanks test. For
+      instance, I'll use clozes to test myself on favorite quotes:
     </p>
 
     <blockquote>
       &ldquo;if the personal computer is truly a __ then the use of it
-      would actually change the __ of an __", __, __&rdquo; (A: new
-      medium, thought patterns, entire civilization, Alan Kay, 1989).
+      would actually change the __ of an __", __, __&rdquo; (Answer:
+      new medium, thought patterns, entire civilization, Alan Kay,
+      1989).
     </blockquote>
 
     <p>
@@ -1339,32 +1171,34 @@
     </p>
     
     <blockquote>
-      The Adelson illusion is also known as the ___ illusion. (A:
+      The Adelson illusion is also known as the ___ illusion. (Answer:
       checker-shadow)
     </blockquote>
 
     <p>
       Why not use more of Anki's features? Part of the reason is that
-      I get an enormous benefit from just using the core features.
-      Furthermore, mastering this tiny set of features has required a
-      lot of work. A basketball and hoop are simple pieces of
-      equipment, but you can spend a lifetime learning to use them
-      well. Simlarly, basic Anki practice can be developed
-      enormously. And so I've concentrated on just those basic
-      features.
+      I get an enormous benefit from just the core features.
+      Furthermore, learning to use this tiny set of features well has
+      required a lot of work. A basketball and hoop are simple pieces
+      of equipment, but you can spend a lifetime learning to use them
+      well. Similarly, basic Anki practice can be developed
+      enormously. And so I've concentrated on learning to use those
+      basic features well.
     </p>
 
     <p>
-      I know many people who try Anki out, but start to go down a
-      rabbit hole of how to use it &ldquo;efficiently&rdquo;. Usually,
-      they're chasing 1% improvements. Often, those people ultimately
-      give up Anki as &ldquo;too difficult&rdquo;, which seems to be a
-      synonym for &ldquo;I got nervous I wasn't using it
-      perfectly&rdquo;. Which is a pity, because it means that they've
-      given up a 2,000% improvement because they were overcome by the
-      desire for a few final 5%, 2% and (in many cases) 0.1%
-      improvements. This rabbit hole seems to be especially attractive
-      to programmers.
+      I know many people who try Anki out, and then go down a rabbit
+      hole of figuring out how to learn as many features as possible
+      so they can use it &ldquo;efficiently&rdquo;. Usually, they're
+      chasing 1% improvements. Often, those people ultimately give up
+      Anki as &ldquo;too difficult&rdquo;, which seems to be a synonym
+      for &ldquo;I got nervous I wasn't using it
+      perfectly&rdquo;. This is a pity. As I mentioned above, Anki
+      offers something like a 20-fold improvement over (say) ordinary
+      flashcards. And so they're giving up a 2,000% improvement
+      because they were worried they were missing a few final 5%, 1%
+      and (in many cases) 0.1% improvements. This kind of rabbit hole
+      seems to be especially attractive to programmers.
     </p>
 
     <p>
@@ -1374,9 +1208,9 @@
       programmer's efficiency disease. Learn how to use Anki for basic
       question and answer, and concentrate on exploring new patterns
       within that paradigm. That'll serve you far better than any
-      number of hours spent fiddling with plugins. Then, if you build
-      a regular habit of high-quality Anki use, you can start
-      experimenting with more advanced features.
+      number of hours spent fiddling around with the features. Then,
+      if you build a regular habit of high-quality Anki use, you can
+      start experimenting with more advanced features.
     </p>
 
     <p>
@@ -1384,46 +1218,80 @@
       friends and family:</strong> I've experimented with using Anki
       to store (non-sensitive!) questions about friends and family. It
       works well for things like &ldquo;Is [my friend] a vegan?&rdquo;
-      But my use quickly ran aground on many questions. For instance,
-      suppose I'd talked with a friend about their kids, but never met
-      them. I might put in questions like &ldquo;What is the name of
-      [my friend's] eldest child?&rdquo; Or, if we'd chatted about
-      music, I might put in: &ldquo;What kind of music does [my
-      friend] most like?&rdquo;
+      But my use quickly ran aground on thornier questions. For
+      instance, suppose I'd talked with a new friend about their kids,
+      but never met those kids. I might put in questions like
+      &ldquo;What is the name of [my friend's] eldest child?&rdquo;
+      Or, if we'd chatted about music, I might put in: &ldquo;What is
+      a musician [my friend] likes?&rdquo;
     </p>
 
     <p>
-      This was a well-intentioned experiment. But somehow, such
-      questions always leave me feeling uncomfortable. It seems too
+      This kind of experiment is well intentioned. But posing such
+      questions always leaves me feeling uncomfortable. It seems too
       much like faking interest in my friends. There's a pretty strong
       social norm that if you remember your friends' taste in music or
       their kids' names, it's because you're really interested in that
-      friend. Using a memory aid feels ungenuine somehow.
+      friend. Using a memory aid feels somehow ungenuine.
     </p>
 
     <p>
-      I've talked with several friends about this. And, I must admit,
-      they mostly appear to find it charming that I'd go to so much
-      trouble over this. Certainly, in some sense it seems mostly like
-      a net positive for the world.
-    </p>
-
-    <p>
-      Nonetheless, I have trouble doing it. I have adopted it for
-      slightly less personal stuff &ndash; things like people's food
+      I've talked with several friends about this. Most have told me
+      the same thing: they appreciate me going to so much trouble in
+      the first place, and find it charming that I'd worry so much
+      about whether it was ungenuine. So perhaps it's a mistake to
+      worry.  Nonetheless, I have trouble doing it. I have adopted it
+      for less personal stuff &ndash; things like people's food
       preferences. And maybe over time I'll use it for storing more
       personal facts. But for now I'm taking it slow.
     </p>
 
-    ZZZ
-    
+    <p>
+      <strong>Process versus declarative memory:</strong> There's a
+      big difference between remembering a fact and mastering a
+      process.  For instance, while you might remember a Unix command
+      when cued by an Anki question, that doesn't mean you'll
+      recognize an opportunity to use the command in the context of
+      the command line, and be comfortable typing it out. And it's
+      still another thing to find novel, creative ways of combining
+      the commands you know, in order to solve challenging problems.
+    </p>
+
+    <p>
+      Put another way: to really internalize a process, it's not
+      enough just to review Anki cards. You need to carry out the
+      process, in context. And you need to solve real problems with
+      it.
+    </p>
+
+    <p>
+      With that said, I've found the transfer process relatively
+      easy. In the case of the command line, I use it often enough
+      that I have plenty of opportunities to make real use of my
+      Ankified knowledge of the command line. Over time, that
+      declarative knowledge is becoming knowledge I routinely use in
+      context. That said, it'd be good to better understand when the
+      transfer works and when it doesn't. Even better would be a
+      memory system that integrates into your actual working
+      environment. For instance, it could query you on Unix commands,
+      while placing you at an actual command line. Or perhaps it would
+      ask you to solve higher-level problems, while at the command
+      line.
+    </p>
+
+    <p>
+      I've tried one experiment in this vein: miming the action of
+      typing commands while I review my Anki cards. But my subjective
+      impression was that it doesn't work so well, and it was also
+      quite annoying to do. So I stopped.
+    </p>
+
     <p>
       <strong>Getting past &ldquo;names don't matter&rdquo;:</strong>
-      Another personal curiosity: I had to get past an allergy to
-      using Anki simply to recall names. I'm a theoretical physicist
-      by training. And there is a famous story in physics, told by
-      Richard Feynman. As a child, he was out playing in a field with
-      a know-it-all kid. Here's what happened, in Feynman's telling:
+      I'm a theoretical physicist by training. There is a famous story
+      in physics, told by Richard Feynman, dismissing the value of
+      knowing names. As a child, he was out playing in a field with a
+      know-it-all kid. Here's what happened, in Feynman's telling:
     </p>
 
     <blockquote>
@@ -1436,45 +1304,49 @@
 	<br><br>He says, &ldquo;It'a brown-throated thrush. Your
 	father doesn't teach you anything!&rdquo;
 
-	<br><br>But it was the opposite. He had already taught me:
-	&ldquo;See that bird?&rdquo; he says. &ldquo;It's a Spencer's
-	warbler.&rdquo; (I knew he didn't know the real name.)
-	&ldquo;Well, in Italian, it's a <em>Chutto Lapittida</em>. In
-	Portugese, it's a <em>Bom da Peida</em>. &hellips; You can
-	know the name o that bird in all the languages of the world,
-	but when you're finished, you'll know absolutely nothing
-	whatever about the bird! You'll only know about humans in
-	different places, and what they call the bird. So let's look
-	at the bird and see what it's <em>doing</em> &mdash; that's
-	what counts.&rdquo; (I learned very early the difference
-	between knowing the name of something and knowing something.)
+	<br><br>But it was the opposite. He [Feynman's father] had
+	already taught me: &ldquo;See that bird?&rdquo; he
+	says. &ldquo;It's a Spencer's warbler.&rdquo; (I knew he
+	didn't know the real name.)  &ldquo;Well, in Italian, it's
+	a <em>Chutto Lapittida</em>. In Portuguese, it's a <em>Bom da
+	Peida</em>&hellip; You can know the name of that bird in all
+	the languages of the world, but when you're finished, you'll
+	know absolutely nothing whatever about the bird! You'll only
+	know about humans in different places, and what they call the
+	bird. So let's look at the bird and see what
+	it's <em>doing</em> &mdash; that's what counts.&rdquo; (I
+	learned very early the difference between knowing the name of
+	something and knowing something.)
     </blockquote>
 
     <p>
       Feynman (or his father) goes on to a thoughtful discussion of
-      real knowledge: observing its behaviour, understanding the
-      reasons for it, and so on.
+      real knowledge: observing behavior, understanding the reasons
+      for it, and so on.
     </p>
 
     <p>
-      It's a good, thoughtful story. But names do matter. Maybe not as
-      much as the know-it-all kid thought, and they're not usually a
-      deep kind of knowledge. But they're the foundation that allows
-      you to build up a network of knowledge.
+      It's a good story. But it goes too far: names do matter. Maybe
+      not as much as the know-it-all kid thought, and they're not
+      usually a deep kind of knowledge. But they're the foundation
+      that allows you to build up a network of knowledge.
     </p>
 
-    <p>
-      At first, I felt somewhat silly putting names for things into
-      Anki. But now I do it enthusiastically, knowing that it's an
-      early step along the way to understanding.
-    </p>
+      <p>
+	This trope that names don't matter was repeatedly drilled into
+	me during my scientific training. When I began using Anki, at
+	first I felt somewhat silly putting questions about names for
+	things into the system. But now I do it enthusiastically,
+	knowing that it's an early step along the way to
+	understanding.
+      </p>
 
     <p>
-      It's useful for names of all kinds of things, but I find it
+      Anki is useful for names of all kinds of things, but I find it
       particularly helpful for non-verbal things. For instance, I put
       in questions about artworks, like: &ldquo;What does the artist
       <a href="https://www.emilyhare.co.uk/">Emily Hare's</a> painting
-      <em>Howl</em> look like?&rdquo;
+      <em>Howl</em> look like?&rdquo; Answer:
     </p>
 
     <center>
@@ -1496,111 +1368,438 @@
       becomes challenging when you get behind with cards. If you skip
       a day or two &ndash; or fifty &ndash; the cards begin to back
       up. It's intimidating to come back to find you have 500 cards to
-      review in a day. Even worse, if you fall out of the Anki havit,
-      you can accumulate a very large number of cards. I largely
-      stopped using Anki for a 7-month period, and came back to
-      thousands of backlogged cards.
+      review in a day. Even worse, if you fall out of the Anki habit,
+      you can get a very long way behind. I largely stopped using Anki
+      for a 7-month period, and came back to thousands of backlogged
+      cards.
     </p>
 
     <p>
-      Fortunately, it really wasn't that hard to catch up. I set
-      myself gradually increasing quotas (100, 150, 200, 250, and
-      eventually 300) of cards per day, and worked through it each day
-      for several weeks. At the same time, I added very few new cards.
+      Fortunately, it wasn't that hard to catch up. I set myself
+      gradually increasing quotas (100, 150, 200, 250, and eventually
+      300) of cards per day, and worked through those quotas each day
+      for several weeks.
     </p>
 
     <p>
-      Now, I must admit, this isn't a great pattern. It's demoralizing
-      and discouraging. It'd be better if Anki had a &ldquo;catch
-      up&rdquo; feature that would spread the excess cards over the
-      next few weeks in our schedule. But it doesn't. In any case,
-      this is a gotcha, but one that's not too serious.
+      It wasn't too hard, but, frankly it really was somewhat
+      demoralizing and discouraging. It'd be better if Anki had a
+      &ldquo;catch up&rdquo; feature that would spread the excess
+      cards over the next few weeks in your schedule. But it
+      doesn't. In any case, this is a gotcha, but it's possible to
+      address.
     </p>
 
-    <h3>Anki as a virtuoso skill and method of understanding</h3>
+      <p>
+	<strong>Using Anki for APIs, books, videos, seminars,
+	  conversations, the web, events, and places:</strong> Nearly
+	  everything I've said about Ankifying papers applies also to
+	  other resources. Here's a few tips. I've separated out the
+	  discussion for APIs into an appendix, which you can
+	  <a href="#Anki_APIs">read below</a>, if interested.
+      </p>
+
+      <p>
+	For seminars and conversations with colleagues I find it
+	surprisingly helpful to set Anki quotas. For instance, for
+	seminars I try to find at least three high-quality questions
+	to Ankify. For conversations, at least one high-quality
+	question to Ankify. I've found that setting quotas helps me
+	pay more attention, especially during seminars. (I find it
+	much easier <em>a priori</em> to pay attention in one-on-one
+	conversation.)
+      </p>
+
+      <p>
+	I'm more haphazard about videos, events, and places. It'd be
+	good to, say, systematically Ankify 3-5 questions after going
+	on an outing or to a new restaraunt, to help me remember the
+	experience. I do this sometimes. But I really haven't been
+	that systematic.
+      </p>
+
+      <p>
+	I tend to Ankify in real time as I read papers and books. For
+	seminars, conversations, and so on I prefer to immerse myself
+	in the experience. Instead of getting out Anki, I will quickly
+	make a mental (or paper) note of what I want to Ankify. I then
+	enter it into Anki later. This requires a bit of discipline;
+	it's one reason I prefer to set a small quota, so that I
+	merely have to enter a few questions later, rather than
+	dozens.
+      </p>
+	
+      <p>
+	One caution is with books: reading an entire book is a
+	substantial commitment, and adding Anki questions regularly
+	can slow you down a lot. It's worth keeping this in mind when
+	deciding how much to Ankify. Sometimes a book is so dense with
+	great material that it's worth taking the time to add lots of
+	questions. But unmindfully Ankifying everything in sight is a
+	bad habit, one I've occasionally fallen into.
+      </p>
+
+      <p>
+	What you Ankify is not a trivial choice: Ankify things that
+	serve your long-term goals. In some measure we become what we
+	pay attention to, so we must be careful what we pay attention
+	to*<span class="marginnote">* With apologies to Kurt Vonnegut,
+	who said: &ldquo;We are what we pretend to be, so we must be
+	careful about what we pretend to be.&rdquo;.</span>. This is
+	always true, but Anki makes it especially true.
+      </p>
 
     <p>
-      Considered as a computer program, Anki is incredibly simple. It
-      lets you enter text or other media, and then shows you the media
-      later in a cued way, with the schedule changing in a way
-      determined by your responses.
+      With all that said, one fun pattern is to go back to my old,
+      pre-Anki notes on books, and to Ankify them. This can often be
+      done quickly, and gives me a greater return on the time I've
+      invested in now mostly-forgotten
+      books*<span class="marginnote">* Friends sometimes complain that
+      many books are over-padded essays.  I've sometimes wondered if
+      one benefit of such padding is that it enforces a kind of spaced
+      repetition, along Anki-like lines, since it means readers take
+      some weeks to read the book.  This is perhaps an inefficient way
+      to memorize the main points of the book, but may well be better
+      than having no memory of the book at all.</span>.
     </p>
 
     <p>
-      That's it.
+      Something I haven't yet figured out is how to integrate Anki use
+      with note taking for my creative projects. I've found I
+      certainly can't replace note-taking with Anki &ndash; it's too
+      slow, and for many things a poor use of my long-term memory. On
+      the other hand, there are also a lot of benefits to using Anki
+      for important items &ndash; fluid access to memory is at the
+      foundation of so much creative thought. In practice, I find
+      myself instinctively and unsystematically doing some things as
+      notes, others as Anki questions, and still other things as
+      both. Overall, it works okay, but my sense is that it could be a
+      lot better if I applied more systematic thought and
+      experimentation. Part of the problem is that I don't have a very
+      good system for note-taking, period!  If I worked more on that,
+      I suspect the whole thing would get a lot better. Still, it
+      works okay.
     </p>
 
+      <p>
+	<strong>Try to avoid the yes/no pattern:</strong> One bad
+	habit I sometimes slide into is having lots of questions with
+	yes/no answers. For instance, here's a (bad) question I added
+	when learning about graphical models in machine learning:
+      </p>
+
+      <blockquote>
+	Is computing the partition function intractable for most
+	graphical models?
+      </blockquote>
+
+      <p>
+	The answer is &ldquo;yes&dquo;. That's fine. But it'd help my
+	understanding to elaborate the ideas in the question. Can I
+	add a question about for which graphical models computing the
+	partition function is tractable? Can I give an example of a
+	graphical model for which the partition function is certainly
+	intractable? What does it mean for computing the partition
+	function to be intractable anyway?
+      </p>
+
+
+      <p>
+	<strong>Anki use is best thought of as a virtuoso
+	  skill:</strong> Anki is an incredibly simple program: it
+	  lets you enter text or other media, and then shows you that
+	  media on a schedule determined by your responses. Despite
+	  that simplicity, I've just written more than 10,000 words
+	  about how to use Anki. It's an incredibly powerful
+	  tool. And, like many tools, it requires skill to use well,
+	  skill that can be developed over time. It's worth thinking
+	  of Anki as a skill that can be taken to truly virtuoso
+	  levels, and attempting to cultivate that level of
+	virtuosity.
+      </p>
+      
+      <p>
+	<strong>Anki isn't just a tool for memorizing simple facts.
+	  It's a tool for understanding almost anything.</strong> It's
+	  a common misconception that Anki is just for memorizing
+	  simple raw facts, things like vocabulary items and basic
+	  definitions. But as we've seen, it's possible to use Anki
+	  for much more advanced types of understanding. My questions
+	  about AlphaGo began with simple questions such as &ldquo;How
+	  large is a Go board?&rdquo;, and ended with high-level
+	  conceptual questions about the design of the AlphaGo systems
+	  &ndash; questions whose statement wouldn't make sense here,
+	  but on subjects such as how AlphaGo avoided
+	  over-generalizing from training data, the limitations of
+	  convolutional neural networks, and so on.
+      </p>
+
+      <p>
+	In short, what it means to develop Anki as a virtuoso skill is
+	the ability to use it for types of understanding beyond basic
+	facts. Indeed, many of the observations I've made about how to
+	use Anki are really about what it means to understand
+	something. Break things up into atomic facts. Build rich
+	hierarchies of interconnections. Don't put in orphan
+	questions. Patterns for how to engage with reading material,
+	patterns (and anti-patterns) for questions types, patterns for
+	the kinds of things you'd like to memorize. Anki skills are a
+	concrete instantiation of your theory of how you
+	understand. And developing those skills will help you
+	understand better. To be a virtuoso Anki user is to be a
+	virtuoso in understanding.
+      </p>
+
+    <h2>Part II: Principles of Personal Memory Systems</h2>
+
+      <p>
+	In the first part of this essay we looked in depth at a
+	particular personal memory system, Anki, through the lens of
+	my personal experience. In the second part of this essay we'll
+	consider broader questions. How much does memory matter for
+	cognition? I argue that memory is often undervalued, that it's
+	central to cognition, and that personal memory systems are
+	powerful tools for augmenting cognition. Also in this second
+	part of the essay, we examine the cognitive science underlying
+	personal memory systems. And we'll consider how cognitive
+	science and design can inform one another in developing new
+	systems for augmenting human cognition.
+      </p>
+      
+      <h3>How important is long-term memory, anyway?</h3>
+      
+      <p>
+	Long-term memory is sometimes undervalued. It's common for
+	people to denigrate &ldquo;rote memory&rdquo;, especially in
+	the classroom. And I've heard from many people that they
+	dropped some class &ndash; organic chemistry is common &ndash;
+	because it was &ldquo;just a bunch of facts, and I wanted
+	something involving more understanding&rdquo;.
+      </p>
+
+      
+      <p>
+	I'm not defending bad classroom teaching, or the way organic
+	chemistry is often taught.  But it's a mistake to
+	underestimate the importance of memory. I used to believe
+	these tropes about the relatively low importance of
+	memory. But I now understand that memory is at the foundation
+	of our cognition.
+      </p>
+
+      <p>
+	There are two main reasons for this change, one a personal
+	experience, the other based on evidence from cognitive
+	science.
+      </p>
+
+      <p>
+	Let me begin with the personal experience.
+      </p>
+
+      <p>
+	Over the years, I've often taught technical subjects such as
+	quantum mechanics. Quantum mechanics has a reputation as a
+	difficult subject, and people do, indeed, often get stuck.
+	When I talk with people about the difficulties they're having,
+	they often mention high-level conceptual problems. But when
+	you dig down it usually turns out they're having a hard time
+	with basic notation and basic terminology. Every sentence is a
+	struggle. And when you clear up those elementary things, their
+	high-level confusion often immediately vanishes.
+      </p>
+
+      <p>
+	This led me to suspect that the high-level problems people
+	think they're having trouble with often aren't the real
+	problem. Rather, it's remembering the basics.
+      </p>
+
+      <p>
+	This was no more than a suspicion for years. But that changed
+	when I began using Anki to understand subjects such as AlphaGo
+	and deep reinforcement learning. I found it almost unsettling
+	how much easier Anki made learning such subjects.  I thought
+	trouble learning new technical subjects was sophisticated,
+	high-level problems (just like my quantum mechanics
+	students). But it turns out I was making exactly the same
+	mistake as my quantum mechanics students! The root of my
+	difficulties wasn't high level; rather, I just needed to
+	better master the basics.
+      </p>
+
+      <p>
+	Imagine you're a student of French, and someone asks you to
+	compose a sonnet in French. You're having trouble finding a
+	good theme, striking sentiments and images, and so on. Your
+	troubles seem complex. But your real problem is that you're
+	only confident with 200 words of French vocabulary. Without
+	mastery of the basics, complex work is nearly impossible. And
+	mastering the basics is often mostly a matter of memory.
+      </p>
+
+      <p>
+	This experience of how much easier Anki made learning a new
+	technical subject greatly increased by visceral appreciation
+	for the importance of memory.
+      </p>
+
+      <p>
+	There are also many results from cognitive science on the key
+	role memory plays in cognition.
+      </p>
+
+      <p>
+	One striking line of work began in the 1960s and 1970s, when
+	researchers such as Adrian de Groot and Herbert Simon studied
+	how people acquire expertise, focusing particularly on
+	chess*<span class="marginnote">* See, for instance, Herbert A.
+	Simon, <a href="assets/Simon1974.pdf">How Big is a Chunk?</a>,
+	Science (1974), and Adriaan D. de Groot, <em>Thought and
+	Choice in Chess</em>, Amsterdam University Press (2008,
+	reprinted from 1978).</span>. They found that world-class
+	chess experts saw the board differently to beginners. A
+	beginner would see &ldquo;a pawn here, a rook there&rdquo;,
+	and so on, a series of individual pieces. Masters, by
+	contrast, saw much more elaborate &ldquo;chunks&rdquo;:
+	combinations of pieces that they recognized as a unit, and
+	were able to reason about at a higher level of abstraction
+	than the individual pieces.
+      </p>
+
+      <p>
+	Simon estimated chess masters learn between 25,000 and 100,000
+	of these chunks during their training, and that learning the
+	chunks was a key element in becoming a first-rate chess
+	player. They really see chess positions very differently from
+	beginners.
+      </p>
+
+      <p>
+	Why does learning to recognize and reason about such chunks
+	help so much in developing expertise? Here's a speculative,
+	informal model &ndash; as far as I know, it hasn't been
+	validated by cognitive scientists. But it's a useful way of
+	thinking. I'll describe it in the context of mathematics,
+	instead of chess, since mathematics is an area where I have
+	experience talking with people at all ranges of ability, from
+	beginners to accomplished professional mathematicians.
+      </p>
+
+      <p>
+	Many people's model of accomplished mathematicians is that
+	they are astoundingly bright, with very high IQs, and the
+	ability to deal with very complex ideas in their mind. A
+	common perception is that their smartness gives them the
+	ability to deal with very complex ideas. Basically, they have
+	a higher horsepower engine.
+      </p>
+
+      <p>
+	It's true that top mathematicians are usually very bright. But
+	here's a different explanation of what's going on. It's that,
+	per Simon, many top mathematicians have, through hard work,
+	internalized many more complex mathematical chunks than
+	ordinary humans. And what this means is that mathematical
+	situations which seem very complex to the rest of us seem very
+	simple to them. So it's not that they have a higher horsepower
+	mind, in the sense of being able to deal with more
+	complexity. Rather, their prior learning has given them better
+	chunking abilities, and so situations most people would see as
+	complex they see as simple, and they find it much easier to
+	reason about.
+      </p>
+
+      <p>
+	Now, the concept of chunks used by Simon in his study of chess
+	players actually came from a famous 1956 paper by George
+	Miller, &ldquo;The Magical Number Seven, Plus or Minus
+	Two&rdquo;*<span class="marginnote">* </span>.  Miller argued
+	that the capacity of working memory is roughly seven
+	chunks. In fact, it turns out that there is variation in that
+	number from person to person, and a substantial correlation
+	between general intellectual ability (IQ) and working
+	memory*<span class="marginnote">* A review of the correlation
+	may be found in Phillip L. Ackerman, Margaret E. Beier, and
+	Mary O. Boyle, <a href="assets/Ackerman2006.pdf">Working
+	Memory and Intelligence: The Same or Different Constructs?</a>
+	Psychological Bulletin (2006).</span>. The better your working
+	memory, the higher your IQ, and vice versa.
+      </p>
+
+      <p>
+	Exactly what Miller meant by chunks he left somewhat
+	imprecise, writing:
+      </p>
+
+      <blockquote>
+	The contrast of the terms bit and chunk also serves to
+	highlight the fact that we are not very definite about what
+	constitutes a chunk of information. For example, the memory
+	span of five words that Hayes obtained&hellip; might just as
+	appropriately have been called a memory span of 15 phonemes,
+	since each word had about three phonemes in it. Intuitively,
+	it is clear that the subjects were recalling five words, not
+	15 phonemes, but the logical distinction is not immediately
+	apparent. We are dealing here with a process of organizing or
+	grouping the input into familiar units or chunks, and a great
+	deal of learning has gone into the formation of these familiar
+	units.
+      </blockquote>
+
+      <p>
+	Put another way, in Miller's account the chunk was effectively
+	the <em>basic unit</em> of working memory. And what so what
+	Simon and his collaborators were doing was studying the basic
+	units used in the working memory of chess players.
+
+	But, in if you've
+	internalized more complex chunks in some domains, like chess
+	or mathematics, then your working memory has a higher
+	effective capacity. In particular, someone with a lower IQ but
+	able to call on more complex chunks may be able to effectively
+	reason about more complex situations than someone with a
+	higher IQ but less complex internalized chunks.
+      </p>
+
+      <p>
+	In other words, having more chunks memorized in some domain is
+	like an effective boost to your IQ in that domain.
+      </p>
+
+      <p>
+	Okay, that's a speculative informal model. But regardless of
+	whether it's correct, there is considerable evidence that
+	long-term memory is at the heart of effective cognition. It's
+	the basis on which people build up the chunks which are at the
+	basis of expertise. Those chunks are, in turn, crucial to
+	effective problem solving, simplifying what would otherwise
+	appear to be extremely complex situations. Indeed, I believe
+	they're also crucial to creativity. The mathematician
+	Littlewood has identified &lsquo;speed of associative
+	thought&rdquo; as crucial to high-creativity activities. And
+	part of that ability
+      </p>
+
+      <p>
+	So: long-term memory is at the foundation of our cognition,
+	including our ability to understand, to problem solve, and to
+	create. And personal memory systems such as Anki are special,
+	because they make all these other aspects of your cognition
+	much more effective. It's as though you've somehow obtainead a
+	magic memory. And so I believe such personal memory systems
+	are key tools for augmenting human cognition.
+      </p>
+	
     <p>
-      And yet I've just written more than 10,000 words on how to use
-      it. Although simple, it's an incredibly powerful tool. And, like
-      many tools, it requires skill to use well.  What's more, that's
-      a skill you can develop, over time. What would it take to
-      develop truly virtuosic skills with Anki?
+      Now, this is a speculative informal model. But I think it's a
+      helpful model of what's going on. And I think that part of what
+      Anki is doing is speeding up the acquisition of those high-level
+      chunks. And that's a way of becoming a much more effective
+      thinker in the domains related to those chunks.
     </p>
 
-    <p>
-      One common misconception about Anki is that it's just for
-      memorizing very simple raw facts, things like vocabulary items
-      and basic definitions. But as we've seen, it's possible to use
-      Anki in a much more sophisticated way. My questions about
-      AlphaGo began with &ldquo;How large is a Go board?&rdquo; And
-      ended up with high-level conceptual questions about the design
-      of the AlphaGo systems &ndash; questions too complex to make
-      sense here, but about subjects such as how AlphaGo avoided
-      over-generalizing from training data, what the shortcomings of
-      using convolutional neural networks might have been, and so on.
-    </p>
-
-    <p>
-      Anki isn't just a tool for memorizing simple facts.
-    </p>
-
-    <p>
-      It's a tool for understanding almost
-      anything*<span class="marginnote">* Andy Matuschak first pointed
-      out to me that this view is unusual, and differs greatly from
-      the conventional view of Anki. It was also through conversations
-      with Andy that I understood that Anki use could be a virtuoso
-      skill.</span>.
-    </p>
-
-    <p>
-      Many of the observations I've made about how to use Anki are
-      implicitly about a theory of what it means for me to
-      understand. Break things up into atomic facts. Build rich
-      hierarchies of interconnections. Don't put in orphan
-      questions. Patterns for how to engage with reading material,
-      patterns for question types, patterns for the kinds of things
-      you'd like to memorize. And so on.
-    </p>
-
-    <p>
-      As one's theory of how to understand improves, so does one's
-      theory of Anki. And vice versa. They're not the same thing. But
-      Anki skills are a concrete instantiation of your theory of how
-      you understand. And Anki use can be a valuable prod to better
-      develop that theory.
-    </p>
-
-    <p>
-      Let me finish the direct discussion of Anki by mentioning a
-      speculative idea about how Anki enables understanding.
-    </p>
-
-    <p>
-      In the 1970s, Herbert Simon and his collaborators XXX did a
-      series of studies of how people acquired expertise, focusing
-      particularly on chess.  They found that world-class chess
-      experts saw the board differently to beginners. A beginner would
-      see &ldquo:a pawn here, a rook there&rdquo;, and so on, a series
-      of individual pieces. Master-level players saw much more
-      elaborate &ldquo;chunks&rdquo;: combinations of pieces that they
-      recognized as a unit, and were able to reason about at a higher
-      level of abstraction than the individual pies. The Masters'
-      training was helping them learn how to see and reason about
-      those higher-level chunks.
-    </p>
-
+      
     <p>
       I suspect that Anki doesn't just help you form long-term
       memories. But in domains were you build up great depth in
@@ -1609,101 +1808,38 @@
       these, in turn, help you form true expertise.
     </p>
 
+
+    <h3>Distributed practice</h3>
+
     <p>
-      Why does chunking matter to expertise? Let me give you my
-      working theory [XXX - Simon may have done the same, or de Groot
-      in their 1978 book]. It's speculation, basically a story &ndash;
-      as far as I know, this hasn't been validated by cognitive
-      scientists.  But I find it useful. I'll describe it in the
-      context of mathematics, since that's an area where I've talked
-      with people at all ranges of ability, including some of the
-      world's best mathematicians.
+      Why does Anki work?  In this and later sections I describe some
+      of the cognitive science underlying such systems. In this
+      section we'll look at one of the key ideas, known
+      as <em>distributed practice</em>.
     </p>
 
     <p>
-      Many people's model of first-rate mathematicians is that they
-      are astoundingly bright, with very high IQs, and the ability to
-      deal with very complex ideas in their mind. In particular, a
-      common model is that their smartness gives them the ability to
-      deal with very complex ideas. Basically, they have a
-      higher-horsepower engine.
-    </p>
-
-    <p>
-      It's true that top mathematicians are usually very bright. But
-      here's a different explanation of what's going on. It's that,
-      per Simon, many of those people have, through hard work,
-      internalized more high-level chunks than I have. And what this
-      means is that situations which seem very complex to me actually
-      seem very simple to them. So it's not that they necessarily have
-      a higher horsepower mind, one capable of dealing with more
-      complexity. Rather, their learning has given them better
-      chunking abilities, and so situations I see as complex they see
-      as simple, and so their mind makes more sense of it.
-    </p>
-
-    <p>
-      In general, there is a substantial correlation between general
-      intellectual ability (IQ) and working memory XXX. The better
-      your working memory, the higher your IQ, and vice versa. But if
-      you've developed more chunks in some domain, like chess or
-      mathematics, then in some regards that is like an increase in
-      your working memory in that domain. In particular, someone with
-      a lower IQ but more complex chunks may be able to effectively
-      reason about more complex situations than someone with a higher
-      IQ but less complex chunks.
-    </p>
-
-    <p>
-      In other words, having more chunks is like getting a higher
-      effective IQ in that domain.
-    </p>
-
-    <p>
-      Now, this is a speculative informal theory (XXX). But I think
-      it's a helpful model of what's going on. And I think that part
-      of what Anki is doing is speeding up the acquisition of those
-      high-level chunks. And that's a way of becoming a much more
-      effective thinker in the domains related to those chunks.
-    </p>
-    
-      
-    <h3>Principles of long-term memory systems</h3>
-
-    <p>
-      How should we build long-term memory systems? Anki is an
-      extremely encourating step. Can we improve on it? Or can we
-      perhaps build systems which use similar ideas to serve other
-      needs? In this section, I'll take a brief look at a few key
-      principles that can be used in the design of long-term memory
-      systems.  There are three core ideas I emphasize: distributed
-      practice; the testing effect; and the structuring of human
-      attention.
-    </p>
-
-    <p>
-      <strong>Distributed practice:</strong> Suppose you're introduced
-      to someone at a party, and they tell you their name. Of course,
-      how well you remember their name later depends on how long it is
-      until you need to recall it.  If you're paying attention, and
-      their name isn't too unusual, you'll almost certainly remember
-      their name 20 seconds later. But you're more likely to have
-      forgotten their name in an hour, and more likely still to have
-      forgotten their name in a month.
+      Suppose you're introduced to someone at a party, and they tell
+      you their name. If you're paying attention, and their name isn't
+      too unusual, you'll almost certainly remember their name 20
+      seconds later. But you're more likely to have forgotten their
+      name in an hour, and more likely still to have forgotten their
+      name in a month.
     </p>
 
     <p>
       That is, memories decay. This isn't news!  But the great German
-      psychologist Hermann Ebbinghaus had the clever idea of studying
+      psychologist Hermann Ebbinghaus had the good idea of studying
       memory decay systematically and
-      quantitatively*<span class="marginnote">Hermann
+      quantitatively*<span class="marginnote">* Hermann
       Ebbinghaus, <a href="http://psychclassics.yorku.ca/Ebbinghaus/index.htm">Memory:
       A Contribution to Experimental Psychology</a> (1885).</span>. In
-      particular, he was interested in <em>how</em> quickly memories
-      decay, and what caused the decay. To study this, Ebbinghaus
-      memorized strings of nonsense syllables &ndash; things like
-      &ldquo;fim&ldquo; and &ldquo;pes&rdquo;, and recorded how well
-      he retained those syllables after different time intervals.
+      particular, he was interested in how quickly memories decay, and
+      what causes the decay. To study this, Ebbinghaus memorized
+      strings of nonsense syllables &ndash; things like
+      &ldquo;fim&ldquo; and &ldquo;pes&rdquo; &ndash; and later tested
+      himself, recording how well he retained those syllables after
+      different time intervals.
     </p>
 
     <p>
@@ -1712,7 +1848,7 @@
       called the <em>Ebbinghaus forgetting curve</em>:
     </p>
 
-    XXX
+    <img src="assets/Ebbinghaus.png">
 
     <p>
       What determines the steepness of the curve, i.e., how quickly
@@ -1730,17 +1866,18 @@
     </p>
 
     <p>
-      Ebbinghaus's exponential decay only occurs when you don't recall
-      the item. Suppose you're introduced to a person at a party,
-      don't think about their name again for 20 minutes, then need to
+      Suppose you're introduced to a person at a party, and then don't
+      think about their name for 20 minutes. But then you need to
       bring it to mind to introduce them to someone else. Immediately
       after that, your probability of recall will again be very high.
       Ebbinghaus's research suggested that the probability will decay
       exponentially after the re-test, but the rate of decay will be
-      slower. In fact, subsequent re-tests slow the decay still more:
+      slower. In fact, subsequent re-tests slow the decay still more,
+      a gradually flattening out of the decay curve as the memory is
+      consolidated through multiple recall events:
     </p>
 
-    XXX
+    <img src="assets/Ebbinghaus_repeat.png">
 
     <p>
       This gradual increase in decay time underlies the design of Anki
@@ -1757,35 +1894,30 @@
       maximally promote retention.
     </p>
 
-    <p>
-      <strong>On the use of the scientific literature:</strong> Since
-      Ebbinghaus, there's been thousands of studies of diffeent
-      variations of distributed practice. In some sense, these studies
-      have taught us a great deal about the behaviour of long-term
-      memory. It's tempting to jump into that literature, and to use
-      it as a guide to the design of memory systems.
-    </p>
+    <h3>On the role of cognitive science in the design of systems</h3>
+
+      <p>
+	Since Ebbinghaus, there's been thousands of studies of
+	different variations of distributed practice. These studies
+	have taught us a great deal about the behavior of long-term
+	memory. It's tempting to jump into that literature, and to use
+	it as a guide to the design of memory systems. But it's also
+	worth thinking a little about the limitations of that
+	literature as a guide to the development of systems.
+      </p>
 
     <p>
-      We are, in fact, going to learn much from that literature. But
-      before we do that, I want to make some high-level remarks about
-      the limitations of the scientific literature as a guide to the
-      development of systems.
-    </p>
-
-    <p>
-      It's true that scientists have done a tremendous number of
-      studies of distributed practice. In some sense we do
-      &ldquo;know&rdquo; a lot. But on the other hand, many very basic
-      questions about distributed practice remain poorly understood.
+      While scientists have done a tremendous number of studies of
+      distributed practice, many very basic questions about
+      distributed practice remain poorly understood.
     </p>
 
     <p>
       We don't understand in detail why exponential decay of memory
-      occurs, or when that model breaks down. We don't understand what
-      determines the rate of decay, and why it varies for different
-      types of memories. We don't understand why the decay takes
-      longer after subsequent recalls. And we have little
+      occurs, or when that model breaks down. We don't have good
+      models of what determines the rate of decay, and why it varies
+      for different types of memories. We don't understand why the
+      decay takes longer after subsequent recalls. And we have little
       understanding of the best way of expanding the inter-study
       intervals.
     </p>
@@ -1803,131 +1935,137 @@
       example: there are times when our memories don't decay, but get
       better over time, even when we're not aware of explicit acts of
       recall.  Informally, you have may have noticed this in your own
-      life. In XXX the psychologist William James made the
-      tongue-in-cheek observation that XXX. This effect was
-      experimentally verified in a XXX study of XXX Oehrn, who showed
-      XXX. Unfortunately, while subsequent experiments have confirmed
-      this result, the picture remains poorly understood. It depends
-      sensititively on the type of material being memorized &ndash;
-      Oehrn used XXX &ndash; on the exact time intervals, and many
-      other variables.  Now, obviously this contradicts the Ebbinghaus
-      exponential forgetting curve that I described above. In
-      practice, a pretty good heuristic is that the Ebbinghaus curve
-      holds, but there are exceptions, usually over limited times, and
-      for very specific types of materials.
+      life. The psychologist William James made the tongue-in-cheek
+      observation, which he attributed to an unnamed German author,
+      that*<span class="marginnote">* William James, &ldquo;The
+      Principles of Psychology&rdquo; (1890).</span>:
     </p>
 
-    <p>
-      I don't mention this to undermine your belief in the Ebbinghaus
-      model. But rather to caution you: memory is complicated, we
-      don't understand many of the big picture questions well, and we
-      should be careful before we put too much faith in any given
-      model.
+    <blockquote>
+      [W]e learn to swim during the winter and to skate during the
+      summer.
+    </blockquote>
+
+      <p>
+	In fact, such an effect was experimentally verified in an 1895
+	study of Axel Oehrn*<span class="marginnote">* Axel Oehrn,
+	Experimentelle Studien zur Individualpsychologie
+	(1895).</span>. While subsequent experiments have confirmed
+	this result, it depends sensitively on the type of material
+	being memorized, on the exact time intervals, and many other
+	variables.  Now, in some sense this contradicts the Ebbinghaus
+	exponential forgetting curve. In practice, a pretty good
+	heuristic is that the Ebbinghaus curve holds approximately,
+	but there are exceptions, usually over limited times, and for
+	very specific types of materials.
+      </p>
+
+      <p>
+	I don't mention this to undermine your belief in the Ebbinghaus
+	model. But rather to caution you: memory is complicated, we
+	don't understand many of the big picture questions well, and we
+	should be careful before we put too much faith in any given
+	model.
+      </p>
+
+      <p>
+	With all that said: the basic effects underlying distributed
+	practice are real, large, and have been confirmed by many, many
+	experiments. Effects like that discovered by Oehrn are much less
+	important by comparison.
+      </p>
+
+      <p>
+	This places us in a curious situation: we have enough
+	understanding of memory to conclude that a system like Anki
+	should help a lot. But many of the choices needed in the
+	design of such a system must be made in an
+	<em>ad hoc</em> way, guided by intuition and unconfirmed
+	hypotheses. The experiments in the scientific literature
+	do <em>not</em> yet justify those design choices. The reason is
+	that those experiments are mostly not intended to address those
+	questions. They'll focus on specific types of information to
+	memorize. Or they'll focus on relatively short periods of time
+	&ndash; memorization over a day or a week, not for years. This
+	doesn't mean such work isn't helping us build a better theory of
+	memory. It just means it's not answering the questions designers
+	need to build systems.
+      </p>
+
+      <p>
+	As a consequence, system designers must look elsewhere: to
+	informal experiments and theories. Anki, for example, uses a
+	spacing algorithm developed by Piotr Wozniak on the basis of
+	personal experimentation. Although Wozniak has published
+	a <a href="https://www.supermemo.com/english/publicat.htm">number
+	of papers</a>, they are informal reports, and don't abide by
+	the norms of the conventional cognitive science literature.
+      </p>
+
+      <p>
+	In some sense, this is not satisfactory: we don't understand
+	what spacing schedule to use. But a system has to use some
+	schedule, and so designers do the best they can. This works
+	much better than naive approaches, but over the long run it'd
+	be good to have an approach based on a detailed theory of how
+	human memory works.
     </p>
 
-    <p>
-      With all that said: the basic effects underlying distributed
-      practice are real, large, and have been confirmed by many, many
-      experiments. Effects like that discovered by Oehrn are real, but
-      they're much less important by comparison.
-    </p>
+      <p>
+	Now, one response to this is to say that you should design
+	scientifically, and have good experimental evidence for all
+	design choices. I've heard this used as a criticism of the
+	designers of systems such as Anki, that they make too
+	many <em>ad hoc</em> guesses, not backed by a systematic
+	scientific understanding.
+      </p>
 
-    <p>
-      This places us in a curious situation: we have enough
-      understanding of memory to conclude that a system like Anki
-      should help a lot. But many of the choices you need to make in
-      the design of such a system must be made in an
-      <em>ad hoc</em> way, guided by intuition and unconfirmed
-      hypotheses. The experiments in the scientific literature
-      do <em>not</em> yet justify those design choices. The reason is
-      that those experiments are mostly not intended to address those
-      questions. They'll focus on specific types of information to
-      memorize. Or they'll focus on relatively short periods of time
-      &ndash; memorization over a day or a week, not for years. This
-      doesn't mean such work isn't helping us build a better theory of
-      memory. It just means it's not answering the questions designers
-      need to build systems.
-    </p>
+      <p>
+	But what are they supposed to do? Wait 50 or 100 years, until
+	those answers are in? Give up design, and become memory
+	scientists for the next 30 years, so they can give properly
+	&ldquo;scientific&rdquo; answers to all the questions they
+	need answered in the design of their systems?
+      </p>
 
-    <p>
-      As a consequence, systems designers must look elsewhere: to
-      informal experiments and theories. Anki, for example, uses a
-      spacing algorithm developed by Piotr Wozniak on the basis of
-      personal experimentation. Although Wozniak has published
-      a <a href="https://www.supermemo.com/english/publicat.htm">number
-      of papers</a>, they are informal reports, not contributions to
-      the conventional cognitive science literature, since they don't
-      abide by its norms. In some sense, this is not satisfactory: we
-      don't understand what a good spacing schedule is to use. But a
-      system has to use some schedule, and so designers do the best
-      they can. This works much better than naive approaches, but over
-      the long run it'd be good to have an approach based on a
-      detailed theory of how human memory
-      works*<span class="marginnote">Worse, you can get a kind of
-      system authority effect, where people take choices made in
-      systems very seriously, sometimes conferring on <em>ad hoc</em>
-      choices an authority they don't deserve.</span>.
-    </p>
+      <p>
+	This isn't the way design works, nor the way it should work.
+      </p>
 
-    <p>
-      Now, one response to this is to say that you should design
-      scientifically, and have good experimental evidence for all
-      design choices. I've heard this used as a criticism of the
-      designers of systems such as Anki, that they make too
-      many <em>ad hoc</em> guesses, not backed by a systematic
-      scientific understanding.
-    </p>
+      <p>
+	If designers waited until all the evidence was in, no-one
+	would ever design anything. In practice, what you want is
+	imaginative, bold design, exploring many ideas, but inspired
+	and informed (and not too constrained) by what is known
+	scientifically. Ideally, alongside this there would be a much
+	slower feedback loop, whereby design choices would suggest
+	questions about memory, and scientific experiments, and the
+	improved understanding of memory that resulted would suggest
+	new avenues for design.
+      </p>
 
-    <p>
-      But what are they supposed to do? Wait 50 or 100 years, until
-      those answers are in? Give up design, and become memory
-      scientists for the next 30 years, so they can answer the
-      questions they need answered.
-    </p>
+      <p>
+	This kind of balance is not at all easy to achieve.  The
+	human-computer interaction community has tried to achieve
+	it. But I don't think it's worked very well. It seems to me
+	that they've given up a lot of boldness and imagination in
+	design. At the same time, they're not doing full-fledged
+	cognitive science either &ndash; they're not really developing
+	a detailed understanding of the mind. Frankly, I think they've
+	actually taken the worst of both worlds, not the best.
+      </p>
 
-    <p>
-      This isn't the way design works, nor the way it should work.
-    </p>
-
-    <p>
-      If you waited until all the evidence was in, no-one would ever
-      design anything. In practice, what you want is imaginative, bold
-      design, exploring many ideas, but inspired and informed by what
-      is known scientifically. Ideally, alongside this there would be
-      a (necessarily much slower) feedback loop, whereby design
-      choices would suggest questions about memory, and scientific
-      experiments, and the improved understanding of memory would
-      suggest new avenues for design:
-    </p>
-
-    XXX - feedback loop.
-
-    <p>
-      Of course, That's easy to say. But it's not at all easy to achieve.
-    </p>
-
-    <p>
-      The human-computer interaction community has tried to achieve
-      it. But I don't think it's worked very well. As we'll discuss
-      more in Chapter XXX, they've given up a lot of boldness and
-      imagination in design. At the same time, they're not doing
-      full-fledged cognitive science either &ndash; they're not really
-      working toward a detailed understanding of the mind. Frankly, I
-      think they've actually taken the worst of both worlds, not the
-      best.
-    </p>
-
-    <p>
-      In any case, we'll come back to this later: the relationships
-      between design and cognitive science and how to get it
-      right. It's a core problem, and one that is not trivial to
-      resolve.
-    </p>
+      <p>
+	In any case, we'll come back to this later: the relationships
+	between design and cognitive science and how to get it
+	right. It's a core problem, and one that is not trivial to
+	resolve.
+      </p>
 
     <p>
       <strong>The testing effect:</strong> In school, we usually think
       of &ldquo;studying&rdquo; and &ldquo;testing&rdquo; as two very
-      different activitives. Anki upends this: it makes testing into a
+      different activities. Anki upends this: it makes testing into a
       form of studying; indeed, you're being tested over and over (and
       over!)  again. In fact, numerous studies have shown that being
       tested on material is a much more efficient way of learning
@@ -1956,7 +2094,7 @@
       third group (STTT) read over the essays in the first session,
       and then took tests in the final three sessions. The length of
       the study and test sessions were arranged so that participants
-      in all thre groups engaged with the essay for the same total
+      in all three groups engaged with the essay for the same total
       time.
     </p>
 
@@ -1988,7 +2126,7 @@
     </p>
 
     <p>
-      After completion of the four sessions, Roediger and Karpick
+      After completion of the four sessions, Roediger and Karpicke
       asked participants how well they thought they'd remember the
       material in a week.
     </p>
@@ -2061,22 +2199,13 @@
       culture than it is anything to do with personal memory systems.
     </p>
 
-    <p>
-      <strong>Systems to structure human attention:</strong> I've been
-      focusing on important ideas from cognitive science. But there
-      are also important ideas which don't come from cognitive
-      science. Rather, they come from the designers and
-      builders*<span class="marginnote">* I'm mostly going to say
-      &ldquo;designers&rdquo; from now on, although in many cases the
-      designer is also a programmer who actually builds the
-      system.</span> who builds systems that enable people to take
-      advantage of these facts about human memory.
-    </p>
+    <h3>Who should build tools to augment human cognition?</h3>
+    
 
     <p>
       In 2014, <em>The New York Times</em> science journalist Benedict
       Carey published the book &ldquo;How We Learn&rdquo;. It's a
-      popular science book, with extended dicussion of distributed
+      popular science book, with extended discussion of distributed
       practice, the test effect, and many other ideas.  Carey frames
       the book as a kind of self-help, bringing you up-to-date on
       cognitive science research, with the goal of helping you be more
@@ -2102,7 +2231,7 @@
     <p>
       These points apply more broadly to the entire cognitive science
       literature. It's one thing to know how memory works. It's quite
-      another to develop a really good, easily useable system that
+      another to develop a really good, easily usable system that
       makes it possible to take advantage of that understanding of
       memory. Developing such systems is a difficult skill, a skill
       very different to studying memory.
@@ -2111,7 +2240,10 @@
     <p>
       And so it is only natural that the systems that enable us to act
       on the insights of cognitive scientists have been built by
-      systems designers, not by cognitive scientists.
+      systems designers*<span class="marginnote">* I'm mostly going to
+      use the term &ldquo;designers&rdquo;, although in many cases the
+      designer is also a programmer who actually builds the
+      system.</span>, not by cognitive scientists.
     </p>
 
     <p>
@@ -2154,15 +2286,15 @@
       not (for the most part) prescribing how they should think, or
       about building systems to help them think more effectively. This
       is not a criticism of cognitive science. Rather, it's just an
-      acknowledgement that the norms of cognitive science do not
-      favour cognitive scientists building or studying systems.
+      acknowledgment that the norms of cognitive science do not
+      favor cognitive scientists building or studying systems.
     </p>
 
     <p>
       When I point this out, sometimes people suggest that if only the
       norms of cognitive science were to change, cognitive scientists
       would start building systems. This underestimates just how
-      difficult systmes design and building is. Someone with the
+      difficult systems design and building is. Someone with the
       skills to build a magnificent theory of human memory may know
       very little about how to build systems that will enable memory
       to operate at its best. That's because building effective
@@ -2173,485 +2305,283 @@
 
     <p>
       This is, in part, why I believe we need a field of human
-      agumentation. That field will take input from cognitive
+      augmentation. That field will take input from cognitive
       science. But it will fundamentally be a design science, oriented
       toward asking questions about what kind of systems we can build,
       and then building, all the way from prototype to large-scale
       deployment.
     </p>
 
-    <h3>An Active Learning Environment to Raise the Ceiling</h3>
 
+    <a name="Anki_analysis"></a>
+    <h2>Appendix 1: analysis of Anki study time</h2>
+      
     <p>
-      A fair number of my non-physicist friends have tried to teach
-      themselves quantum mechanics. While they're extremely bright and
-      self-motivated people, they usually fail.
+      Here's a ballpark analysis of the effort required to study an
+      Anki card for recall over 20 years &ndash; what we might
+      reasonably consider lifetime recall. Note that the analysis is
+      sensitive to the detailed assumptions made, so the time
+      estimates shouldn't be taken too seriously. Nonetheless, it's
+      useful to get a sense of the times involved.
     </p>
 
     <p>
-      Why do they fail?
+      When a card is initially entered, Anki requires reviews after
+      just 1 minute and then 10 minutes. After those reviews the
+      interval between reviews rises substantially, to 1 day. The
+      interval expansion rate after that may vary a
+      little*<span class="marginnote">* The reason is that Anki allows
+      you to specify that you found a card &ldquo;easy&rdquo; or
+      &ldquo;hard&rdquo; when you review it, in addition to the
+      generic &ldquo;good&rdquo; (meaning you got it right) or
+      &ldquo;again&rdquo; (meaning you got it wrong). Those additional
+      options vary the exact rate of interval expansion. In practice,
+      I nearly always choose &ldquo;good&rdquo;, or tell Anki that I
+      got the card wrong.</span>, but for my cards the typical
+      expansion rate is by a factor of about 2.4 for each successful
+      review. That means that successful reviews will raise the
+      interval to 2.4 days, then to 2.4 * 2.4 = 6.76 days, and so on.
+      On average, I get about 1 in 12 cards wrong, so by the 12th card
+      we're up to about 2.4<sup>9</sup> = 2,642 days between
+      reviews. Note that we raise to the 9<sup>th</sup> power rather
+      than the 12<sup>th</sup> power, because it's not until the third
+      repetition of a card that the interval reaches 1 day.
     </p>
 
     <p>
-      If they were to read a Stephen King novel, they certainly would
-      not fail. They might lose interest, but they wouldn't fail
-      because it was too hard. And yet several of them have told me
-      they failed at learning quantum mechanics because it was
-      &ldquo;too hard&rdquo;. It's as though there's a kind of ceiling
-      on the difficulty of the material they can really master while
-      working on their own. While this ceiling can (and does) change
-      over the course of a lifetime, it usually only changes
-      relatively slowly.
+      If you sum those intervals all up, it suggests the typical time
+      between failed reviews is about 12 years.  Note, however, that I
+      haven't been using Anki for nearly that long, and this estimate
+      may be over-optimistic.  We can get a lower bound on the time
+      between failures by observing that my mean interval between card
+      reviews is already 1.2 years.  To achieve an interval of 1.2
+      years requires about 0.9 years of successful prior reviews, so
+      on average my cards involve at least 2.1 years between
+      failures. However, the real number may be much higher, since
+      there's no reason to assume my next review on most of those
+      cards is going to fail.  So let's say that a conservative
+      estimate is a mean time between failures of between 4 and 7
+      years.
     </p>
 
     <p>
-      My own experience with using Anki to read outside my field is
-      that it greatly raised the ceiling. Many fields that I would
-      formerly have found extremely daunting immediately became easy,
-      almost trivial.
+      If we assume the mean time between failures is 4 years, then
+      over 20 years that means 5 failures, and reviewing 5 failures *
+      10 reviews per period = 50 times, for a total of 50 * 8 seconds
+      = 400 seconds, or about 7 minutes.
     </p>
 
     <p>
-      Imagine an Active Learning Environment that integrated an essay
-      form:
-    </p>
-
-    XXX
-
-    <p>
-      with questions:
-    </p>
-
-    XXX
-
-    <p>
-      What's more, you'd be actively re-tested on those questions in
-      the future, prompted both online, on mobile, and perhaps through
-      other channels (text, email, and so on):
-    </p>
-
-    XXX
-
-    <p>
-      I believe it would be possible to raise the ceiling on people's
-      ability to understand in this way. Might it be possible, for
-      instance, to teach 100,000 people quantum mechanics? Not in the
-      sense of having vaguely understood a bunch of differential
-      equations. But in the sense of having a detailed, durable
-      understanding of the core ideas of quantum mechanics.
+      If instead we assume the mean time between failures is 7 years,
+      then over 20 years that means roughly 3 failures, and reviewing
+      3 failures * 11 reviews per period = 33 times, for a total of 33
+      * 8 seconds &approx; 260 seconds, or about 4 minutes.
     </p>
 
     <p>
-      Might it be possible to double the number of people in the world
-      who have a detailed understanding of quantum mechanics? Increase
-      by a factor of 10? Of 100?
+      Note that in Anki's model a failure resets the review interval
+      back to 10 minutes, then to 1 day, 2.4 days, and so on. In
+      practice, that seems much too conservative.  After one or two
+      failures with a card I usually catch on, and it would be better
+      if Anki wasn't so draconian in resetting the review schedule. A
+      better review schedule would reduce the total study time, and I
+      wouldn't be surprised if a commitment of &tilde;2 minutes was
+      possible, for an average card.
+    </p>
+
+    <a name="Anki_APIs"></a>
+    <h2>Appendix 2: Using Anki to learn APIs</h2>
+    
+    <p>
+      Another good use for Anki is to assist in learning APIs.  Here's
+      some patterns which work for me, and a few warnings about
+      bad patterns.
     </p>
 
     <p>
-      Of course, it would not just be for quantum mechanics. It could
-      be for any subject. But I believe it would be especially
-      interesting for subjects often thought to be extremely
-      challening &ndash; things like advanced mathematics or
-      theoretical physics. For this reason, in the example which
-      follow I'll often refer to quantum mechanics, but of course
-      this <em>is</em> just an example.
+      It begins with me deciding there's some API I'd like to learn to
+      use in a project. Now, some of the time, I just want to use the
+      API a little &ndash; say, for 50-100 lines of code, or even just
+      some 1-10 line code snippets. In that case I'm best off winging
+      it, adapting snippets from elsewhere, and consulting the docs as
+      needed.
     </p>
 
     <p>
-      In designing a site like this it would be tempting to think of
-      it as an extension of an essay. The mocked up screenshots I've
-      shown above have this flavour. This is tempting because the
-      essay is a known, conventional media form. Such a site would end
-      up looking something like a textbook &ndash; a bit like my
-      interactive textbook
-      on <a href="http://neuralnetworksanddeeplearning.com">Neural
-      Networks and Deep Learning</a>.
+      But suppose I know I will use the API more seriously in a
+      project.  For instance, for my
+      essay <a href="http://cognitivemedium.com/tat/">Thought as a
+      Technology</a> I wanted to build some prototypes using 3d
+      graphics, and decided to learn the basics of
+      the <a href="https://threejs.org/">three.js</a> Javascript
+      library.
     </p>
 
     <p>
-      Treating the site as an extension of the essay form would be a
-      mistake. It would be letting a known media form drive the
-      arrangement of the site by default.
+      One tempting failure mode is to think &ldquo;Oh, I should master
+      the API first&rdquo;, and then to dive into tutorials or the
+      documentation. Apart from a quick skim of a tutorial or the
+      documentation, that's a mistake. A better approach is to find a
+      small, functioning piece of code that does something related to
+      the core functionality of my project. It doesn't need to be
+      similar to the whole project, but ideally implements one or two
+      similar features, and is a few tens of lines of code long. I get
+      that code running, then start making small tweaks, adding bits
+      of functionality I need, taking out bits that I don't, and
+      trying to understand and improve the code.
+    </p>
+
+    <span class="quote_right">
+      I probably err on the side of just making things
+      happen&hellip; I get so much of a thrill bringing things to
+      life&hellip; as soon as it comes to life it starts telling
+      you what it is. - Dan Ingalls
+    </span>
+    
+    <p>
+      The great thing about this is that I need only change 1 to 5
+      lines of code at a time, and I see meaningful progress toward my
+      goals. That's exciting. To use a metaphor from machine learning,
+      it's like doing gradient descent in the space of meaningful
+      projects.
     </p>
 
     <p>
-      It's better to ask instead: what media form could we create that
-      would do most to promote understanding?
+      Of course, while doing this, I'll constantly be looking up
+      things in the docs, on StackOverflow, and so on. I'll also be
+      reading and understanding pieces of the code I started
+      from. It's tempting to Ankify all this, but it's a mistake: it
+      takes too much time, and you Ankify too much that later turns
+      out to be little use.  However, when something is clearly a
+      central concept, or I know I'll reuse it often, it's worth
+      adding to Anki. In this way, I gradually build up a knowledge
+      base of things I can use in real, live projects. And, slowly, I
+      get better and better.
     </p>
 
     <p>
-      In this case the core event &ndash; the thing driving
-      understanding &ndash; would be the questions. This means making
-      users' core experience be about their relationship to the
-      questions:
-    </p>
-
-    XXX --- "You have mastered 77% of the questions about Quantum
-    Mechanics, and are learning 9%." "You have mastered 12% of the
-    questions about Quantum Field Theory, and are learning 3%."
-    Today's questions. Statistics.
-
-    <p>
-      This is not to say the essay component would not be
-      important. It would be the scaffolding on which the web of
-      questions would be created. But ultimately it would be people's
-      ability to think differently &ndash; as expressed by their
-      ability to answer questions &ndash; that was transformative
-      event for people.
-    </p>
-
-    <p>
-      (Secondarily, the essay component would be an exceptionally good
-      form of marketing, providing a funnel for people to enter the
-      site. But that should truly be secondary.)
+      Once I'm making real progress on my project, and confident I've
+      made a good choice of API, then it makes sense to work through a
+      tutorial. I usually dip quickly into several such tutorials, and
+      identify the one I believe I can learn most quickly from. And
+      then I work through it. I do Ankify at this stage, but keep it
+      relatively light. It's tempting to Ankify everything, but I end
+      up memorizing lots of useless information, at great time
+      cost. It's much better to only Ankify material I know I'll need
+      repeatedly. Usually that means I can already see I need it right
+      now, at the current stage of my project. On the first pass, I'm
+      conservative, Ankifying less material. Then, once I've gone
+      through a tutorial once, I go back over it, this time Ankifying
+      everything I'm likely to need later. This second pass is usually
+      quite rapid &ndash; often faster than the first pass &ndash; but
+      on the second pass I have more context, and my judgment about
+      what to Ankify is better.
     </p>
 
     <p>
-      In naming this media form*<span class="marginnote">* Computers
-      support so many different media forms that it is arguably a
-      mistake to be trying to name them all. Nonetheless, I need some
-      term of reference for this idea.</span>, I was tempted to use
-      the term &ldquo;active essay&rdquo;. It's a good term, one I've
-      heard several people suggest for various types of interactive
-      essay. However, <a href="">explorable explanation</a> seems to
-      have won out for that type of work. Instead, I've adopted the
-      term <em>Active Learning Environment</em>. It's a little
-      cumbersome, but has the advantage of stressing the centrality of
-      active learning, rather than making it sound like a variation on
-      an essay. This, in turn, makes it a little easier to keep an eye
-      on the central fact, which is how to design this media form to
-      best promote understanding, rather than thinking of it as some
-      type of essay.
+      I continue doing this, bouncing back and forth between my
+      project and Anki as I work through tutorials and
+      documentation. In the very earliest stages I spend quite a bit
+      of time in the docs, just getting basic syntax right. After that
+      I try to spend most of my time on my project. But I find it
+      helpful to also spend a substantial fraction of time Ankifying
+      good-quality material, particularly material closely related to
+      the project.  This means tutorials, documentation, as well as
+      material that comes up while reading code &ndash; code from
+      others, and even code I've written myself. I actually find it
+      helpful to sometimes Ankify the APIs for code I've personally
+      written, if they're likely to be useful in the future. Just
+      because I wrote something doesn't mean I'll automatically
+      remember it in future!
+    </p>
+    
+    <p>
+      So: don't jump into Ankifying tutorials and documentation
+      straight away. Wait, and do it in tandem with serious work on
+      your project. I must admit, part of the reason I advise this is
+      because I find the advice hard to take myself, and I always
+      regret not following it. I start a new project, think &ldquo;Oh,
+      I need such-and-such an API&rdquo;, and then dive into a
+      tutorial, spending hours on it. But I struggle and struggle and
+      make very slow progress. Until I remember to find some working
+      code to start from, and immediately find things are going much
+      better. I then swear to never use the tutorial-first approach
+      again. Unfortunately, in practice, I find it seductive.
+    </p>
+
+      <p>
+	The overall process is much like the common learning-by-doing
+	style of learning a new API, where you gradually learn the API
+	through repetition, while working on a project. The main
+	difference is that Anki speeds up the rate at which you
+	agglomerate new knowledge.
+      </p>
+      
+    <p>
+      A potential failure mode is to think &ldquo;Oh, I might want to
+      learn such-and-such an API one day, so I should start adding
+      cards, even though I don't currently have a project I'm using
+      the API for.&rdquo;
     </p>
 
     <p>
-      A key principle behind the site is that the better the
-      questions, the better the resulting understanding.
+      I've tried this a couple of times, and my advice is: don't do
+      it.
     </p>
 
     <p>
-      This is not a small point.
+      It's a form of a problem I described in the main body of the
+      essay: the temptation to stockpile knowledge against some day
+      when you'll use it. You will learn far more quickly if you're
+      simultaneously using the API seriously in a project.  Using the
+      API to create something new helps you identify what is important
+      to remember from the API. And it also &ndash; this is
+      speculation &ndash; sends a signal to your brain saying
+      &ldquo;this really matters&rdquo;, and that helps your memory
+      quite a bit. So if you're tempted to do highly speculative
+      Ankification, please don't. And if you find yourself starting,
+      stop.
     </p>
 
     <p>
-      It's tempting to think of the questions as a sort of add on,
-      something that you would go through the motions of creating
-      them. In fact, I believe the range in possible quality for a set
-      of questions would be enormous, comparable to the way prose can
-      vary from the writing of a first grader to the writing of a
-      Shakespeare.
+      A more challenging partial failure mode is Ankifying what turn
+      into orphan APIs. That is, I'll start to use a new API for a
+      project. I'll Ankify some material from the API. Then the
+      project finishes, and I don't immediately have another project
+      that uses the same API. I then find my mind won't engage so well
+      with the cards &ndash; there's a half-conscious thought of
+      &ldquo;why am I learning this useless stuff?&rdquo; I just no
+      longer find the cards as interesting as when I was actively
+      using the API.
     </p>
 
     <p>
-      How can you get Shakespeare-level questions? Or, failing that,
-      at least how can you create the highest-quality questions?  What
-      principles should the questions follow to ensure they were of
-      high quality?
+      This is a difficult situation. I use the rule of thumb that if
+      it seems likely I'm not going to use the API again, I delete the
+      cards when they come up. But if it seems likely I'll use the API
+      in the next year or so, I keep them in the deck. It's not a
+      perfect solution, since I really do slightly disconnect from the
+      cards. But it's the best compromise I've found.
     </p>
 
+    <h3>Acknowledgments</h3>
+
     <p>
-      Naturally, the questions would reflect many of the ideas we've
-      discussed earlier. They'd mostly be atomic. They'd form a rich,
-      interconnected web, with many questions appearing in multiple
-      variations. They'd involve rich elaborations, to help people
-      form deep memories.
+      I became intrigued with Anki in large part due to the writing
+      of <a href="https://www.gwern.net/Spaced-repetition">Gwern
+      Branwen</a>, <a href="https://sasha.wtf/anki-post-1/amp/">Sasha
+      Laundy</a>, and <a href="https://sivers.org/srs">Derek
+      Sivers</a>.  Thanks to Mason Hartman, Andy Matuschak, and Kevin
+      Simler for many useful conversations about this essay. I'm
+      particularly grateful to Andy Matuschak for many detailed
+      conversations, and in particular for pointing out how unusual is
+      my view that Anki use is a virtuoso skill that can be developed.
     </p>
+    
+      {% footer.html %}
 
-    <p>
-      And so on. I won't reiterate all the ideas discussed earlier.
-      But it is worth mentioning a few things that go beyond our
-      earlier discussion.
-    </p>
-
-    <p>
-      <strong>Completeness of coverage:</strong> What does it mean to
-      understand a subject? At some level, the question is
-      ill-defined. It's always possible to deepen one's understanding,
-      even of the most apparently trivial aspects of a subject. There
-      is an article*<span class="marginnote">* This was pre-web, and I
-      stumbled across the article in a library. I've been unable to
-      find it since. A natural guess is that I've misremembered the
-      author; if that's the case, the story perhaps loses some of its
-      interest. Nonetheless, I believe the key point is still
-      valid.</span> by the mathematician Kolmogorov discussing the
-      equals sign: in what ways was it a good notation, a poor
-      notation, could it be improved? The humble equals sign, which
-      few of us ever give much thought to, can be understood much more
-      deeply &ndash; deeply enough to deserve several pages of
-      discussion by one of the greatest mathematicians ever!
-    </p>
-
-    <p>
-      Still, there is some notion of achieving basic mastery of a
-      subject. Can we find a set of questions where thoroughly
-      mastering those questions would also mean someone had achieved
-      at least a basic mastery of a subject*<span class="marginnote">*
-      In Newtonian physics an attempt has been made in this direction
-      with the Force Concept Inventory (FCI). The FCI has also been
-      criticised, but it's a worthwhile line of work.</span>? That
-      sort of completeness is worth aspiring to.
-    </p>
-
-    <p>
-      <strong>Scalability:</strong> Of course, you'd like the process
-      to be scalable. The point isn't to just raise the ceiling for
-      one subject!  While the process would no doubt begin with
-      prototypes, once a powerful approach had been idntified, you'd
-      want to scale up the production of very high quality Active
-      Learning Environments.
-    </p>
-
-    <p>
-      I suspect a large step toward this would be the development of a
-      very good checklist to use during production. Certainly, many
-      problems could be overcome with a good checklist. Indeed, this
-      is even true of existing books and essays, which often have
-      glaring, easily spotted issues. For instance, it's surprisingly
-      common to read a textbook in which many advanced terms &ndash;
-      certainly, more advanced than most readers would be familiar
-      with &ndash; are used without any explanation.
-    </p>
-
-    <p>
-      While many problems could be overcome using good checklist,
-      there are also problems which couldn't be overcome in this
-      way. To produce the very best writing requires an author with
-      extraordinarily deep understanding, and often a good dose of
-      many other characteristics: imagination, with, a beautiful way
-      with words, and so on. Such qualities are significantly more
-      difficult to systematize.
-    </p>
-
-    <p>
-      With that said, I believe it's possible to systematize the
-      production of materials which are far better than most textbooks
-      in the quality of the prose. This would be significant in its
-      own right. But even more important: the active learning features
-      &ndash; distributed practice, thee testing effect, and so on
-      &ndash; would qualitatively change the experience, and raise the
-      ceiling for users.
-    </p>
-
-    <p>
-      An Active Learning Environment could go beyond Anki in many
-      ways.  Here's a few ideas:
-    </p>
-
-    <ul>
-      <li>
-      <strong>Automatic elaboration and variation of
-      questions:</strong> As we discussed earlier, much research
-      suggests that there is a benefit to elaborations and variations
-      on questions. This is true even of rather elementary variations
-      and elaborations. The environment could certainly automatically
-      generate some variations on elaborations. E.g.: the question
-      &ldquo;Who painted &lsquo;The Starry Night&rsquo;?&rdquo; might
-      be used to generate the question &ldquo;Which artist pained
-      &lsquo;The Starry Night&rsquo;?&rdquo; This is an extremely
-      minor variation, but I wouldn't be surpised if using both
-      variations was better than either one alone.</li>
-
-      <li>
-	<strong>Better schedule for practice:</strong> In scheduling,
-	Anki uses a very simple approach. It doesn't analyse the
-	question (e.g., use of unfamiliar words, more complex
-	structure, and so on). It doesn't incorporate past performance
-	of other users. And it uses few facts about the user's own
-	past performance. We could use machine learning models to
-	build a better practice schedule*<span class="marginnote">*
-	The language learning
-	company <a href="https://www.duolingo.com">Duolingo</a> has
-	reported some promising preliminary experiments in this
-	direction: Burr Settles and Brendan
-	Meeder, <a href="assets/Settles2016a.pdf">A Trainable Spaced
-	Repetition Model for Language Learning</a> (2016).</span>.  I
-	wouldn't be surprised if you could obtain a factor of two or
-	so reduction in practice time in this way &ndash; a very
-	substantial improvement.  (XXX - Bahrick and Bahrick. Do we
-	really want to review before we forget? Can we improve the
-	resetting model?)
-      </li>
-
-      <li><strong>Map of mastery:</strong> That is, provide users with
-	visual representations showing where they are strong in a
-	subject, where they are weak, and what they haven't yet
-	covered.</li>
-
-      <li><strong>Video:</strong> My description has assumed the base
-      learning materials are a mixture of essay and questions. It'd be
-      interesting to experiment with video. At least personally, I
-      find I connect more emotionally to video, but I also often find
-      it rare that I can pick up all the details necessary to master a
-      subject. Perhaps a video plus question format would
-      </li>
-
-      <li><strong>Improved motivation:</strong> The designers of sites
-      such as Twitter and Facebook have found many patterns that can
-      be used to deeply involve users. These patterns are often
-      exploited so users behave in ways misaligned with their own best
-      interests*<span class="marginnote">*
-      See <a href="http://humanetech.com/">Time Well
-      Spent</a>.</span>. Might it be possible to use some of those
-      patterns in more humane ways, serving users' desires to learn
-      and achieve understanding?
-      </li>      
-	
-    </ul>
-
-    <p>
-      An Active Learning Environment would be a qualitative
-      improvement over conventional essays, enabling users to durably
-      retain deep knowledge about subjects that were formerly
-      inaccessible. It would truly raise the ceiling. This would be a
-      huge advantage over most educational websites today, such as
-      Khan Academy. While such sites are often valuable, they don't
-      necessarily do much to raise the ceiling.
-    </p>
-
-    <p>
-      An Active Learning Environment would also be a qualitative
-      improvement over shared Anki decks. While shared decks can be
-      useful, they lack many key attributes of an Active Learning
-      Environment. They lack a strong narrative hook that can be used
-      to drive initial interest. They lack a strong overall narrative
-      to sustain interest, and to help users organize and integrate
-      their understanding.
-    </p>
-
-    <p>
-      These are enormous advantages. But perhaps even more important
-      is that shared Anki decks lack depth. It is difficult to
-      construct an Anki deck that will shepherd another user along,
-      helping them build up an understanding, starting from cards at
-      an elementary level and gradually progressing to a deeper
-      understanding.
-    </p>
-
-    <p>
-      Part of the difficulty is that Anki provides limited control
-      over the order in which cards are presented. If a deck contains
-      cards at many different levels of difficulty, it's easy for a
-      beginner to end up stuck on questions involving unfamiliar
-      concepts.  It's a bit too much like reading the pages of a
-      textbook which has been cut up into pieces, and randomly
-      reshuffled!
-    </p>
-
-    <p>
-      But perhaps more important: good explanation is not the forte of
-      Anki cards. Good explanations are often rich and multifaceted,
-      tying many ideas together. By contrast, good Anki cards are
-      usually simple and atomic. Richness emerges, but it emerges out
-      of the entire collection of cards.  And so Anki is not
-      especially suited to be an explanatory medium. In some sense, an
-      Active Learning Environment is an answer to the question: how
-      could we create a good explanatory medium that also integrates
-      the advantages of distributed practice?
-    </p>
-
-    <p>
-      What would success mean for an Active Learning Environment?
-    </p>
-
-    <p>
-      It's conventional for websites to measure success by the number
-      of users. But in this case there would be a much more compelling
-      number to track: the number of people who achieved mastery over
-      a subject.
-    </p>
-
-    <p>
-      Suppose, for example, that 1,000 people achieved mastery over
-      the quantum mechanics materials. That's perhaps comparable to
-      the impact of a physics professor teaching quantum mechanics for
-      30 years. Indeed, given that most people who take university
-      quantum mechanics' classes don't durably recall much, it would
-      perhaps be beyond what the physics professor
-      achieves*<span class="marginnote">* While the understanding
-      might be longer lasting than a traditional class, there may be
-      types of understanding achieved in a traditional class
-      that </span>.
-    </p>
-
-    <p>
-      Going further, suppose 10,000 people achieved mastery. That
-      would certainly be beyond what any professor achieves, and would
-      also be well beyond typical MOOC certification rates. 100,000
-      people achieving mastery would perhaps double (or more) the
-      number of people in the world who understand quantum
-      mechanics. Beyond that, if 1,000,000 people mastered it, that
-      would make a dramatic qualitative shift in the human race's
-      understanding of quantum mechanics.
-    </p>
-
-    <p>
-      These perhaps seem unrealistic as goals. My own belief is that
-      with very high quality material, users would be extremely
-      excited, understanding that they were gradually coming to
-      achieve mastery of a subject they had formerly believed was
-      inaccessible. And so, over a period of years, multiple thousands
-      of people achieving mastery should well be possible.
-    </p>
-
-    <h3>What other processes of understanding could an Active
-      Learning Environment support?</h3>
-
-    <p>
-      I've argued that memory is far more crucial to understanding
-      than is commonly thought. But it is not the same as
-      understanding. Indeed, as I said above, understanding is
-      essentially an open-ended process. For any given subject it's
-      always possible to go deeper.
-    </p>
-
-    <p>
-      What other types of understanding are involved in truly
-      mastering a subject? And might it be possible to build those
-      into an Active Learning Environment?
-    </p>
-
-    <p>
-      <strong>Execution of simple procedures:</strong> One important
-      type of understanding is execution of simple procedure. For
-      instance, executing the algorithm to multiply two numbers on a
-      piece of paper:
-    </p>
-
-    <pre>
-      581
-   &times;  162
-   ------
-   ??????
-    </pre>
-
-    <p>
-      At a higher level, it may mean carrying out some more complex
-      procedure,
-      say <a href="https://en.wikipedia.org/wiki/Separation_of_variables">separation
-      of variables</a>, to solve a differential equation arising in
-      some quantum mechanics problem.
-    </p>
-
-    <p>
-      Now, carrying out such procedures &ndash; of either type &ndash;
-      certainly involves some kinds of long-term memory. You need to
-      remember the steps in the procedure to multiply, for instance.
-    </p>
-
-    <p>
-      Still, there is a difference between remembering the steps in a
-      procedure and actually carrying out the procedure. The former is
-      a declarative memory, of the sort that Anki is extremely useful
-      for forming.  The latter is a procedural memory, which our
-      brains store using a separate memory system XXX. As a result,
-      you can have a perfect memory of the steps to take in carrying
-      out a procedure, and yet be rather slow and uncertain when you
-      carry it out. The converse can be true, too: for instance, your
-      fingers may know how to enter a password on your computer, and
-      yet you may have a hard time bringing the password to mind.
-    </p>     
-
-    {% footer.html %}
+    <script src="assets/adjust_marginnotes.js" type="text/javascript">
+    </script>
     
   </body>
 </html>
