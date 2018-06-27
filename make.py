@@ -17,7 +17,7 @@ footers, and sidebars.
 import re
 import subprocess
 
-files = ["ltm.html", "style.css"]
+files = ["CNAME", "ltm.html", "style.css"]
 directories_to_copy = ["assets"]
 directory = "public"
 
