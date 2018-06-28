@@ -1934,7 +1934,9 @@
       related terms used for this set of phenomena, but we'll use the
       phrase &ldquo;distributed practice&rdquo;, meaning practice
       which is distributed in time, ideally in a way designed to
-      maximally promote retention.
+      maximally promote retention.  This is in contrast to cramming,
+      often known as massed practice, where people try to fit all
+      their study into just one session, relying on repetition.
     </p>
 
     <h3>On the role of cognitive science in the design of systems</h3>
@@ -1943,24 +1945,32 @@
 	Since Ebbinghaus, there's been thousands of studies of
 	different variations of distributed practice. These studies
 	have taught us a great deal about the behavior of long-term
-	memory. It's tempting to jump into that literature, and to use
-	it as a guide to the design of memory
+	memory. Most of all, it shows emphatically that distributed
+	practice outperforms massed
+	practice*<span class="marginnote">* Many experiments also try
+	to assess participants' perception of the effectiveness of
+	massed practice versus distributed practice. Remarkably, they
+	often believe that massed practice is more effective, despite
+	the fact that it is reliably outperformed by distributed
+	practice.</span>.  It's tempting to jump into that literature,
+	and to use it as a guide to the design of memory
 	systems*<span class="marginnote">* Rather than do such a
 	review, let me point to several reviews which serve as useful
 	entry points. Benedict Carey's book &ldquo;How We Learn&rdquo;
-	(2015) is a good introduction.  Useful reviews of distributed
-	practice include: Cepeda <em>et
+	(2015) is a good introduction at a popular level.  Useful
+	reviews of the distributed practice literature include:
+	Cepeda <em>et
 	al</em>, <a href="assets/Cepeda2006.pdf">Distributed Practice
 	in Verbal Recall Tasks: A Review and Quantitative
 	Synthesis</a> (2006); and: Gwern
 	Branwen, <a href="https://www.gwern.net/Spaced-repetition">Spaced-Repetition</a>.</span>. But
-	it's also worth thinking a little about the limitations of
-	that literature as a guide to the development of systems.
+	it's also worth thinking about the limitations of that
+	literature as a guide to the development of systems.
       </p>
 
     <p>
       While scientists have done a tremendous number of studies of
-      distributed practice, many very basic questions about
+      distributed practice, many fundamental questions about
       distributed practice remain poorly understood.
     </p>
 
@@ -1976,10 +1986,10 @@
 
     <p>
       Of course, there are many partial theories to answer these and
-      other basic questions. But there's no single, powerful, broadly
-      accepted general theory. And so in that sense, we know little
-      about distributed practice, and are probably decades (if not
-      more) away from a reasonably full understanding.
+      other fundamental questions. But there's no single, powerful,
+      broadly accepted general theory. And so in that sense, we know
+      little about distributed practice, and are probably decades (if
+      not more) away from a reasonably full understanding.
     </p>
 
     <p>
@@ -2022,9 +2032,9 @@
 
       <p>
 	With all that said: the basic effects underlying distributed
-	practice are real, large, and have been confirmed by many, many
-	experiments. Effects like that discovered by Oehrn are much less
-	important by comparison.
+	practice and the Ebbinghaus forgetting curve are real, large,
+	and have been confirmed by many experiments. Effects like that
+	discovered by Oehrn are less important by comparison.
       </p>
 
       <p>
@@ -2034,13 +2044,13 @@
 	design of such a system must be made in an
 	<em>ad hoc</em> way, guided by intuition and unconfirmed
 	hypotheses. The experiments in the scientific literature
-	do <em>not</em> yet justify those design choices. The reason is
-	that those experiments are mostly not intended to address those
-	questions. They'll focus on specific types of information to
-	memorize. Or they'll focus on relatively short periods of time
-	&ndash; memorization over a day or a week, not for years. This
-	doesn't mean such work isn't helping us build a better theory of
-	memory. It just means it's not answering the questions designers
+	do <em>not</em> yet justify those design choices. The reason
+	is that those experiments are mostly not intended to address
+	those questions. They'll focus on specific types of
+	information to memorize. Or they'll focus on relatively short
+	periods of time &ndash; memorization over a day or a week, not
+	for years. Such work helps us build a better theory of memory,
+	but it's not necessarily answering the questions designers
 	need to build systems.
       </p>
 
@@ -2048,7 +2058,11 @@
 	As a consequence, system designers must look elsewhere, to
 	informal experiments and theories. Anki, for example, uses a
 	spacing algorithm developed by Piotr Wozniak on the basis of
-	personal experimentation. Although Wozniak has published
+	personal experimentation*<span class="marginnote">* See: Piotr
+	Wozniak, <a href="https://www.supermemo.com/english/algsm11.htm">Repetition
+	spacing algorithm used in SuperMemo 2002 through SuperMemo
+	2006</a>. Anki uses algorithm SM-2.</a></span>. Although
+	Wozniak has published
 	a <a href="https://www.supermemo.com/english/publicat.htm">number
 	of papers</a>, they are informal reports, and don't abide by
 	the norms of the conventional cognitive science literature.
@@ -2098,24 +2112,25 @@
 
       <p>
 	This kind of balance is not easy to achieve.  The
-	human-computer interaction community has tried to achieve
-	it. But I don't think it's worked very
-	well*<span class="marginnote">* I'm aware this comment won't
-	make me any friends within the human-computer interaction
-	community. On the other hand, I don't think it does any good
-	to be silent about this. When I look at major events within
-	the community, such as the CHI conference, the overwhelming
-	majority of papers seem timid and with low aspirations
-	compared to early work on augmentation. It's telling that
-	publishing conventional papers (pdf, not even interactive
-	JavaScript and HTML) is still so central to the
-	field. </span>. It seems to me that they've given up a lot of
-	boldness and imagination and aspiration in their design. At
-	the same time, they're not doing full-fledged cognitive
-	science either &ndash; they're not developing a detailed
-	understanding of the mind. Getting the relationship between
-	design and cognitive science right is a core problem. And it's
-	not trivial to get right.
+	human-computer interaction community has tried to achieve it
+	in the systems they build (not just for memory, but for
+	augmenting human cognition in general). But I don't think it's
+	worked very well. It seems to me that they've given up a lot
+	of boldness and imagination and aspiration in their
+	design*<span class="marginnote">* As an outsider, I'm aware
+	this comment won't make me any friends within the
+	human-computer interaction community. On the other hand, I
+	don't think it does any good to be silent, either. When I look
+	at major events within the community, such as the CHI
+	conference, the overwhelming majority of papers seem timid and
+	with low aspirations compared to early work on
+	augmentation. It's telling that publishing conventional papers
+	(pdf, not even interactive JavaScript and HTML) is still so
+	central to the field. </span>. At the same time, they're not
+	doing full-fledged cognitive science either &ndash; they're
+	not developing a detailed understanding of the mind. Getting
+	the relationship between design and cognitive science right is
+	a core problem. And it's not trivial to get right.
       </p>
 
       <!--
@@ -2267,19 +2282,19 @@
       In 2014, <em>The New York Times</em> science journalist Benedict
       Carey published the book &ldquo;How We Learn&rdquo;. It's a
       popular science book, with extended discussion of distributed
-      practice and many related ideas.  Carey frames the book as a
-      kind of self-help, bringing you up-to-date on cognitive science
-      research, with the goal of helping you be more effective in your
-      learning.
+      practice and many related ideas.  Carey frames the book as
+      self-help, bringing the reader up-to-date on cognitive science
+      research, with the goal of helping them be more effective in
+      their learning.
     </p>
 
     <p>
-      It's a good book, and an excellent, thoughtful review of some of
-      the main ideas in the cognitive science of
-      learning. Unfortunately, Carey has little to say about how to
-      take advantage of these ideas. It's one thing to understand that
-      distributed practice is much better than cramming. It's quite
-      another thing to actually systematically act on this
+      It's a good book, and a thoughtful review of some of the main
+      ideas in the cognitive science of learning. Unfortunately, Carey
+      has little to say about how to take advantage of these
+      ideas. It's one thing to understand that distributed practice is
+      much better than the usual strategy of massed practice, i.e.,
+      cramming. It's quite another thing to systematically act on this
       understanding. Indeed, Carey's and other discussions of
       distributed practice often frame it as though people are making
       a choice between cramming and distributed practice. But that's
@@ -2291,11 +2306,11 @@
 
     <p>
       These points apply more broadly to the entire cognitive science
-      literature. It's one thing to know how memory works. It's quite
-      another to develop a really good, easily usable system that
-      makes it possible to take advantage of that understanding of
-      memory. Developing such systems is a difficult skill, a skill
-      very different to studying memory.
+      literature. It's one thing to know how memory works. It's
+      another to develop a good, usable system that makes it possible
+      to take advantage of that understanding of memory. Developing
+      such systems is a difficult skill, a skill very different to
+      studying memory.
     </p>
 
     <p>
@@ -2309,18 +2324,15 @@
 
     <p>
       Anki, for example, was developed by Damien Elmes, a professional
-      programmer who works fulltime on the project.
-    </p>
-
-    <p>
-      Anki is a descendant of the
+      programmer who works fulltime on the project. And, as mentioned
+      above, Anki is a descendant of the
       program <a href="https://www.supermemo.com/en/frontpage">SuperMemo</a>,
-      developed by a researcher named Piotr Wozniak who has devoted
-      much of his life to developing systems for spaced repetition. In
-      some sense, Wozniak is a combined researcher and designer. But
-      his research is not at all research in the conventional sense of
-      cognitive science. Rather, it's devoted almost entirely to
-      improving SuperMemo and related systems. Looking through
+      developed by Piotr Wozniak, who has devoted much of his life to
+      developing systems for spaced repetition. In some sense, Wozniak
+      is a combined researcher and designer. But his research is not
+      research in the conventional sense of cognitive science. Rather,
+      it's devoted almost entirely to improving SuperMemo and related
+      systems. Looking through
       his <a href="http://super-memory.com/english/publicat.htm">publications</a>
       it's striking how different they are from typical papers in
       cognitive science.
@@ -2342,13 +2354,13 @@
 
     <p>
       In general, it's notable how little direct impact cognitive
-      scientists have had on how people think. This is because
-      cognitive science is about studying how people actually think,
-      not (for the most part) prescribing how they should think, or
-      about building systems to help them think more effectively. This
-      is not a criticism of cognitive science. Rather, it's just an
-      acknowledgment that the norms of cognitive science do not
-      favor cognitive scientists building or studying systems.
+      science has had on how people think. This is because cognitive
+      science is about studying how people actually think, not (for
+      the most part) prescribing how they should think, or about
+      building systems to help them think more effectively. This is
+      not a criticism of cognitive science. Rather, it's just an
+      acknowledgment that the norms of cognitive science do not favor
+      cognitive scientists building or studying systems.
     </p>
 
     <p>
@@ -2359,9 +2371,8 @@
       skills to build a magnificent theory of human memory may know
       very little about how to build systems that will enable memory
       to operate at its best. That's because building effective
-      systems &ndash; even prototype systems &ndash; is very, very
-      hard work to do well. We'll come back to this line of
-      questioning in Chapter XXX.
+      systems &ndash; even prototype systems &ndash; is very hard work
+      to do well.
     </p>
 
     <p>
