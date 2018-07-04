@@ -50,7 +50,12 @@ body {
 #container p {
     color: rgba(0, 0, 0, 0.8);
     margin: 9px 0px 9px 0px;
-    font-size: 21px;
+}
+
+#container ul {
+    color: rgba(0, 0, 0, 0.8);
+    list-style-position: outside;
+    padding-left: 40px;
 }
 
 #container blockquote {
