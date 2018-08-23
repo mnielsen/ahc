@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="citation_title" content="Transformational Environments: Building a Young Lady's Illustrated Primer">
+    <meta name="citation_author" content="Nielsen, Michael">
+    <meta name="citation_publication_date" content="2018">
+    <meta name="citation_fulltext_html_url" content="http://augmentingcognition.com/XXX">
+    <meta name="citation_fulltext_world_readable" content="">
+
+    <title>Transformational Environments: Building a Young Lady's Illustrated Primer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Transformational Environments: Building a Young Lady's
+      Illustrated Primer</h1>
+      <p>
+	<a href="http://michaelnielsen.org">Michael Nielsen</a> &nbsp;
+	| &nbsp; <a href="https://ycr.org">Y Combinator Research</a> &nbsp;
+	| &nbsp; September 2018
+      </p>
+    </div>
+
+    <div id="container">
+
+      <p>
+	Reminiscing on his friend Richard Feynman, the computer
+	scientists Danny Hillis observed:
+      </p>
+
+      <blockquote>
+	Every great man that I have known has had a certain time and
+	place in their life that they use as a reference point; a time
+	when things worked as they were supposed to and great things
+	were accomplished. For Richard, that time was at Los Alamos
+	during the Manhattan Project. Whenever things got
+	&ldquo;cockeyed&rdquo;, Richard would look back and try to
+	understand how now was different than then.
+      </blockquote>
+
+      <p>
+	Most of us have had some form of this experience, though
+	perhaps not as starkly as Feynman. Environments that
+	challenged and helped enlarge us. We join a theatre group or a
+	sports team or a collaboration or start an organization. It
+	may, perhaps, grow to take over our life, perhaps even pulling
+	us into 60-, 80-, 100-hour weeks of exhilaration and terror
+	and exhaustion and joy.
+      </p>
+
+      <p>
+	The author Lois Bujold has observed that these experiences are
+	not merely passing things. They are transformative of who we
+	are:
+      </p>
+
+      <blockquote>
+	All great human deeds both consume and transform their
+	doers. Consider an athlete, or a scientist, or an independent
+	business creator. In service of their goals they lay down time
+	and energy and many other choices and pleasures; in return,
+	they become most truly themselves. A false destiny may be
+	spotted by the fact that it consumes without transforming,
+	without giving back the enlarged self&hellip; [T]hese basic
+	human transformational deeds &hellip; change our fundamental
+	relationship with the universe &hellip; [they] consume the old
+	self, and replace it with something new, often better and
+	wiser, sometimes wearier or disillusioned, or tense and
+	terrified, certainly more self-knowing, but never the same
+	again.
+      </blockquote>
+
+      <p>
+	In his 1995 science fiction novel &ldquo;The Diamond
+	Age&rdquo; the author Neal Stephenson has describe a
+	particularly striking example of such an environment. The
+	novel tells the story of a poor young girl named Nell who
+	accidentally comes into possession of a marvellous digital
+	&ldquo;book&rdquo;, <em>The Young Lady's Illustrated
+	Primer</em>.
+      </p>
+
+      <p>
+	The Primer is not a book as we currently conceive of books. It
+	is a fully interactive learning environment. It can answer
+	Nell's questions. It teaches her to read, and many other
+	skills. It protects her and provides emotional support.
+      </p>
+
+      <p>
+	The Primer is a striking idea. It grew out of visions from
+	researchers such as Alan Kay (the Dynabook), Seymour Papert
+	(Logo), and Donald Blitzer (Plato). But, of course,
+	Stephenson's vision <em>is</em> fiction. It doesn't describe
+	in detail how the Primer works, any more than a science
+	fiction writer describing faster-than-light travel will
+	describe the necessary physics. 
+      </p>
+
+      <p>
+	This is not one of my standard essays. Rather, it's an
+	exploration, an attempt to understand what would be required
+	to build a particular type of environment. It's not quite the
+	Primer I'm trying to describe here. But it would achieve many
+	of the same ends. I don't see all the details, but there are
+	some extremely powerful ideas here, ideas which are not being
+	pursued seriously in any system.
+      </p>
+
+      <p>
+	I believe we can build environments that will be
+	transformative for much of the world's population. They will
+	change how people understand; how they think; how they act;
+	and how they create. These notes are an attempt to describe
+	how that will happen.
+      </p>
+
+      <p>
+	This isn't intended to be shared with other people, for the
+	most part. This is me <em>thinking</em> aloud, excitedly. It's
+	me trying to figure out what do I really think. There may be a
+	made-for-audiences version in the future. But right now I want
+	to unabashedly explore ideas as boldly as possible.
+      </p>
+
+      <h2>Narrative embedding of spaced repetition</h2>
+
+      <p>
+	Spaced-repetiton study is a remarkably effective tool for
+	improving people's basic memory. But although the payoff is
+	enormous, there are barriers which have (so for) prevented it
+	from taking off. Worse, those barriers are only partially
+	understood, and only by a small number of people. It's
+	unsurprising it hasn't been more widely used.
+      </p>
+
+      <p>
+	I believe spaced-repetition study can be used to greatly
+	reduce the effort in mastering technical material. In
+	particular, it's a tremendous amplifier for internalizing the
+	large number of new notations and nomenclature. 
+      </p>
+      
+      <p>
+	There are three main issues I see with existing
+	spaced-repetition systems, like DuoLingo and Anki:
+      </p>
+
+      <ul>
+	<li><strong>The systems are shallow:</strong> I mean this in
+	two senses. First, the huge majority of uses are for rather
+	shallow material &ndash; things like the countries-of-Africa.
+	Second, many uses don't cumulatively build from simple to
+	  complex material.</li>
+
+	<li><strong>They are not emotionally engaging, with little
+	    narrative arc:</strong> An Anki deck may be very
+	    informative, but it is left almost completely up to the
+	    user to supply the emotional relationship. Ditto DuoLingo.
+	    Both are just very disconnected from any emotional story
+	    or narrative embedding.
+	</li>
+
+	<li><strong>Most people don't know how to design good
+	questions:</strong> This includes the designers of DuoLingo,
+	and most users of Anki. Designing good questions is, in my
+	opinion, a potentially virtuoso talent &ndash; one I haven't
+	yet mastered, though I'm working on it. And having
+	well-designed questions is an enormous amplifier on the
+	utility.
+	</li>
+      </ul>
+
+      <p>
+	This all points toward embedding spaced-repetition questions
+	inside some sort of overall narrative. That narrative can
+	build up to a deeper and deeper understanding. And it can
+	foster an emotional connection to the material.
+      </p>
+
+      <p>
+	It also points toward gradually developing an informal theory
+	of question design. What are good questiosn? What principles
+	should govern their design? This will require a lot of
+	experimentation and continual reflection. Nonetheless I
+	believe this idea of <em>virtuoso question-asking</em> is a
+	skill well worth fostering.
+      </p>
+
+      <p>
+	How would these ideas work in practice? There's hundreds of
+	important design decisions that would need to be made. It'd
+	take a lot of work to figure those out. Still, I believe these
+	two ideas are important: a narrative embedding for spaced
+	repetition; and a virtuoso set of principles for designing
+	great questions.
+      </p>
+
+      <h2>Both emotional and cognitive mastery</h2>
+
+      <p>
+	One of the most extraordinary YouTube channels is
+	3Blue1Brown. The proprietor, Grant Sanderson, has built a
+	channel with more than a million subscribers, explaining the
+	details of postgraduate level mathematics. 
+      </p>
+
+      <P>
+	3Blue1Brown is often described as an &ldquo;educational&rdquo;
+	YouTube channel. But in conversations, Grant has repeatedly
+	stressed that he does not view his channel as primarily
+	educational. Rather, he views it as entertainment. It's
+	intended to provide an enjoyable and stimulating experience of
+	mathematics, a sense that mathematics contains beauty and awe.
+      </P>
+
+      <p>
+	It is not, however, intended that watchers will walk away
+	remembering the details of what they have seen &ndash; how a
+	proof works, the details of definitions, and so on.
+      </p>
+
+      <p>
+	That material is in the videos, and Grant tells me a few
+	dedicated viewers do repeatedly watch the videos, and fill in
+	a detailed understanding. But he believes most people are
+	content with the primarily emotional experience.
+      </p>
+
+      <p>
+	By conventional educational lights, such an experience is a
+	failure. But I don't think it is. The most important thing in
+	almost any experience is our emotional response. And, in
+	particular, how it changes our emotional response to the
+	world. For many people it a profound, unexpected experience to
+	really understand that mathematics is extraordinarily
+	beautiful, full of awe. Most people are cut off from this,
+	unable to see it any more than a blind person can directly see
+	a rainbow. But 3Blue1Brown removes the blinders, and reveals
+	the rainbow.
+      </p>
+
+      <p>
+	It has become a cliche, but Antoine de Saint-Exupéry's remark
+	is true:
+      </p>
+
+      <blockquote>
+	If you want to build a ship, don't drum up people to collect
+	wood and don't assign them tasks and work, but rather teach
+	them to long for the endless immensity of the sea.
+      </blockquote>
+
+      <p>
+	An ideal medium will be entertaining. It will be emotionally
+	engaging, perhaps even transformative.  These are not
+	optional. They are essential.
+      </p>
+
+      <p>
+	With that said, can we do even better?
+      </p>
+
+      <p>
+	Can we build a system that creates a powerful emotional
+	arc, <em>and</em> helps people master the details, enabling
+	them to build a detailed, powerful model?
+      </p>
+
+      <p>
+	I believe this is the correct aspiration to have.
+      </p>
+
+      <p>
+	<strong>Good sources for developing a strong emotional
+	arc:</strong> Vi Hart, VSauce, Grant Sanderson. And other
+	YouTubers and good writers (etc), both within science and
+	without. The classics are also a good source: great novelsts,
+	great movie-makers, and so on. All understand a tremendous
+	amount about how to provide a powerful emotional experience.
+      </p>
+
+      <p>
+	It's notable, by the way, that those people &ndash; Vi Hart,
+	VSauce, Grant Sanderson &ndash; have radically expanded the
+	boundaries of what is possible.  Each has invented a new media
+	form, which has expanded what people think is
+	possible. Imagine in 2005 proposing creating a video
+	explaining
+      </p>
+	
+      <p>
+	<strong>Emotional tricks:</strong> Many YouTubers use clever
+	tricks to create emotional engagement. They're essentially
+	forms of emotional hacking. Vi Hart and VSauce both do it
+	extensively. Simple examples are things with tone and pitch
+	and wordplay and humour and surprising shots. And, of course,
+	there are much more sophisticated techniques as well.
+      </p>
+
+      <p>
+	These techniques are fine. But when possible it's better to
+	find the engagement within the material. Grant Sanderson,
+	Richard Feynman, and Scott Aaronson all share in common that
+	much of the emotion is <em>internal to the material</em>. That
+	is, they show you the beauty and awe that is instrinsic to the
+	material. You understand extraordinary problems, a little
+	touch of the numinous.
+      </p>
+
+      <p>
+	When possible, this internal experience is preferable.
+      </p>
+
+      <p>
+	A related aesthetic that I dislike is a certain
+	nerdiness-for-nerdiness's sake. It's perhaps uncharitable, but
+	I wonder how much is about generating a sense of belonging for
+	lonely people: a sense that this type of nerdiness defines
+	their tribe. In any case, it's not something I have much
+	sympathy for.
+      </p>
+
+      <h2>Essential problems</h2>
+
+      <p>
+	An extremely good way to write something that is emotionally
+	gripping is to write about something that is important to
+	you. That is, bring people inside the problem you want to
+	solve. And, ideally, not just a problem you sort of want to
+	solve. No, a burning problem, a problem that matters so, so
+	much to you.
+      </p>
+
+      <p>
+	Roger Penrose's book &ldquo;The Emperor's New Mind&rdquo; is a
+	good example. Penrose wanted to know if computers could
+	think. And he wrote a book-length discussion of the topic,
+	essentially a cleaned up version of himself thinking aloud. I
+	disagree completely with that book, but it's fantastic.
+      </p>
+
+      <p>
+	Educators fool themselves about this all the time. Even when
+	they think they're going after an essential problem, they're
+	usually not. How much would they pay to know the answer? A
+	million dollars?  I'll bet that if Penrose had thought a
+	million dollars would answer his question, he would have
+	raised it. But education is nearly always about fake work.
+      </p>
+
+      <p>
+	This is pernicious. It's a very easy mindset to get into,
+	perhaps because it's so common. But it's disastrous, in my
+	opinion. Write to answer a question you genuinely, really
+	have. You will be emotionally engaged
+      </p>
+	
+      <p>
+	(The essential problem of serious educators is how to educate
+	the child. I've never once seen people brought seriously into
+	that problem. They always condescend. I don't think I've ever
+	been in a classroom where that was not true, at least a
+	little.)
+      </p>
+
+      <p>
+	More examples: Steven Pinker's books vary. He has some
+	tendency toward condescension, though it's much better than
+	most classrooms. Feynman's books are usually good (though not
+	as good as Penrose). He clearly desperately wants to
+	understand physics, and that is obvious on nearly every
+	page. David Deutsch's books are good. He isn't writing those
+	books to be expository. He's writing them to solve profound
+	problems.
+      </p>
+
+      <p>
+	Pick a profound problem. A problem you personally care
+	desperately about. And write about that. If you don't have any
+	problems you care that much about, your writing simply won't
+	be as good. You won't care so much, and it will come across.
+      </p>
+
+      <p>
+	There's an odd kind of emotional vulnerability and openness
+	and honesty required here. It's not conventional. It may make
+	some people uncomfortable. But for others I expect it
+      </p>
+      
+      <p>
+	(More than anything, I think this is what makes Feynman's
+	writing work. He clearly cared desparately about physics and
+	understanding it. By conventional pedagogical lights much of
+	his writing isn't very good. But in certain respects it is
+	much, much better than almost anything else ever written.)
+      </p>
+
+      <p>
+	What 
+      </p>
+
+      Tonnes of problems come to mind.
+
+      All of these would be good to mention in passing.  But there are
+      two which come to mind as being things which I intrinsically
+      care a lot more about.
+
+      Those are the overall problem --- how to invent a media
+      environment .  It's unconventional to bring people inside that
+      problem. But, frankly, done honestly and intelligently, I think
+      that'd be very compelling. Not to all people. But certainly to .
+      And it will certainly require a certain a.
+      
+      
+      
+      What essential problems?
+      
+	Integrate the material .  What essential problems can I do? There's
+really two levels to this. One is the problems that I mention. The
+other is the problems that . What about over the longer run? For a
+pilot: go MVP.  Building problem-solving skill. Add a note on mastery
+learning.  Add a note on wanting to find major competitive
+advantage. Inventing a new medium. In fact, inventing a series of new
+media.  Media versus environment. This means that in some sense it.
+You want to separate out the pursuit of big, major new ideas from the
+pursuit of the small.
+
+      Ultimately, you build communities around essential problems. And by providing people with ways to contribute.  There's a process of community induction. People must believe that they, personally.
+
+      Ultimately, I don't think this kind of thing can enti
+
+      The Rationality Community is absolutely fascinating.
+
+      So too iis the Catholic Church.
+
+      Unsolved expository problems
+
+      <h2>Things to aim for in a pilot</h2>
+
+      <ul>
+	<li>A narrative embedding of spaced repetition.  This gives
+	both the memory benefits of spaced repetition, but also
+	enables a narrative and emotional arc, and t</li>
+
+	<li>The development of virtuos
+	  
+      </ul>
+	
+	
+    </div>
+  </body>
+</html>
+
+
