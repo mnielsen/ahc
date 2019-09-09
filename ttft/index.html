@@ -1,0 +1,2810 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44208967-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-44208967-5');
+    </script>
+
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="citation_title" content="How can we develop transformative tools for thought?">
+    <meta name="citation_author" content="Matuschak, Andy">
+    <meta name="citation_author" content="Nielsen, Michael">
+    <meta name="citation_publication_date" content="2019">
+    <meta name="citation_fulltext_html_url" content="http://augmentingcognition.com/ttft/index.html">
+    <meta name="citation_fulltext_world_readable" content="">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+
+    <title>How can we develop transformative tools for
+    thought?</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>How can we develop transformative tools for thought?</h1>
+      <p>
+	<a href="https://andymatuschak.org/">Andy Matuschak</a> and <a href="http://michaelnielsen.org">Michael Nielsen</a> &nbsp; | &nbsp; August 2019
+      </p>
+    </div>
+
+    <div id="container">
+      
+      <p>
+	Part of the origin myth of modern computing is the story of a
+	golden age in the 1960s and 1970s. In this story, visionary
+	pioneers pursued a dream in which computers enabled powerful
+	tools for thought, that is, tools to augment human
+	intelligence*<span class="marginnote">* E.g., Douglas
+	Engelbart, <a href="assets/Engelbart1962.pdf">Augmenting Human
+	Intellect: A Conceptual Framework</a> (1962).</span>. One of
+	those pioneers, Alan Kay, summed up the optimism of this dream
+	when he wrote of the potential of the personal computer:
+	&ldquo;the very use of it would actually change the thought
+	patterns of an entire
+	civilization&rdquo;*<span class="marginnote">* Alan
+	Kay, <a href="assets/Kay1989.pdf">User Interface: A Personal
+	View</a> (1989).</span>.
+      </p>
+
+      <p>
+	It's an inspiring dream, which helped lead to modern
+	interactive graphics, the computer mouse, windowing
+	interfaces, word processors, and much else. But
+	retrospectively it's difficult not to be disappointed, to feel
+	that computers have not yet been nearly as transformative as
+	far older tools for thought, such as writing and
+	language. Today, it's common in technology circles to pay lip
+	service to the pioneering dreams of the past. But nostalgia
+	aside there is little determined effort to pursue the vision
+	of transformative new tools for thought.
+      </p>
+
+      <p>
+	We believe now is a good time to work hard on this vision
+	again. In this essay we sketch out a set of ideas we believe
+	can be used to develop transformative new tools for
+	thought. In the first half of the essay we focus on describing
+	an experimental prototype system that we've built, for
+	augmenting human memory.  This is meant as a snapshot of an
+	ongoing project, detailing both encouraging progress as well
+	as many challenges and opportunities. In the second half of
+	the essay, we broaden the focus. We sketch several other
+	prototype systems. And we address the questions: what do we
+	know today that wasn't known formerly? And why is it that the
+	technology industry has made comparatively little effort
+	developing this vision of transformative tools for thought?
+      </p>
+
+      <p>
+	In the opening we mentioned some visionaries of the past. To
+	those could be added many others &ndash; Ivan Sutherland,
+	Seymour Papert, Vannevar Bush, and more. Online there is much
+	well-deserved veneration for these people. But such veneration
+	can veer into an unhealthy reverence for the good old days, a
+	belief that giants once roamed the earth, and today's work is
+	lesser. Yes, those pioneers did amazing things, and there are
+	things they did that modern technologists, in both industry
+	and academia, are poorly equipped to do. But they also made
+	mistakes, and were ignorant of powerful ideas that are
+	available today. In this essay we'll dig down to understand
+	what we know today that wasn't formerly acted on. Out of this
+	understanding arises a conviction that there is an
+	extraordinary set of opportunities open today.
+      </p>
+
+      <p>
+	A word on nomenclature: the term &ldquo;tools for
+	thought&rdquo; is cumbersome. It rolls off neither the tongue
+	nor the keyboard. What's more, the term &ldquo;tool&rdquo;
+	implies a certain narrowness. Alan Kay has
+	argued*<span class="marginnote">* Again, in Alan
+	Kay, <a href="assets/Kay1989.pdf">User Interface: A Personal
+	View</a> (1989), among other places.</span> that a more
+	powerful aim is to develop a new <em>medium for
+	thought</em>. A medium such as, say,
+	Adobe <em>Illustrator</em> is essentially different from any
+	of the individual tools <em>Illustrator</em> contains. Such a
+	medium creates a powerful, immersive context, a context in
+	which it is possible for the user to have new kinds of
+	thought, thoughts that were formerly impossible for
+	them. Speaking loosely, the range of expressive thoughts
+	possible in such a medium is an emergent property of the
+	elementary objects and actions in that medium. If those are
+	well chosen, the medium expands the possible range of human
+	thought.
+      </p>
+
+      <p>
+	Going further, even the notion of a medium for thought is too
+	narrow. An even better frame is to develop powerful
+	new <em>environments for thought</em>. Past examples of such
+	environments include the control room for Apollo 11, jazz
+	improvisation in a superb ensemble, and a first-rate
+	scientific laboratory.  Such environments enable a range of
+	human expression even greater than a powerful medium for
+	thought, since they incorporate social and emotional context
+	difficult to provide in a medium alone. What are the most
+	powerful such environments? And what new environments can we
+	create?
+      </p>
+
+      <p>
+	All that said, the term &ldquo;tools for thought&rdquo; has
+	been widely used since Iverson's 1950s and 1960s
+	work*<span class="marginnote">* An account may be found in
+	Iverson's Turing Award
+	lecture, <a href="assets/Iverson1979.pdf">Notation as a Tool
+	of Thought</a> (1979). Incidentally, even Iverson is really
+	describing a medium for thought, the APL programming language,
+	not a narrow tool.</span> introducing the term. Experience
+	suggests that many people find terms such as &ldquo;medium for
+	thought&rdquo; and &ldquo;environment for thought&rdquo; too
+	abstract, and more cumbersome than &ldquo;tools for
+	thought&rdquo;. And so we shall use &ldquo;tools for
+	thought&rdquo; somewhat loosely, as a catch all phrase, while
+	giving ourselves license to explore a broader range.
+      </p>
+
+      <p>
+	The musician and comedian Martin Mull has observed that
+	&ldquo;writing about music is like dancing about
+	architecture&rdquo;. In a similar way, there's an inherent
+	inadequacy in any writing about tools for thought. A
+	successful tool for thought expands your thinking beyond what
+	can be done using writing alone; the more transformative the
+	tool, the larger the gap that is opened. Conversely, the
+	larger that gap, the more difficult the new tool is to evoke
+	in writing. But what writing can do, and the reason we wrote
+	this essay, is act as a bootstrap. It's a way of identifying
+	points of leverage that may help develop new tools for
+	thought. So let's get on with it!
+      </p>
+
+      <h2>Part I: Memory systems</h2>
+
+      <h3>Introducing the mnemonic medium</h3>
+      
+      <p>
+	Few subjects are more commonly regarded as difficult than
+	quantum computing and quantum mechanics. Indeed, popular media
+	accounts often regale (and intimidate) readers with quotes
+	from famous physicists in the vein of: &ldquo;anyone who
+	thinks they’ve understood quantum mechanics has not understood
+	quantum mechanics&rdquo;.
+      </p>
+      
+      <p>
+	What makes these subjects difficult? In fact, individually
+	many of the underlying ideas are not too complicated for
+	people with some technical background. But the ideas come in
+	an overwhelming number, a tsunami of unfamiliar concepts and
+	notation. People must learn in rapid succession of qubits, the
+	bra-ket notation, Hadamard gates, and many, many other
+	abstract, unfamiliar notions. They're imbibing an entire new
+	language. Even if they can follow at first, understanding
+	later ideas requires fluency with all the earlier ideas. It's
+	overwhelming and eventually disheartening.
+      </p>
+
+      <p>
+	As an experiment, we have developed a
+	website, <a href="https://quantum.country"><em>Quantum
+	Country</em></a>, which explores a new approach to explaining
+	quantum computing and quantum
+	mechanics. Ostensibly, <em>Quantum Country</em> appears to be
+	a conventional essay introduction to these subjects. There is
+	text, explanations, and equations, much as in any other
+	technical essay:
+      </p>
+
+      <center>
+	<img src="assets/quantum_country_sample.png" width="500">
+      </center>
+
+      <p>
+	But it's not a conventional essay. Rather, <em>Quantum
+	Country</em> is a prototype for a new type of <em>mnemonic
+	medium</em>. Aspirationally, the mnemonic medium makes it
+	almost effortless for users to remember what they read. That
+	may sound like an impossible aspiration. What makes it
+	plausible is that cognitive scientists know a considerable
+	amount about how human beings store long-term
+	memories. Indeed, what they know can almost be distilled to an
+	actionable recipe: follow these steps, and you can remember
+	whatever you choose.
+      </p>
+
+      <p>
+	Unfortunately, those steps are poorly supported by existing
+	media. Is it possible to design a new medium which much more
+	actively supports memorization? That is, the medium would
+	build in (and, ideally, make almost effortless) the key steps
+	involved in memory. If we could do this, then instead of
+	memory being a haphazard event, subject to chance, the
+	mnemonic medium would make memory into a choice. Of course, on
+	its own this wouldn't make it trivial to learn subjects such
+	as quantum mechanics and quantum computing &ndash; learning
+	those subjects is about much more than memory. But it would
+	help in addressing one core difficulty: the overwhelming
+	number of new concepts and notation.
+      </p>
+
+      <p>
+	In fact, there are many ways of redesigning the essay medium
+	to do that. Before showing you our prototype, please pause for
+	a moment and consider the following questions: how could you
+	build a medium to better support a person's memory of what
+	they read?  What interactions could easily and enjoyably help
+	people consolidate memories? And, more broadly: is it possible
+	to 2x what people remember? 10x? And would that make any
+	long-term difference to their effectiveness?
+      </p>
+
+      <p>
+	Let's sketch the user experience of <em>Quantum
+	Country</em>. At the time of this writing the site contains
+	three mnemonic essays. We'll focus on the introductory essay,
+	<a href="https://quantum.country/qcvc">&ldquo;Quantum
+	  Computing for the Very Curious&rdquo;</a>. Embedded within
+	  the text of the essay are 112 questions about that
+	  text. Users are asked to create an account, and quizzed on
+	  whether they remember the answers to those questions. Here's
+	  what the interaction looks like, as a user answers three
+	  questions.
+      </p>
+
+      <center>
+	<video autoplay loop muted width="600">
+	  <source src="assets/qc_interaction.mov">
+	</video>
+      </center>
+
+      <p>
+	Note that this interaction occurs within the text of the essay
+	itself. Here's a zoomed-out view, so you can see how such
+	questions are surrounded by essay text both above and below:
+      </p>
+
+      <center>
+	<img src="assets/qc_zoom_out.png" width="450">
+      </center>
+
+      <p>
+	We use the term <em>cards</em> for these interface elements
+	pairing questions and answers.
+      </p>
+
+      <p>
+	Of course, for long-term memory it's not enough for users to
+	be tested just once on their recall. Instead, the day after
+	first reading the essay, the user receives an email asking
+	them to sign into a review session. In that review session
+	they're tested again, in a manner similar to that shown
+	above. Then, through repeated review sessions in the days and
+	weeks ahead, people consolidate the answers to the questions
+	into their long-term memory.
+      </p>
+
+      <p>
+	So far, this looks like no more than an essay which integrates
+	old-fashioned flashcards. But notice the intervals indicated
+	by the purple bar at the bottom of the cards:
+      </p>
+
+      <center>
+	<video autoplay loop muted width="500">
+	  <source src="assets/qc_icons.mov">
+	</video>
+      </center>
+      
+      <p>
+	The highlighted icon denotes the time interval until the user
+	is tested again on the question. Questions start out with the
+	time interval &ldquo;soon&rdquo;, meaning the user is being
+	tested in-essay. That rises to one day, if the user gets the
+	question right.  The interval then continues to rise upon each
+	successful review, from one day to three days, then a week, and
+	so on. After just six successful reviews the interval is at
+	four months.
+      </p>
+
+      <p>
+	This takes advantage of a fundamental fact about human memory:
+	as we are repeatedly tested on a question, our memory of the
+	answer gets strong, and we are likely to retain it for
+	longer*<span class="marginnote">* The literature on this is
+	vast. A useful entrée is: Gwern
+	Branwen, <a href="https://www.gwern.net/Spaced-repetition">Spaced
+	Repetition for Efficient Learning</a>.</span>.  This
+	exponential rise perhaps seems innocuous, but it's
+	transformative. It means that a relatively small number of
+	reviews will enable a user to remember for years. With the
+	time taken to review a typical question being just a few
+	seconds, that means a user can achieve years of recall with no
+	more than a few minutes work. By contrast, with conventional
+	flashcards it takes hours of review to achieve the same
+	durability. Exponential scheduling is far more efficient.
+      </p>
+
+      <h3>The early impact of the prototype mnemonic medium</h3>
+
+      <p>
+	Although it's early days for <em>Quantum Country</em> we can
+	begin to see some of the impact of the mnemonic
+	medium. Plotted below is the demonstrated retention of answers
+	for each user, versus the number of times each question in the
+	essay has been reviewed:
+      </p>
+
+      <center>
+	<img src="assets/dem_retention.png">
+      </center>
+
+      <p>
+	By a card's &ldquo;demonstrated retention&rdquo; we mean the
+	maximum time between a successful review of that card, and the
+	prior review of that card. A little more concretely, by
+	repetition number 5 (on the horizontal axis) a user has
+	reviewed all 112 questions in the essay 5 times. And the
+	vertical axis shows the total demonstrated retention, summed
+	across all cards, with each blue dot representing a single
+	user who has reached repetition 5.
+      </p>
+
+      <p>
+	So, for instance, after 5 repetitions, we see from the graph
+	that most users are up around 3,000 days of demonstrated
+	retention. That means an average of about 3,000 / 112 ~ 27
+	days per question in the essay.  Intuitively, that seems
+	pretty good &ndash; if you're anything like us, a couple of
+	months after reading something you have only a hazy memory. By
+	contrast, these users have, at low time cost to themselves (of
+	which more below), achieved about a month of demonstrated
+	retention across 112 detailed questions.
+      </p>
+
+      <p>
+	Furthermore, you can see the exponential rise in retention
+	with the number of times cards have been reviewed. After the
+	first review, users typically have an average of just over 2
+	days of demonstrated retention, per card. But by the fifth
+	review that rises to an average of 27 days of demonstrated
+	retention. That typically takes about 80 minutes of total
+	review time to achieve. While we don't yet have enough data
+	for the sixth and seventh reviews, we hope demonstrated
+	retention will continue to rise rapidly. Given that the essay
+	takes about 4 or so hours to read, this suggests that a less
+	than 50% overhead in time commitment can provide many months
+	or years of retention for almost all the important details in
+	the essay.
+      </p>
+
+      <p>
+	This is the big, counterintuitive advantage of spaced
+	repetition: you get exponential returns for increased
+	effort. On average, every extra minute of effort spent in
+	review provides more and more benefit. This is in sharp
+	contrast with most experiences in life, where we run into
+	diminishing returns. For instance, ordinarily if you increase
+	the amount of time you spend reading by 50%, you expect to get
+	no more than 50% extra out of it, and possibly much less. But
+	with the mnemonic medium when you increase the amount of time
+	you spend reading by 50%, you get 10x as much out of it. Of
+	course, we don't quite mean that 50% and 10x literally. But it
+	does convey the key idea of getting a strongly non-linear
+	return. It's a change in the quality of the medium.
+      </p>
+
+      <P>
+	This delayed benefit in fact makes the mnemonic medium unusual
+	in multiple ways. Another is this: most online media use
+	short-term engagement models, using variations on operant
+	conditioning to drive user behavior. The mnemonic medium is
+	much more like meditation &ndash; in some ways, the
+	anti-product, since it violates so much conventional Silicon
+	Valley wisdom &ndash; in that the benefits are delayed, and
+	the greater the delay, the more the benefit.
+      </P>
+
+      <p>
+	These are preliminary results, and need more
+	investigation. One naturally wonders what would happen if we'd
+	been much more aggressive with the review schedule, setting
+	the initial interval between reviews to (say) 2 months? If
+	users reliably retained information up to that point, then the
+	graph would start very high, and we wouldn't see the
+	exponential. We need to investigate these and many similar
+	questions to better understand what's going on with user's
+	memories.
+      </p>
+
+      <p>
+	Early feedback from users gives us cautious optimism that
+	they're finding the mnemonic medium useful. In May 2019, one
+	of us (MN) posted to Twitter a short thread explaining the
+	technical details of how quantum teleportation works. One user
+	of <em>Quantum Country</em>
+	<a href="https://twitter.com/KeithMansfield/status/1132031824513966080">replied
+	  to the thread</a> with:
+      </p>
+
+      <blockquote>I've only done your first quantum country course (so
+	far) but I find it remarkable that I can view the proof and
+	follow it, knowing what everything means. It's almost like Neo
+	in The Matrix telling Morpheus, `I know quantum
+	computing’*<span class="marginnote">* In the movie <em>The
+	Matrix</em> one of the characters (Neo) uses a computer to
+	very rapidly upload martial arts skills into his mind. As he
+	opens his eyes after completing the upload he tells another
+	character (Morpheus): &ldquo;I know Kung Fu&rdquo;.</span>.
+      </blockquote>
+
+      <p>
+	A user with significantly more prior experience of quantum
+	computing <a href="https://news.ycombinator.com/item?id=19429035">wrote</a>:
+      </p>
+
+      <blockquote>
+	I have a PhD in quantum information/computing and I knew
+	everything in the essay before reading it, but the additional
+	understanding I got from doing the given spaced repetition
+	flashcards significantly improved my understanding of the
+	material. Everyone who is reading this essay, should sign up
+	and give spaced repetition a try.
+      </blockquote>
+
+      <p>
+	Another user, new to quantum computing, told us
+	that <em>Quantum Country</em> &ldquo;is by far the best way
+	that I could imagine being introduced to this
+	material&rdquo;. When we asked how he'd used what he'd
+	learned, he explained that when a visitor to his company gave
+	a technical seminar about quantum computing, he expected to
+	get lost after about 10 minutes. Instead:
+      </p>
+
+      <blockquote>
+	Wow, I actually followed that for 40 or 45 minutes because the
+	matrices looked familiar&hellip; [the medium means] you run
+	into concepts over and over again&hellip; It affords
+	interactions at a more effective level of abstraction.
+      </blockquote>
+
+      <p>
+	Furthermore, there's a constant flow of people who are
+	steadily working through the review sessions in the manner we
+	intended. Six months after release of the prototype, 195 users
+	had demonstrated one full month of retention on at least 80%
+	of cards in the essay, demonstrating an extraordinary level of
+	commitment to the process*<span class="marginnote">* We've
+	made no attempt at all to scale this out. It's interesting to
+	ponder doing so.</span>. We don't yet have a good model of
+	exactly what those people are learning, but it seems highly
+	plausible that they are taking away considerably more than
+	from a conventional essay, or perhaps even from a conventional
+	class.
+      </p>
+	
+      <p>
+	Of course, this kind of feedback and these kinds of results
+	should be taken with a grain of salt. The mnemonic medium is
+	in its early days, has many deficiencies, and needs
+	improvement in many ways (of which more soon).  It is,
+	however, encouraging to hear that some users already find the
+	medium exceptionally helpful, and suggests developing and
+	testing the medium further. At a minimum, it seems likely the
+	mnemonic medium is genuinely helping people remember. And
+	furthermore it has an exponentially increasing efficiency: the
+	more people study, the more benefit they get per minute
+	studied.
+      </p>
+
+      <!-- data collected August 17, 2019. Note that we've rounded up
+	for numbers like 90.5%, to 91%. This affects both the 91% and
+	87% numbers (though not the difference, so I'm not inclined to
+	worry much about it). -->
+      
+      <p>
+	In another informal experiment, we tried to figure out how
+	much it affected user's memories when they <em>weren't</em>
+	asked to review cards. To do this, we introduced a deliberate
+	short (two-week) delay on reviews for a small subset of 8
+	cards. That is, some users would review those 8 cards upon an
+	initial read, and then would be prevented from reviewing them
+	again for at least two weeks. Other users would continue to
+	study as normal on the 8 cards. By comparing the two groups we
+	could estimate the effect that reviewing the cards had on
+	user's memories.
+      </p>
+
+      <p>
+	What happened? Well, for those users whose reviews were
+	delayed, accuracy dropped from 91% (upon the initial read) to
+	87% (after two weeks). This may seem a small drop, but keep in
+	mind that users continued to review other cards, which almost
+	certainly boosted their final performance, since those other
+	cards had some overlap in content with the delayed cards. It's
+	difficult to avoid this kind of overlap without delaying
+	reviews on all the cards, which seemed rather too drastic a
+	change in user experience to impose.  For users who were asked
+	to review the cards as normal, accuracy improved from 89% to
+	96%. Summing up: when users didn't review the cards, accuracy
+	dropped by 4%; when they did review the cards, accuracy
+	increased by 7%*<span class="marginnote">* In more detail:
+	there were 16 users in the group that did the reviews, per
+	usual, and 25 users in the group where reviews were
+	delayed. The 95% confidence intervals were: 91 &plusmn; 4%, 87
+	&plusmn; 5%, 89 &plusmn; 5%, 96 &plusmn; 3%, assuming each
+	variable is binomial, independent and identically
+	distributed. This latter assumption is approximate, since we'd
+	expect some user- and question-dependent effects.</span>.
+      </p>
+
+      <p>
+	Another way of looking at the data from this informal
+	experiment is to ask which users saw improved-or-unchanged
+	performance, and which saw their performance get worse. In
+	fact, every single user (100%) who reviewed cards on the
+	regular schedule saw their performance either stay the same or
+	improve.  By contrast, 40% of the users whose reviews were
+	delayed saw their performance get worse, while 60% saw it stay
+	the same or improve.
+      </p>
+
+      <p>
+	These are small-but-promising results. Of course, our
+	experiment was only done over two weeks, and we'd expect
+	larger effects in experiments done over longer periods. And,
+	as already mentioned, the effect is likely diminished by
+	overlaps between the cards. Nonetheless, this informal
+	experiment again suggests the mnemonic medium is helping
+	people's memory, and suggests more comprehensive studies.
+      </p>
+      
+      <p>
+	Despite these suggestive preliminary results, it's still
+	tempting to be dismissive. Isn't this &ldquo;just&rdquo; an
+	essay with flashcards embedded? At some level, of course,
+	that's correct. In the same way, wikis are just editable web
+	pages; Twitter is just a way of sharing very short form
+	writing; and Facebook is just a way of sharing writing and
+	pictures with friends. Indeed, writing itself is just a clever
+	way of ordering a small number of symbols on a page. While a
+	medium may be simple, that doesn't mean it's not profound. As
+	we shall see, the mnemonic medium has many surprising
+	properties. It turns out that flashcards are dramatically
+	under-appreciated, and it's possible to go much, much further
+	in developing the mnemonic medium than is <em>a priori</em>
+	obvious.
+      </p>
+
+      <p>
+	Before we delve deeper into the mnemonic medium, let's mention
+	one challenge in the discussion: the inherent difficulty in
+	achieving a good balance between conveying enthusiasm and the
+	kind of arm's-length skepticism appropriate for evaluation. On
+	the one hand, we would not have built the mnemonic medium if
+	we weren't excited about the underlying ideas, and wanted to
+	develop those enthusiasms. To explain the mnemonic medium
+	well, we need to bring you, the reader, inside that
+	thinking. But having done that, we also need to step back and
+	think more skeptically about questions such as: is this medium
+	really working?  What effect is it actually having on people?
+	Can it be made 10x better?  100x better? Or, contrariwise, are
+	there blockers that make this an irredeemably bad idea? How
+	important a role does memory play in cognition, anyway? So
+	far, we've focused on the enthusiastic case for, why one might
+	consider this design at all. But over time we'll gradually
+	step back and consider in a more skeptical frame.
+      </p>
+
+      <h3>Expanding the scope of memory systems: what types of
+      understanding can they be used for?</h3>
+
+      <p>
+	<em>Quantum Country</em> is an example of a <em>memory
+	system</em>. That is, it's a system designed to help users
+	easily consolidate what they've learned into long-term
+	memory. It's part of a long history of memory systems, going
+	back to ancient times, when the orator Cicero and the
+	rhetorician Quintilian described mnemonic techniques that
+	could be used to memorize long texts.
+      </p>
+
+      <p>
+	In modern times, many memory systems have been
+	developed. Among the better known are Anki, SuperMemo,
+	Quizlet, Duolingo, and Memrise. Like <em>Quantum Country</em>,
+	each of these systems uses increasing time intervals between
+	reviews of particular questions. Such systems are sometimes
+	known as <em>spaced-repetition memory systems</em>
+	(or <em>SRM</em> systems)*<span class="marginnote">* Strictly
+	speaking, Quizlet's basic product doesn't use spaced
+	repetition. There is, however, a paid version using spaced
+	repetition, and it's otherwise quite similar to many of these
+	systems.</span>. They're usually justified in a manner similar
+	to our explanation for <em>Quantum Country</em>: some notion
+	of each review gradually increasing the consolidation strength
+	for a memory.
+      </p>
+
+      <p>
+	SRM systems are most widely used in language
+	learning. Duolingo, for instance, claims
+	<a href="https://techcrunch.com/2018/08/01/duolingo-hires-its-first-chief-marketing-officer-as-active-user-numbers-stagnate/">25
+	  million monthly active users</a>. Reports are mixed on
+	  success. Some serious users
+	  are <a href="https://www.thrillist.com/travel/nation/duolingo-app-review-foreign-language">enthusiastic
+	  about their success</a> with
+	  Duolingo. But <a href="https://www.thecut.com/2019/01/does-duolingo-even-work.html">others
+	  find it of limited utility</a>. The company, of
+	  course, <a href="https://support.duolingo.com/hc/en-us/articles/115000035183-Are-there-official-studies-about-Duolingo-">touts
+	  research</a> showing that it's incredibly successful. It
+	  seems likely to us that Duolingo and similar systems are
+	  useful for many users as part of (but only part of) a
+	serious language learning program.
+      </p>
+
+      <p>
+	What about memory systems for uses beyond language? Quizlet is
+	popular,
+	with <a href="https://techcrunch.com/2018/10/25/quizlet-hits-50m-monthly-users/">50
+	million monthly active users</a>. It's widely used in
+	classrooms, especially for simple declarative knowledge
+	&ndash; lists of American Presidents, capitals of countries,
+	and so on. Anki and SuperMemo seem to most often be used for
+	similar simple declarative knowledge, but have much smaller
+	active user bases than Quizlet*<span class="marginnote">* They
+	are, however, widely used within some interesting niche
+	audiences. For instance, there is
+	a <a href="https://www.reddit.com/r/medicalschoolanki/">thriving
+	population</a> of medical students using Anki.</span>.
+      </p>
+
+      <p>
+	One of the ideas motivating <em>Quantum Country</em> is that
+	memory systems aren't just useful for simple declarative
+	knowledge, such as vocabulary words and lists of capitals. In
+	fact, memory systems can be extraordinarily helpful for
+	mastering abstract, conceptual knowledge, the kind of
+	knowledge required to learn subjects such as quantum mechanics
+	and quantum computing. This is achieved in part through many
+	detailed strategies for constructing cards capable of encoding
+	this kind of understanding. But, more importantly, it's
+	possible because of the way mnemonic essays embed spaced
+	repetition inside a narrative. That narrative embedding makes
+	it possible for context and understanding to build in ways
+	difficult in other memory systems.
+      </p>
+
+      <p>
+	Other people have also found ways of using memory systems for
+	abstract, conceptual knowledge. Perhaps most prominently, the
+	creator of the SuperMemo system, Piotr Wozniak,
+	has <a href="http://supermemopedia.com/wiki/Main_Page">written
+	extensively</a> about the many ingenious ways he uses memory
+	systems. And several other expert users of memory systems have
+	also developed similar strategies. However, employing those
+	strategies requires considerable skill. In practice, that
+	skill barrier has meant these strategies are used by no more
+	than a tiny handful of people.
+      </p>
+
+      <p>
+	By contrast, <em>Quantum Country</em> provides a much more
+	scalable approach to using memory systems to do abstract,
+	conceptual learning. In some sense, <em>Quantum Country</em>
+	aims to expand the range of subjects users can comprehend at
+	all. In that, it has very different aspirations to all prior
+	memory systems.
+      </p>
+
+      <p>
+	More generally, we believe memory systems are a far richer
+	space than has previously been realized. Existing memory
+	systems barely scratch the surface of what is possible. We've
+	taken to thinking of <em>Quantum Country</em> as a <em>memory
+	laboratory</em>. That is, it's a system which can be used both
+	to better understand how memory works, and also to develop new
+	kinds of memory system. We'd like to answer questions such as:
+      </p>
+
+      <p>
+	<ul>
+	<li>What are new ways memory systems can be applied, beyond
+	  the simple, declarative knowledge of past systems?</li>
+
+	<li>How deep can the understanding developed through a memory
+	  system be? What patterns will help users deepen their
+	  understanding as much as possible?</li>
+
+	<li>How far can we raise the human capacity for memory? And
+	  with how much ease? What are the benefits and drawbacks?</li>
+
+	<li>Might it be that one day most human beings will have a
+	regular <em>memory practice</em>, as part of their everyday
+	lives? Can we make it so memory becomes a choice; is it
+	possible to in some sense solve the problem of memory?</li>
+	</ul>
+      </p>
+
+      <p>
+	Over the next few sections we sketch out some of our thinking
+	about how memory systems may be developed. We'll see that
+	memory systems are a small part of a much bigger picture. Not
+	only is seriously developing memory systems likely to lead to
+	a transformative tool for thought, we also believe it will
+	teach us much about the general problem of developing such
+	tools.
+      </p>
+
+      <h3>Improving the mnemonic medium: making better cards</h3>
+
+      <p>
+	Cards are fundamental building blocks in the mnemonic
+	medium. But despite this central role, it's tempting to treat
+	their content rather casually. After all, it's just a question
+	and an answer, each containing a little text, perhaps a
+	figure. Surely they ought to be easy to write?
+      </p>
+
+      <p>
+	While tempting, thinking in this way is a
+	mistake. Card-writing is better thought of as an open-ended
+	skill. Do it poorly, and the mnemonic medium works poorly. Do
+	it superbly well, and the mnemonic medium can work very well
+	indeed. In fact, by developing the card-writing skill it's
+	possible to expand the possibilities of the medium.
+      </p>
+
+      <p>
+	A helpful comparison is to the sentence in written prose. For
+	the beginning writer it's tempting to treat sentences
+	casually. But in the hands of a great writer &ndash; say, a
+	Nabakov &ndash; sentences can be developed into a virtuoso
+	artform. What would it take to achieve virtuoso skill in
+	writing the cards of the mnemonic medium?
+      </p>
+
+      <p>
+	It's not obvious <em>a priori</em> that writing cards is such
+	a rich activity. One of us (MN)
+	wrote <a href="https://augmentingcognition.com/ltm.html">17,000-</a>
+	and <a href="http://cognitivemedium.com/srs-mathematics">6,000-word</a>
+	essays whose subject was in large part understanding how to
+	write good cards. He didn't realize that was going to be the
+	subject when he began writing; it only became clear in
+	retrospect how rich card writing is. It turns out that
+	answering the question &ldquo;how to write good cards?&rdquo;
+	requires thinking hard about your theory of knowledge and how
+	to represent it, and your theory of learning. The better those
+	theories, the better your cards will be. Small wonder it's a
+	rich, open-ended problem!
+      </p>
+
+      <p>
+	All that said, let's make a few concrete observations about
+	good card-writing. While the specific examples that follow are
+	relatively banal, they should give you some feeling for the
+	profound issues that arise in improving the mnemonic
+	medium. We'll begin with three principles we used when writing
+	the cards in <em>Quantum Country</em>. Note that these are
+	just three of many more principles &ndash; a more detailed
+	discussion of good principles of card construction may be
+	found
+	in <a href="http://augmentingcognition.com/ltm.html">Augmenting
+	Long-term Memory</a>.
+      </p>
+
+      <ul>
+	<li><strong>Most questions and answers should be
+	atomic:</strong> Early in his own personal memory practice, MN
+	was learning the Unix command to create links in the
+	filesystem. He entered the question: &ldquo;How to create a
+	soft link from linkname to filename&rdquo;. The answer was
+	&ldquo;ln -s filename linkname&rdquo;. This looks like a good
+	question, but he routinely forgot the answer. To address this,
+	he refactored the card into two more atomic cards. One card:
+	&ldquo;What’s the basic command and option to create a soft
+	link?&rdquo; (A: &ldquo;ln -s&rdquo;). Second card:
+	&ldquo;When creating a soft link, in what order do linkname
+	and filename go?&rdquo; (A: &ldquo;filename
+	linkname&rdquo;). Breaking the card into more atomic pieces
+	turned a question he routinely got wrong into two questions he
+	routinely got right. It seemed that the more atomic questions
+	brought more sharply into focus what he was forgetting, and so
+	provided a better tool for improving memory. And what of the
+	original card? Initially, he deleted it. But after some time
+	he added the card back, with the same question-and-answer,
+	since it served to integrate the understanding in the more
+	atomic cards.
+	</li>
+
+	<li><strong>Make sure the early questions in a mnemonic essay
+	    are trivial: it helps many users realize they aren't
+	    paying enough attention as they read:</strong> This was a
+	    discovery made when we released the first <em>Quantum
+	    Country</em> essay. Anticipating that users would be
+	    struggling with a new interface, we deliberately made the
+	    first few questions in the essay utterly trivial, so they
+	    could focus on the interface. To our surprise, users
+	    performed poorly on these questions, worse than the (much
+	    harder) later questions. Our current hypothesis to explain
+	    this is that when users failed to answer the first few
+	    questions correctly it served as a wakeup call. The
+	    questions were so transparently simple that they realized
+	    they hadn't really been paying attention as they read, and
+	    so were much more careful subsequently.
+	</li>
+
+	<li><strong>Avoid orphan cards:</strong> These are cards which
+	don't connect closely to anything else. Suppose, for the sake
+	of illustration, that you're trying to learn about African
+	geography, and have a question: &ldquo;What's the territory in
+	Africa that Morocco disputes?&rdquo; (A: &ldquo;The Western
+	Sahara&rdquo;) If you don't know anything about the Western
+	Sahara or Morocco or why there's a dispute, that question will
+	be an orphan, disconnected from everything else. Ideally,
+	you'll have a densely interconnected web of questions and
+	answers: everything connected to everything else in striking
+	ways.
+	</li>
+      </ul>
+
+      <p>
+	Ultimately, we'd like to distill out a set of useful practical
+	principles and idioms to help write good cards and, more
+	generally, good mnemonic essays. Aspirationally, such a set of
+	principles and idioms would work much like <em>The Elements of
+	Style</em> (or some similar book of prose advice), and would
+	help other people learn to write high-quality mnemonic essays.
+      </p>
+
+      <p>
+	When we introduced <em>Quantum Country</em> we explained it
+	using a simple model of spaced repetition: increased
+	consolidation strength for memories leading to increased time
+	intervals between reviews. This is a helpful simple model, but
+	risks creating the misleading impression that it's all that's
+	going on in the system. In fact, for the mnemonic medium to
+	work effectively, spaced repetition must be deployed in
+	concert with many other ideas. The three ideas we just
+	described &ndash; atomicity of questions and answers, making
+	early questions trivial, avoiding orphan cards &ndash; are
+	just three of dozens of important ideas used in the mnemonic
+	medium. We won't enumerate all those other ideas here &ndash;
+	that's not the purpose of this essay. But we want to flag
+	this, since it's common for people to have the simplistic
+	model &ldquo;good memory system = spaced
+	repetition&rdquo;. That's false, and an unhelpful way of
+	thinking.
+      </p>
+
+      <p>
+	Thinking in this way is one reason spaced repetition memory
+	systems often fail for individuals. We often meet people who
+	say &ldquo;Oh, I thought spaced repetition sounds great, and I
+	tried Anki [<em>etc</em>], but it doesn't work for
+	me&rdquo;. Dig down a little, and it turns out the person is
+	using their memory system in a way guaranteed to fail. They'll
+	be writing terrible questions, or using it to learn a subject
+	they don't care about, or making some other error. They're a
+	little like a person who thinks &ldquo;learning the guitar
+	sounds great&rdquo;, picks it up for half an hour, and then
+	puts it down, saying that they sound terrible and therefore
+	it's a bad instrument. Of course, what's really going on is
+	that guitar and memory systems are both skills that must be
+	developed. But, with that said, we want to build as much
+	support into the medium as possible. Ideally, even novices
+	would benefit tremendously from the mnemonic medium. That
+	means building in many ideas that go beyond the simple model
+	of spaced repetition.
+      </p>
+
+      <p>
+	We just identified three principles of good
+	question-and-answer construction. Of course, it's also
+	possible to make more structural modifications to the nature
+	of the cards themselves. Here's three questions suggesting
+	experiments in this vein:
+      </p>
+
+      <p>
+	<ul>
+	  <li><strong>How can we ensure users don't just learn surface
+	  features of questions?</strong> One question in <em>Quantum
+	  Country</em> asks: &ldquo;Who has made progress on using
+	  quantum computers to simulate quantum field theory?&rdquo;
+	  with the answer: &ldquo;John Preskill and his
+	  collaborators&rdquo;. This is the only
+	  &ldquo;Who&hellip;?&rdquo; question in the essay, and many
+	  users quickly learn to recognize it from just the
+	  &ldquo;Who&hellip;?&rdquo; pattern, and parrot the answer
+	  without engaging deeply with the question. This is a common
+	  failure mode in memory systems, and it's deadly to
+	  understanding. One response, which we plan to trial soon, is
+	  to present the question in multiple different-but-equivalent
+	  forms. So the user first sees the question as &ldquo;Who has
+	  made progress [<em>etc</em>]?&rdquo;; but then the second
+	  time the question is presented as a fill-in-the-blanks:
+	  &ldquo;___ and his collaborators have made progress on using
+	  quantum computers to simulate quantum field theory.&rdquo;
+	  And so on, multiple forms of the question, designed so the
+	  user must always engage deeply with the meaning of the
+	  question, not its superficial appearance. Ultimately, we'd
+	  like to develop a library of techniques for identifying when
+	  this learning-the-surface-feature pattern is occurring, and
+	  for remedying it.
+	  </li>
+
+	  <li><strong>How to best help users when they forget the
+	  answer to a question?</strong> Suppose a user can't remember
+	  the answer to the question: &ldquo;Who was the second
+	  President of the United States?&rdquo; Perhaps they think
+	  it's Thomas Jefferson, and are surprised to learn it's John
+	  Adams. In a typical spaced-repetition memory system this
+	  would be dealt with by decreasing the time interval until
+	  the question is reviewed again. But it may be more effective
+	  to follow up with questions designed to help the user
+	  understand some of the surrounding context. E.g.: &ldquo;Who
+	  was George Washington's Vice President?&rdquo; (A:
+	  &ldquo;John Adams&rdquo;). Indeed, there could be a whole
+	  series of followup questions, all designed to help better
+	  encode the answer to the initial question in memory.
+	  </li>
+
+	  <li><strong>How to encode stories in the mnemonic
+	  essay?</strong> People often find certain ideas most
+	  compelling in story form. Here's a short, fun example: did
+	  you know that Steve Jobs actively opposed the development of
+	  the App Store in the early days of the iPhone? It was
+	  instead championed by another executive at Apple, Scott
+	  Forstall. Such a story carries a force not carried by
+	  declarative facts alone.  It's one thing to know in the
+	  abstract that even the visionaries behind new technologies
+	  often fail to see many of their uses. It's quite another to
+	  hear of Steve Jobs arguing with Scott Forstall against what
+	  is today a major use of a technology Jobs is credited with
+	  inventing. Can mnemonic essays be used to help people
+	  internalize such stories? To do so would likely violate the
+	  principle of atomicity, since good stories are rarely
+	  atomic. Nonetheless, the benefits of such stories seem well
+	  worth violating atomicity, if they can be encoded in the
+	  cards effectively.
+	  </li>
+	</ul>
+      </p>
+
+      <p>
+	It's easy to generate dozens more questions and ideas in a
+	similar vein. The mnemonic essay is not a fixed form, but
+	rather a platform for experimentation and continued
+	improvement.
+      </p>
+
+      <p>
+	One useful metaphor for thinking about how to improve mnemonic
+	essays is to think of each as a conventional essay accompanied
+	by a kind of &ldquo;reflected essay&rdquo; &ndash; the
+	knowledge encoded by all the cards. A user can, with ease,
+	choose to remember as much of that reflected essay as they
+	wish. Of course, that reflection will be imperfect. But by
+	developing good card-making strategies we can make the
+	reflected essay a faithful reflection of all the important
+	ideas, the ideas a reader would ideally like to retain.
+      </p>
+
+      <p>
+	Up to now we've described <em>Quantum Country</em> as a
+	spaced-repetition memory system. But while that's helpful as a
+	way to introduce <em>Quantum Country</em>, it's a mistake to
+	pigeonhole the mnemonic medium inside the paradigm of existing
+	SRM systems. Instead, it's better to go back to first
+	principles, and to ask questions like: what would
+	make <em>Quantum Country</em> a good memory system? Are there
+	other powerful principles we could build into the system,
+	apart from spaced repetition?
+      </p>
+
+      <p>
+	In fact, there are ideas about memory very different from
+	spaced repetition, but of comparable power. One such idea is
+	<em>elaborative encoding</em>. Roughly speaking, this is the
+	idea that the richer the associations we have to a concept,
+	the better we will remember it. As a consequence, we can
+	improve our memory by enriching that network of associations.
+      </p>
+
+      <p>
+	This is in some sense an obvious idea, according well with
+	everyday experience. For instance, it's part of the reason
+	it's so much easier to learn new facts in an area we're
+	already expert in &ndash; we quickly form associations to our
+	existing knowledge. But just because the idea is obvious, that
+	doesn't mean it's particularly well supported by existing
+	media forms. There's a lot of low-hanging fruit which we can
+	actively support inside the mnemonic medium. Indeed, several
+	of the suggestions above already implicitly build on the idea
+	of elaborative encoding &ndash; principles like &ldquo;avoid
+	orphan cards&rdquo; are based on this. Here's three more
+	suggestions which build on elaborative encoding:
+      </p>
+
+      <p>
+	<ul>
+	  <li><strong>Provide questions and answers in multiple
+	  forms:</strong> In 1971, the psychologist Allan Paivio
+	  proposed the dual-coding theory, namely, the assertion that
+	  verbal and non-verbal information are stored separately in
+	  long-term memory. Paivio and others observed the <em>picture
+	  superiority effect</em>, demonstrating that pictures and
+	  words together are often recalled substantially better than
+	  words alone. This suggests, for instance, that the question
+	  &ldquo;Who was George Washington’s vice president?&rdquo;
+	  may have a higher recall rate if accompanied by a picture of
+	  Washington, or if the answer (John Adams) is accompanied by
+	  a picture of Adams. For memory systems the dual-coding
+	  theory and picture superiority effect suggest many questions
+	  and ideas. How much benefit is there in presenting questions
+	  and answer in multiple forms? Not just in text, but with
+	  multiple pictures, in audio or video (perhaps with multiple
+	  speakers of different genders, different
+	  accents <em>etc</em>), in computer code? Perhaps in a form
+	  that demands some form of interaction? And in each case:
+	  what works best?
+	  </li>
+
+	  <li><strong>Vary the context:</strong> In 1978, the
+	  psychologists Steven Smith, Arthur Glenberg, and Robert
+	  Bjork*<span class="marginnote">* Steven M. Smith, Arthur
+	  Glenberg, and Robert
+	  A. Bjork, <a href="assets/Smith1978.pdf">Environmental
+	  context and human memory</a> (1978).</span> reported several
+	  experiments studying the effect of place on human memory. In
+	  one of their experiments, they found that studying material
+	  in two different places, instead of twice in the same place,
+	  provided a 40% improvement in later recall. This is part of
+	  a broader pattern of experiments showing that varying the
+	  context of review promotes memory. We can use memory systems
+	  to support things like: changing the location of review;
+	  changing the time of day; changing the background sound, or
+	  lack thereof. In each case, experiments have been done
+	  suggesting an impact on recall. It's not necessarily clear
+	  how robust the results are, or how reproducible &ndash; it's
+	  possible some (or all) are the results of other effects,
+	  uncontrolled in the original experiment. Still, it seems
+	  worth building systems to test and (if possible) improve on
+	  these results.
+	  </li>
+
+	  <lI><strong>How do the cards interact with one another? What
+	      is the ideal network structure of knowledge?</strong>
+	      This is a very complicated and somewhat subtle set of
+	      questions. Let's give a simple example to illustrate the
+	      idea. We've presented the cards in <em>Quantum
+	      Country</em> as standalone entities. But there are
+	      connections between the cards. Suppose you have cards:
+	      &ldquo;Who was George Washington’s Vice
+	      President?&rdquo; (Answer: &ldquo;John Adams&rdquo;,
+	      with a picture of Adams); &ldquo;What did John Adams
+	      look like?&rdquo; (Answer: a picture of Adams); perhaps
+	      a question with a sketch of Adams and Washington
+	      together at some key moment; and so on. Now, this set of
+	      cards forms a network of interrelated cards. And you can
+	      use a memory system like <em>Quantum Country</em> to
+	      study that network. What happens if you remove a card?
+	      Are there crucial lynchpin cards? Are there particularly
+	      effective network structures? Particularly effective
+	      types of relationship between cards? Crucially: are
+	      there general principles we can identify about finding
+	      the deepest, most powerful ways of representing
+	      knowledge in this system?
+	  </lI>
+	</ul>
+
+      <p>
+	By now it's obvious that the prototype mnemonic essay we've
+	developed is the tip of a much larger iceberg. What's more,
+	the suggestions we've made and questions we've asked are also
+	merely a beginning, to give you the flavor of what is
+	possible.
+      </p>
+
+      <h3>Two cheers for mnemonic techniques</h3>
+
+      <p>
+	When we discuss memory systems with people, many immediately
+	respond that we should look into mnemonic techniques. This is
+	an approach to memory systems very different to <em>Quantum
+	Country</em>, Duolingo, Anki, and the other systems we've
+	discussed.  You're perhaps familiar with simple mnemonic
+	techniques from school. One common form is tricks such as
+	remembering the colors of the rainbow as the name Roy G. Biv
+	(red, orange, yellow, green, <em>etc</em>). Or remembering
+	the periodic table of elements using
+	a <a href="https://www.youtube.com/watch?v=VgVQKCcfwnU">song</a>.
+      </p>
+
+      <p>
+	A more complex variation is visualization techniques such as
+	the <em>method of loci</em>. Suppose you want to remember your
+	shopping list. To do so using the method of loci, you
+	visualize yourself in some familiar location &ndash; say, your
+	childhood home. And then you visualize yourself walking from
+	room to room, placing an item from your shopping list
+	prominently in each room. When you go shopping, you can recall
+	the list by imagining yourself walking through the house
+	&ndash; your so-called <em>memory palace</em> &ndash; and
+	looking at the items in each room.
+      </p>
+
+      <p>
+	If you've never used memory palaces this sounds like it
+	couldn't possibly work. But even novices are often shocked by
+	how well such techniques work, with just a small amount of
+	practice. Experts who work hard developing these techniques
+	can do remarkable things, like memorizing the order of a
+	shuffled deck of cards, or lists of hundreds of digits. It's a
+	way of using people's immensely powerful visual and spatial
+	memories as a form of leverage for other types of
+	memory*<span class="marginnote">* A small minority of the
+	population does not possess a mind's eye, and so cannot
+	mentally visualize. This condition is known
+	as <a href="https://en.wikipedia.org/wiki/Aphantasia">aphantasia</a>. One
+	of us <a href="XXX">asked on Twitter</a> if any aphantasics
+	had tried using the method of loci, and how it worked for
+	them. The replies were remarkably heterogeneous (and
+	striking), but most said such mnemonic techniques did not work
+	for them. This deserves further study.</span>.
+      </p>
+
+      <p>
+	Given all this, mnemonic techniques seem promising as an
+	approach to memory systems. It's not surprising that we often
+	meet people who tell us they are much more promising than
+	ideas such as spaced repetition.
+      </p>
+
+      <p>
+	We're enthusiastic about such mnemonic techniques too. But
+	it's important to understand their limitations, and not be
+	bedazzled by the impressiveness of someone who can rapidly
+	memorize a deck of cards.
+      </p>
+
+      <p>
+	One caution concerns the range of what can be memorized using
+	mnemonic techniques. In practice they're often quite
+	specialized. Mnemonic experts will, for instance, use somewhat
+	different approaches to memorize lists of digits versus decks
+	of cards. Those approaches must be mastered separately &ndash;
+	a heavy time investment for two rather narrow kinds of
+	memory. Furthermore, the mnemonic techniques tend to be much
+	better suited for concrete objects than abstract conceptual
+	knowledge &ndash; it's difficult to store, say, the main
+	points in the Treaty of Versailles in your memory palace. This
+	doesn't mean it can't be done &ndash; mnemonic experts have
+	developed clever techniques for converting abstract conceptual
+	knowledge into concrete objects which can be stored in a
+	memory palace. But, in general, an advantage of spaced
+	repetition is that it works across a far broader range of
+	knowledge than do any of the mnemonic techniques.
+      </p>
+
+      <p>
+	A second caution relates to elaborative encoding. The mnemonic
+	techniques are, as you have likely realized, an example of
+	elaborative encoding in action, connecting the things we want
+	to memorize (say, our shopping list) to something which
+	already has meaning for us (say, our memory palace). By
+	contrast, when an expert learns new information in their
+	field, they don't make up artificial connections to their
+	memory palace. Instead, they find meaningful connections to
+	what they already know. Those connections are themselves
+	useful expertise; they're building out a dense network of
+	understanding. It's a much deeper and more desirable kind of
+	expertise, connections native to the subject itself, not
+	artificially constructed mnemonics.
+      </p>
+
+      <p>
+	All this makes us seem negative about mnemonic techniques. In
+	fact, we're enthusiastic about them, and have if anything
+	underused them in the mnemonic medium. What we've written here
+	is merely meant to temper the over-enthusiasm we sometimes
+	encounter. We've had people tell us that mnemonics make memory
+	a solved problem. That is simply false. But with their
+	limitations understood, they're a powerful tool. This is
+	particularly true for knowledge which has an arbitrary, <em>ad
+	hoc</em> structure. For example, it's difficult to remember
+	the colors of the rainbow because those colors are not
+	obviously connected to anything else, unless you happen to
+	have
+	the <a href="https://en.wikipedia.org/wiki/Visible_spectrum">spectrum
+	of visible light</a> memorized for other reasons! That makes a
+	mnemonic like Roy G. Biv extremely helpful. And so mnemonic
+	techniques should be thought of as a useful tool to use in
+	building powerful memory systems, especially when combined
+	with ideas such as spaced repetition.
+      </p>
+
+      <h3>How important is memory, anyway?</h3>
+
+      <p>
+	People tend to fall into two buckets when told of the mnemonic
+	medium. One group is fascinated by the idea, and wants to try
+	it out. The second group is skeptical or even repulsed. In
+	caricature, they say: &ldquo;Why should I care about memory? I
+	want deeper kinds of understanding! Can't I just look stuff up
+	on the internet? I want creativity! I want conceptual
+	understanding! I want to know how to solve important problems!
+	Only dull, detail-obsessed grinds focus on rote memory!&rdquo;
+      </p>
+
+      <p>
+	It's worth thinking hard about such objections. To develop the
+	best possible tools for thought we need to understand and
+	address the underlying concerns. In part, this means digging
+	down far enough to reject the mistaken or superficial parts of
+	these concerns. It also means distilling as sharply as
+	possible the truth in the concerns. Doing both will help us
+	improve and go beyond the mnemonic medium.
+      </p>
+
+      <p>
+	One response to such objections is the argument from lived
+	experience. In the past, one of us (MN) has often helped
+	students learn technical subjects such as quantum
+	mechanics. He noticed that people often think they're getting
+	stuck on esoteric, complex issues. But, as suggested in the
+	introduction to this essay, often what's really going on is
+	that they're having a hard time with basic notation and
+	terminology. It's difficult to understand quantum mechanics
+	when you're unclear about every third word or piece of
+	notation. Every sentence is a struggle.
+      </p>
+
+      <p>
+	It's like they're trying to compose a beautiful sonnet in
+	French, but only know 200 words of French. They're frustrated
+	and think the trouble is the difficulty of finding a good
+	theme, striking sentiments and images, and so on. But really
+	the issue is that they have only 200 words with which to
+	compose.
+      </p>
+
+      <p>
+	At the time, MN's somewhat self-satisfied belief was that if
+	people only focused more on remembering the basics, and
+	worried less about the &ldquo;difficult&rdquo; high-level
+	issues, they'd find the high-level issues took care of
+	themselves.  What he didn't realize is that this also applied
+	to him. When he began using the memory system Anki to read
+	papers in new fields, he found it almost unsettling how much
+	easier Anki made learning the basics of such subjects. And it
+	made him start wondering if memory was often a binding
+	constraint in learning new fields*<span class="marginnote">*
+	See <a href="http://augmentingcognition.com/ltm.html">here</a>
+	and <a href="http://cognitivemedium.com/srs-mathematics">here</a>
+	for more on learning new fields using Anki. The last four
+	paragraphs are adapted from
+	MN's <a href="http://augmentingcognition.com/ltm.html">Augmenting
+	Long-term Memory</a> (2018).</span>.
+      </p>
+
+      <p>
+	One particularly common negative response to the mnemonic
+	medium is that people don't want to remember
+	&ldquo;unimportant details&rdquo;, and are just looking for
+	&ldquo;a broad, conceptual understanding&rdquo;. It's
+	difficult to know what to make of this argument. Bluntly, it
+	seems likely that such people are fooling themselves,
+	confusing a sense of enjoyment with any sort of durable
+	understanding.
+      </p>
+
+      <p>
+	Imagine meeting a person who told you they &ldquo;had a broad
+	conceptual understanding&rdquo; of how to speak French, but it
+	turned out they didn’t know the meaning of
+	&ldquo;bonjour&rdquo;, &ldquo;au revoir&rdquo;, or &ldquo;tres
+	bien&rdquo;. You'd think their claim to have a broad
+	conceptual understanding of French was hilarious. If you want
+	to understand a subject in any real sense you need to know the
+	details of the fundamentals. What's more, that means not just
+	knowing them immediately after reading. It means internalizing
+	them for the long term*<span class="marginnote">* The last two
+	paragraphs are adapted from our mnemonic
+	essay <a href="https://quantum.country/teleportation">How
+	quantum teleportation works</a>.</span>.
+      </p>
+
+      <p>
+	A better model is that conceptual mastery is actually enabled
+	by a mastery of details. One user of &ldquo;Quantum
+	Country&rdquo; told us that she found the experience of
+	reading unexpectedly relaxing, because she &ldquo;no longer
+	had to worry&rdquo; about whether she would remember the
+	content. She simply trusted that the medium itself would
+	ensure that she did. And she reported that she was instead
+	able to spend more of her time on conceptual issues.
+      </p>
+
+      <p>
+	When people respond to the mnemonic medium with &ldquo;why do
+	you focus on all that boring memory stuff?&rdquo;, they are
+	missing the point. By largely automating away the problem of
+	memory, the mnemonic medium makes it easier for people to
+	focus more on other important parts of learning, such as
+	conceptual issues. While memory isn't the only barrier to
+	learning, having the problem automated away really does making
+	learning easier.
+      </p>
+
+      <p>
+	Of course, an immense amount of research has been done on
+	memory, and different facets of its relationship to
+	mastery. Much of this research is detailed and context
+	specific. But at the level of broader conclusions, one
+	especially interesting series of studies was done in the 1970s
+	by Herbert Simon and his collaborators. They studied chess
+	players, and discovered*<span class="marginnote">* See, e.g.,
+	William G. Chase and Herbert
+	A. Simon, <a href="assets/Chase197s.pdf">Perception in
+	Chess</a> (1973). Some fascinating earlier work in a related
+	vein was done by Adrian D. de Groot, and summarized in his
+	book <em>Thought and Choice in Chess</em> (1965).</span> that
+	when master chess players look at a position in chess they
+	don't see it in terms of the individual pieces, a rook here, a
+	pawn there. Instead, over years of playing and analyzing games
+	they learn to recognize somewhere between 25,000 and 100,000
+	patterns of chess pieces. These much more elaborate
+	&ldquo;chunks&rdquo; are combinations of pieces that they
+	perceive as a unity, and are able to reason about at a higher
+	level of abstraction than the individual pieces. At least in
+	part it's the ability to recognize and reason about these
+	chunks which made their gameplay so much better than
+	novices. Furthermore, although Simon did this work in the
+	context of chess, subsequent studies have found
+	<a href="https://en.wikipedia.org/wiki/Chunking_(psychology)">similar
+	  results</a> in other areas of
+	  expertise*<span class="marginnote">* MN has met many
+	  mathematicians and physicists who say that one reason they
+	  went into mathematics or physics is because they hated the
+	  rote memorization common in many subjects, and preferred
+	  subjects where it is possible to derive everything from
+	  scratch. But in conversation it quickly becomes evident that
+	  they have memorized an enormous number of concepts,
+	  connections, and facts in their discipline. It's fascinating
+	  these people are so blind to the central role memory plays
+	  in their own thinking.</span>. It seems plausible, though
+	  needs further study, that the mnemonic medium can help speed
+	  up the acquisition of such chunks, and so the acquisition of
+	  mastery.
+      </p>
+
+      <p>
+	So, does all this mean we're fans of rote memory, the kind of
+	forced memorization common schools?
+      </p>
+
+      <p>
+	Of course not. What we do believe is that many people's
+	dislike of rote memorization has led them to a dislike of
+	memory, and consequently to underrate the role it plays in
+	cognition. Memory is, in fact, a central part of
+	cognition. But the right response to this is not immense
+	amounts of dreary rote memorization. Rather, it's to use good
+	tools and good judgment to memorize what truly matters.
+      </p>
+
+      <p>
+	We've identified some ways in which criticisms of memory
+	systems are mistaken or miss the point. But what about the
+	ways in which those criticisms are insightful? What are the
+	shortcomings of memory systems? And in what ways should we be
+	wary of them?
+      </p>
+
+      <p>
+	We've already implicitly mentioned a few points in this
+	vein. Think about problems like the need to avoid orphan
+	questions. Or to make sure that users don't merely learn
+	surface features. These identify ways in which memory systems
+	can fail, if used poorly. Here's a few more key concerns about
+	memory systems:
+      </p>
+
+      <p>
+	<ul>
+	  <li><strong>Memory systems don't make it easy to decide what
+	      to memorize:</strong> Most obviously, we meet a lot of
+	      people who use memory systems for poorly chosen
+	      purposes. The following is surprisingly close to a
+	    transcript of a conversation we've had multiple times:
+	    <blockquote>
+	      &ldquo;I don’t like [memory system]. I tried to memorize
+	      the countries in Africa, and it was boring.&rdquo;<br>
+	      &ldquo;Why were you trying to remember the countries in
+	      Africa?&rdquo;<br>
+	      [blank look of confusion.]
+	    </blockquote>
+	    It's easy to poke fun at this kind of thing. But we've
+	    both done the equivalent. Even some users of <em>Quantum
+	    Country</em> seem to be going through the motions out of
+	    some misplaced sense of duty. Even more sophisticated
+	    users can make errors. There is a basic question that is
+	    hard to answer: what will be beneficial for us to
+	    memorize? Answering that question well is not trivial.
+	  </li>
+
+	  <li><strong>What's the real impact of the mnemonic essay on
+	      people's cognition? How does it change people's
+	      behavior?</strong> A famous boxer is supposed to have
+	      said that everyone has a plan until they get punched in
+	      the face. Regular users of memory systems sometimes
+	      report that while they can remembers answers when being
+	      tested by their system, that doesn't mean they can
+	      recall them when they really need them. There can be a
+	      tip-of-the-tongue feeling of &ldquo;Oh, I know
+	      this&rdquo;, but not actual recall, much less the fluent
+	      facility one ultimately wants in effective
+	      action. Furthermore, the user may not even recognize
+	      opportunities to use what they have learned. More
+	      broadly: memory is not a goal in itself. It's embedded
+	      in a larger context: things like creative
+	      problem-solving, problem-finding, and all the many ways
+	      there are of taking action in the world. We suspect the
+	      impact of memory systems will vary a lot, depending on
+	      their design. They may be used as crutches for people to
+	      lean on. Or they may be used to greatly enable people to
+	      develop other parts of their cognition. We don't yet
+	      understand very well how to ensure they're enablers,
+	      rather than permanent crutches. But later in the essay
+	      we'll describe some other tools for thought that, when
+	      integrated with memory systems, may better enable this
+	      transition to more effective action.
+	  </li>
+
+	</ul>
+      </p>
+      
+      
+      <h3>How to invent Arabic numerals?</h3>
+
+      <p>
+	Let's briefly get away from memory systems. Imagine you're a
+	designer living in ancient Rome, working for MDC (Mathematical
+	Designs Corporation). A client comes in one day, expressing a
+	desire to improve on Roman numerals. Of course, that's not
+	likely to be literally how they describe their problem to you
+	&ndash; more likely it's a tax collector wanting to tabulate
+	taxes more efficiently, and having some vague notion that MDC
+	may be able to help. But to you, an experienced designer, it
+	seems that an improved system of numerals may be what they
+	need.
+      </p>
+
+      <p>
+	How should you respond to this request? From our modern
+	vantage point we know a vastly better system of numerals is
+	possible, the Arabic numerals. Arabic numerals were, in fact,
+	one of the great leaps in the history of tools for
+	thought. Could you, as a designer, have made that leap? What
+	creative steps would be needed to invent Arabic numerals? Is
+	there a creative practice in which such steps would be likely
+	to occur?
+      </p>
+
+      <p>
+	Of course, we can't know the answers to these questions for
+	sure. But it's worth pointing out that the invention of Arabic
+	numerals wasn't just an extraordinary piece of design. It was
+	also an extraordinary mathematical insight. Furthermore, the
+	design and the mathematical insight are inextricably
+	entangled: the mathematical insight is, in some sense, a
+	design insight, and vice versa.
+      </p>
+
+      <p>
+	Indeed, any person who could invent Arabic numerals would be
+	both one of the great mathematical geniuses who ever lived,
+	and one of the great design geniuses who ever lived. They'd
+	have to be extraordinarily capable in both domains, capable of
+	an insight-through-making loop which used the evolving system
+	to improve not just their own mathematical ideas, but in fact
+	to have original, world-class insights into mathematics; and
+	to use those mathematical insights to improve their evolving
+	system.
+w      </p>
+
+      <p>
+	This is all somewhat sobering if we compare to conventional
+	modern design practice. In a typical practice, you'd interview
+	domain experts (in this case, mathematicians), and read any
+	relevant literature. You'd talk to users of existing systems,
+	and analyze serious behavior, both individually and at
+	scale. In short, you'd do what people in the design community
+	refer to as immersing themselves in the target field.
+      </p>
+
+      <p>
+	This is a powerful practice. At its best it causes systems to
+	come into existence which would otherwise be inconceivable. If
+	applied to Roman numerals (in hypothetical ancient Rome, not
+	today!) this practice would almost certainly improve them a
+	great deal. But it would not provide anywhere near the level
+	of mathematical insight needed to arrive at Arabic numerals.
+      </p>
+
+      <p>
+	Our story about Arabic numerals and mathematics is
+	fanciful. But it expresses a general truth: <em>the most
+	powerful tools for thought express deep insights into the
+	underlying subject matter.</em>  In the case of memory
+	systems, this means they won't just be &ldquo;applied
+	cognitive science&rdquo;, a collage of existing ideas from
+	cognitive science pasted together using modern design
+	practice. Rather, they will express deep original insights
+	into cognitive science, insights no-one else in the world has
+	ever had. A really great memory system will be cognitive
+	science of the highest order.
+      </p>
+
+      <p>
+	So, what does this all mean?
+      </p>
+
+      <p>
+	We take away a warning and an aspiration.
+      </p>
+
+      <p>
+	The warning is this: conventional tech industry product
+	practice will not produce deep enough subject matter insights
+	to create transformative tools for thought. Indeed, that's
+	part of the reason there's been so little progress from the
+	tech industry on tools for thought. This sounds like a knock
+	on conventional product practice, but it's not. That practice
+	has been astoundingly successful at its purpose: creating
+	great businesses. But it's also what Alan Kay has dubbed a pop
+	culture, not a research culture. To build transformative tools
+	for thought we need to go beyond that pop culture.
+      </p>
+
+      <p>
+	The aspiration is for any team serious about making
+	transformative tools for thought. It's to create a culture
+	that combines the best parts of modern product practice with
+	the best parts of the (very different) modern research
+	culture. You need the insight-through-making loop to operate,
+	whereby deep, original insights about the subject feed back to
+	change the system, and changes to the system result in deep,
+	original insights about the subject.
+      </p>
+
+      <p>
+	Doing all this means reinventing some parts of conventional
+	product practice. It means new norms and a new type of person
+	involved in key decision-making. We're not there yet
+	with <em>Quantum Country</em> &ndash; it's not yet generating
+	nearly deep enough ideas about memory and cognition. But
+	that's the aspiration, and what we believe is necessary for
+	truly transformative tools for
+	thought*<span class="marginnote">* This is difficult to write
+	about because much of Silicon Valley doesn't understand
+	research culture, and it's common to meet people who look down
+	on research culture. They've heard the complaints of academics
+	and ex-grad students, and think &ldquo;I could do better than
+	that&rdquo;. Maybe they could do better than the median, but
+	progress is driven by the right tail, and in many fields of
+	research that tail is mindbogglingly good; reading Richard
+	Hamming and Richard Feynman's memoirs a few times won't get
+	you into that tail.</span>.
+      </p>
+	
+      <h2>Part II: Exploring tools for thought</h2>
+
+      <p>
+	We've now examined the mnemonic medium in some depth. The
+	intent was to give you a snapshot of the development of a
+	specific tool for thought, and of some of the thinking enabled
+	by that development. In this second part of the essay we will
+	explore more broadly. We'll briefly sketch out ideas for
+	several other tools for thought. And we'll answer some broader
+	questions, especially around why there hasn't been more work
+	on tools for thought.
+      </p>
+
+      <h3>Mnemonic video</h3>
+
+      <p>
+	In 2014, the digital artist Eric Wernquist released an
+	extraordinary short video entitled
+	&ldquo;<a href="https://vimeo.com/108650530">Wanderers</a>&rdquo;. The
+	video provides a first-person glimpse of what it would be like
+	to explore the Solar System:
+      </p>
+
+      <iframe src="https://player.vimeo.com/video/108650530?color=ffffff&title=0&byline=0&portrait=0&badge=0"
+      width="640" height="272" frameborder="0" allow="autoplay;
+      fullscreen" allowfullscreen></iframe>
+
+      <p>
+	We hear the narrator's (Carl Sagan) wonder and awe, and cannot
+	help but empathize with his deep belief in the value of
+	exploration. We get a sense of how many mysteries and how much
+	beauty there is in our own cosmic neighborhood. The music
+	begins with a wistful nostalgia for those of our ancestors who
+	dared to explore, and then changes to convey excitement and
+	danger and the boldness of those members of our and future
+	generations who continue that exploration.
+      </p>
+
+      <p>
+	It's interesting to contrast the video to the video's script,
+	a short text by Carl
+	Sagan. The <a href="http://mentalfloss.com/article/60335/wanderers-glimpse-humanitys-possible-future">text</a>
+	is beautiful, but reading it is a much more remote and
+	cerebral experience. It conveys a much less visceral emotional
+	understanding.
+      </p>
+
+      <p>
+	We have a friend, Grant Sanderson, who makes astonishing
+	mathematics videos on his YouTube
+	channel, <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a>. Below
+	is one of our favorites, a video sketching a proof of a
+	relatively recent research result in geometry, using ideas
+	from algebraic topology. This sounds fearsome, but the video
+	is beautiful and accessible, and has been viewed more than 1.2
+	million times.
+      </p>
+
+      <center>
+	<iframe width="600" height="338" src="https://www.youtube.com/embed/AmgkSdhK4K8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </center>
+
+
+      <p>
+	As with <em>Wanderers</em>, watching this video is a
+	remarkable emotional experience. It's obvious the person
+	narrating the video loves mathematics, and you cannot help but
+	empathize. As you watch, you experience repeated moments of
+	&ldquo;Ahah!&rdquo;, moments of surprising insight, as
+	connections that were formerly invisible become obvious. It
+	shows mathematics as something beautiful, containing
+	extraordinary insights and intriguing mysteries, while at the
+	same time showing that mathematics is not itself mysterious,
+	that it is something anyone can understand and even do.
+      </p>
+
+      <p>
+	It's tempting to overlook or undervalue this kind of emotional
+	connection to a subject. But it's the foundation of all
+	effective learning and of all effective action. And it is much
+	easier to create such an emotional connection using video than
+	using text.
+      </p>
+
+      <p>
+	There's a flipside to this emotional connection,
+	however. We've often heard people describe Sanderson's videos
+	as about &ldquo;teaching mathematics&rdquo;. But in
+	conversation he's told us he doesn't think more than a tiny
+	fraction of viewers are taking away much detailed
+	understanding of mathematics. We suspect this is generally
+	true, that high affect videos usually do little to change
+	people's detailed intellectual understanding. This <em>does
+	not</em> mean they're not high value. But it does mean the
+	value lies in the emotional connection they create.
+      </p>
+
+      <p>
+	Is it possible to create a medium which blends the best
+	qualities of both video and text?
+      </p>
+
+      <p>
+	In particular, is it possible to create a medium which has the
+	extraordinary emotional range possible in video &ndash; a
+	range which can be used to convey awe and mystery and surprise
+	and beauty? But which can also firmly ground that emotional
+	connection in detailed understanding, the mastery of details
+	which is the raison d’etre of both conventional text and,
+	perhaps even more, of the mnemonic essay form?
+      </p>
+
+      <p>
+	We believe this may be possible, and we hope to create a
+	<em>mnemonic video</em> form that provides both the emotional
+	connection possible through video, and the mastery of details
+	possible through the mnemonic essay.
+      </p>
+
+      <p>
+	Creating such a form is challenging. Many MOOC platforms have
+	attempted something in this vein, typically achieving neither
+	a compelling emotional experience, nor a mastery of
+	intellectual details. The typical approach is to have a
+	low-affect talking head video, with the videos interrupted
+	occasionally for brief quizzes. Here's how it works on one
+	MOOC platform, EdX:
+      </p>
+
+      <p>
+	<strong>XXX: Diagram: head shot of lecturer => questions => head shot => questions => ...</strong>
+      </p>
+
+      <p>
+	Other MOOCs differ in the details. But the overall emotional
+	experience may be summed up as:
+      </p>
+
+      <p>
+	<strong>XXX: Diagram, a graph showing affect over time, and how it changes - moderate affect, some empathy with the teacher; sharp transition / emotional discontinuity; very low affect text-based questions; sharp transition;
+	</strong>
+      </p>
+
+      <p>
+	The emotional experience is disjointed, almost repellent. It
+	gives up the emotional range and connection of the best
+	video. Is it possible to create an integrated medium, with a
+	unified and carefully crafted emotional and intellectual
+	experience? Ideally, is it possible to create something like
+	the following?
+      </p>
+
+      <p>
+	<strong>XXX: high affect, soft, almost invisible, transitions
+	  to moderate-affect detailed questions
+	</strong>
+      </p>
+
+      <p>
+	Here's a short sketch of one possible approach to doing
+	this. In this approach, instead of the questions being
+	separate, as in MOOCs and the mnemonic essay, the narrator
+	would instead ask the questions aloud as an integrated part of
+	the overall narration:
+      </p>
+
+      <p>
+	<strong>XXX: Sketch</strong>
+      </p>
+
+      <p>
+	In MOOCs, questions are often presented in a very dry form,
+	detached from context. In the mnemonic video the narrator
+	would explain why the questions are important, and why it's
+	important that the user participate, as a seamless part of the
+	overall narration. Done right &ndash; perhaps with appropriate
+	music, and sense of urgency or fun in the narration &ndash; it
+	may be possible to create some real sense of stakes. At the
+	same time, the video player can be modified so the user can
+	respond directly to questions, as part of the
+	spaced-repetition experience. The result would be much softer
+	transitions between the high-affect core narration and the
+	moderate-affect questions:
+      </p>
+
+      <p>
+	<strong>XXX: Sketch</strong>
+      </p>
+
+      <p>
+	It seems likely that the rhythm of mnemonic videos would be
+	quite different to. In particularly, the frequency and density
+	of questions would be lower than in the mnemonic essay, and it
+	would be necessary to test different beats and cadences to
+	ensure a good balance of emotional and intellectual
+	experience. Even high-affect video typically has quieter
+	moments; it achieves the high affect in part by contrast to
+	the lower-intensity moments. (Think about the way a good
+	action movie or thriller needs lulls.) We could design so that
+	the questions actually help fill this emotional beat. It is,
+	in short, about really taking seriously the questions as part
+	of the overall emotional experience of the mnemonic video
+	medium.
+      </p>
+
+      <p>
+	Of course, this is merely a quick sketch of one approach to
+	design. It’s a promising direction, but would need
+	considerable development and intense testing. In particular,
+	we need to do detailed, second-by-second user experience
+	testing, to understand and shape users’ emotional and
+	intellectual experience. That would continue until we were
+	confident that our target users were having the desired
+	experience.  Ideally, we’d also generate several more very
+	different designs, and try to understand how each approach
+	would impact the user’s emotional and intellectual experience.
+      </p>
+
+      <p>
+	Why does having an emotional connection matter so much? It’s
+	tempting to ignore the quality of the emotional connection, to
+	focus merely on new skills acquired, on what the user
+	“learns”. But in fact emotional connection is a high-order
+	bit. Do users feel disinterested? Afraid? Hostile? Anxious? Or
+	do they internalize a sense of excitement, of beauty, perhaps
+	even an expansion in their own goals, an expansion of their
+	self?
+      </p>
+
+      <p>
+	At the same time a positive emotional experience alone is not
+	enough. To attain enduring power, the user must experience a
+	growth in detailed mastery. That’s also essential to true
+	growth, an expansion in one’s ability to act. That’s the
+	opportunity in a mnemonic video form. To paraphrase Einstein,
+	attaining a detailed understanding without forming an
+	emotional connection is lame; while forming an emotional
+	connection without detailed understanding has no enduring
+	power.
+      </p>
+
+      <h3>Why isn't there more work on tools for thought today?</h3>
+
+      <p>
+	If tools for thought are so great, why isn't more work being
+	done on them? Why aren't they a major industry?
+      </p>
+
+      <p>
+	As noted in the introduction, there's certainly a lot of lip
+	service paid. It is, for instance, common to hear
+	technologists allude to Steve Jobs's metaphor as computers as
+	&ldquo;bicycles for the mind&rdquo;. But in practice it's
+	rarely more than lip service. Many pioneers of computing have
+	been deeply disappointed in the limited use of computers as
+	tools to improve human cognition. Douglas
+	Engelbart <a href="http://dougengelbart.org/content/view/348/000/">disparaged</a>
+	the &ldquo;dangerous, disappointing, narrow, path that we seem
+	to be stuck with following&rdquo;. When asked in 2006 how much
+	of his vision had been achieved, Engelbart replied
+	facetiously <a href="https://www.smithsonianmag.com/innovation/douglas-engelbart-invented-future-180967498/">&ldquo;about
+	2.8 percent&rdquo;</a>. Alan Kay gives talks
+	asserting <a href="http://www.vpri.org/pdf/m2007007a_revolution.pdf">&ldquo;The
+	real computer revolution hasn't happened yet&rdquo;</a> and in
+	<a href="https://www.fastcompany.com/40435064/what-alan-kay-thinks-about-the-iphone-and-technology-now">an
+	interview</a> has described the modern web as
+	&ldquo;reinventing the flat tire&hellip; at least give us what
+	Engelbart did, for Christ's sake.&rdquo;
+      </p>
+
+      <p>
+	Our experience is that many of today's technology leaders
+	genuinely venerate Engelbart, Kay, and their colleagues. Many
+	even feel that computers have huge potential as tools for
+	improving human thinking. But they don't see how to build good
+	businesses around developing new tools for thought. And
+	without such business opportunities, work languishes.
+      </p>
+
+      <p>
+	What makes it difficult to build companies that develop tools
+	for thought? To answer this, consider Adobe, one of the few
+	large companies serious about developing new tools for
+	thought*<span class="marginnote">* Another large company which
+	takes tools for thought extremely seriously is AutoDesk. A
+	similar story could be told about it.</span>. It's poured
+	money into developing new mediums*<span class="marginnote">*
+	The plural of medium is, of course, media. However, in this
+	context media would usually mean many pieces of new
+	content. That's not what we mean: we mean multiple different
+	new mediums
+	(<em>Illustrator</em>, <em>Photoshop</em> <em>etc</em>). We'll
+	reserve the unusual pluralization for this somewhat unusual
+	meaning.</span> for designers and artists &ndash; programs
+	such as <em>Illustrator</em>, <em>Photoshop</em>, and so
+	on. These new mediums are remarkable tools for thought.
+      </p>
+
+      <p>
+	Unfortunately for Adobe, such mediums are extremely expensive
+	to develop, and it's difficult to prevent other companies from
+	cheaply copying the ideas or developing
+	near-equivalents. Consider, for example, the way the
+	program <em>Sketch</em> has eaten into Adobe's market share,
+	after duplicating many of the best features of
+	Adobe <em>Illustrator</em>. And consider the
+	way <em>Figma</em> is now eating into both <em>Sketch</em>
+	and <em>Illustrator</em>'s market share. Both <em>Sketch</em>
+	and <em>Figma</em> have done this without needing to make an
+	enormous investment in research. That's a big advantage they
+	have over Adobe.
+      </p>
+
+      <p>
+	As Marc Andreessen has observed*<span class="marginnote">* In
+	  Elad Gil's &ldquo;High Growth Handbook&rdquo;
+	  (2018).</span>:
+      </p>
+
+      <blockquote>
+	true defensibility purely at the product level is really rare
+	in [Silicon] Valley, because there are a lot of really good
+	engineers&hellip; And then there's the issue of
+	leap-frogging. The next team has the opportunity to learn from
+	what you did and then build something better.
+      </blockquote>
+
+      <p>
+	Put another way, many tools for thought are public goods. They
+	often cost a lot to develop initially, but it's easy for
+	others to duplicate and improve on them. While such
+	duplication and improvement is good for our society as a
+	whole, it's bad for the companies that make the initial
+	investment. And so such tools for thought suffered the fate of
+	many public goods: our society collectively underinvests in
+	them, relative to the benefits they
+	provide*<span class="marginnote">* Of course, it does cost
+	money for <em>Figma</em> to duplicate features originating in
+	in <em>Illustrator</em>, and they have introduced some
+	improvements. So our characterization as a public good is only
+	approximate. </span>.
+      </p>
+
+      <p>
+	Earlier, we argued that modern design practice generally isn't
+	up to the challenge of producing genuinely transformative
+	tools for thought. On the surface, that process-level argument
+	appears very different to the public goods argument we just
+	made. In fact, the process-level explanation is actually a
+	consequence of the public goods explanation: companies don't
+	use the right processes because there's little value to them
+	in doing so. It's interesting to contrast with &ndash;harder
+	tech&rdquo; industries &ndash; say, chip design &ndash; where
+	companies have much more incentive to do deep research
+	work. In those industries it's relatively harder for other
+	companies to duplicate or capture the value of that research.
+      </p>
+
+      <p>
+	It's illuminating to contrast with video games. Game companies
+	develop many genuinely new interface ideas. This perhaps seems
+	surprising, since you'd expect those interface ideas to also
+	suffer from the public goods problem. After all, game
+	designers need to invest enormous effort to develop those new
+	interface ideas. And those ideas often are immediately copied
+	(and improved on) by other companies, at little cost. In that
+	sense, they are public goods, and enrich the entire video game
+	ecosystem.
+      </p>
+
+      <p>
+	But there's a big difference between video game companies and
+	companies such as Adobe. Many video game companies make most
+	of their money from the first few months of sales. While other
+	companies can (and do) come in and copy or riff on any new
+	ideas, it often does little to affect revenue from the
+	original game, which has already made most of its
+	money*<span class="marginnote">* In fact, cloning is a real
+	issue in gaming, especially in very technically simple
+	games. An example is the game <em>Threes</em>, which took the
+	developers more than a year to make. Much of that time was
+	spent developing beautiful new interface ideas. The resulting
+	game was so simple that clones and near-clones began appearing
+	within days. One near clone, a game called <em>2048</em>,
+	sparked a mini-craze, and became far more successful
+	than <em>Threes</em>. At the other extreme, some game
+	companies prolong the revenue-generating lifetime of their
+	games with re-releases, long-lived online versions, and so
+	on. This is particularly common for capital-intensive AAA
+	games, such as the <em>Grand Theft Auto</em> series. In such
+	cases the business model relies less on clever new ideas, and
+	more on improve artwork (for re-release), network effects
+	  (online versions), and branding.
+	</span>. While this copying is no doubt irritating for the
+	companies being copied, it's still worth it to make the
+	up-front investment.
+      </p>
+
+      <p>
+	In gaming, clever new interface ideas can be distinguishing
+	features which become a game's primary advantage in the
+	marketplace. This is true of many classic video games, ranging
+	from <em>Space Invaders</em> to <em>Wolfenstein 3D</em>
+	to <em>Braid</em> to <em>Monument Valley</em>. Rather than
+	underinvesting, it makes sense for companies to make sizeable
+	investments in developing really good new interface ideas,
+	even though they will become public goods. The result is that
+	the video game industry sees much more innovative work on
+	interfaces, solving the public goods problems.
+      </p>
+
+      <p>
+	By contrast, a company like Adobe builds their business around
+	distribution and long-term lock in. They convince people
+	&ndash; indeed, entire organizations &ndash; to make long-term
+	commitments to their products. Schools offer classes so people
+	can call themselves &ldquo;<em>Photoshop</em>
+	experts&rdquo;. Companies designate their design departments
+	as &ldquo;Adobe shops&rdquo;. So while Adobe does invest in
+	developing clever new interface ideas (for them, this means
+	tools for thought), it's less central to their competitive
+	advantage, and they invest less than they would if it was
+	their central advantage. And Adobe does perhaps are much or
+	more work developing tools for thought as any company.
+      </p>
+
+      <p>
+	It's encouraging that the video game industry can solve the
+	public goods problem, even if only partially. Is there a
+	solution for tools for thought? Unfortunately, the
+	novelty-based short-term revenue approach of the game industry
+	doesn't work. You want people to really master the best new
+	tools for thought, developing virtuoso skill, not spend a few
+	dozens hours (as with most games) getting pretty good, and
+	then moving onto something new.
+      </p>
+
+      <p>
+	Another plausible solution to the public goods problem is
+	patents, granting a temporary monopoly over use of an
+	invention. Many software companies, including Adobe, develop a
+	large patent portfolio. However, a closer look suggests the
+	current patent solution for this problem. In 2017, Dana Rao,
+	Adobe's Vice President for Intellectual Property and
+	Litigation, posted
+	a <a href="https://morningconsult.com/opinions/improving-patents-will-not-kill-innovation/">call</a>
+	for major reforms to the patent system, stating that:
+      </p>
+
+      <blockquote>
+	[the patent] system is broken&hellip; What happened? A patent
+	gold rush built by patent profiteers… Their value lies not in
+	the innovation behind the patent but in the vagueness of the
+	patent’s claims and the ability to enforce it in a
+	plaintiff-friendly forum… Where did the material for these bad
+	patents come from? The advent of software… This led to
+	idea-only patents being granted with broad and often invalid
+	claims, and eager patent profiteers were only too glad to take
+	advantage.
+      </blockquote>
+
+      <p>
+	Adobe shares in common with many other software companies that
+	much of their patenting is defensive: they patent ideas so
+	patent trolls cannot sue them for similar ideas. The situation
+	is almost exactly the reverse of what you'd like. Innovative
+	companies can easily be attacked by patent trolls who have
+	made broad and vague claims in a huge portfolio of patents,
+	none of which they've ever implemented. But when the companies
+	themselves develop and ship a genuinely good new idea, others
+	can often copy the essential core of that idea, varying it
+	enough to evade the patent.
+      </p>
+
+      <p>
+	Switching to the viewpoint of society as a whole, not only do
+	we want to incentivize invention, we also want ideas to move
+	reasonably rapidly into the public domain. Think about core
+	tools for thought such as writing and the number
+	system. Obviously, it's good that those spread throughout
+	society, unencumbered by IP concerns! More broadly, many tools
+	of thought become more valuable for society as they become
+	more ubiquitous. Again, here the modern patent system has
+	numerous well-known problems, striking a poor balance between
+	private and public interest. While a well-designed patent
+	system would help solve the public goods problem, in practice
+	the patent system we have is poorly adapted to the problem.
+      </p>
+
+      <p>
+	Is it possible to avoid the public goods problem altogether?
+	Here's three classes of tools for thought which do:
+      </p>
+
+      <p>
+	<ul>
+	  <li>Search engines such as Google are tools for
+	    thought. They avoid the public goods problem because their
+	    value is in hard-to-duplicate and capital intensive backend
+	    elements (including their data centers, proprietary
+	    algorithms, and ad network), not in their interface ideas.
+	  </li>
+
+	  <li>A service such as Twitter can be considered a tool for
+	    collective thought. While the interface is easily copied,
+	    the company is hard to duplicate, due to network effects.
+	  </li>
+
+	  <li>
+	    Novel hardware devices (e.g., for VR, or the Wii remote,
+	    or for new musical instruments) can be used as the basis
+	    for new tools for thought. While hardware can be
+	    duplicated, it's often much more expensive than
+	    duplicating software. And, in any case, the advantage for
+	    such companies is often in distribution, marketing, and
+	    relationships with vendors who make products for the
+	    platform.
+	  </li>
+	</ul>
+      </p>
+      
+      <p>
+	While these avoid the public goods problem, they don't solve
+	the public goods problem. And many promising directions
+	&ndash; including ideas like mnemonic essays and mnemonic
+	videos &ndash; involve a substantial public goods element. Is
+	it possible to solve the public goods problem in such cases?
+	The two most promising approaches seem to us to be:
+      </p>
+
+      <p>
+	<ul>
+	  <li>Philanthropic funding for research. This approach was
+	  used, for instance, by the field of computer animation and
+	  animated movies. Decades of public research work on computer
+	  animation resulted in a large number of powerful and (in
+	  many cases) publicly available ideas. This, in turn, helped
+	  prepare the way for companies such as Pixar and Dreamworks,
+	  which developed many of the ideas further, and took them to
+	    scale.
+	  </li>
+
+	  <lI>The model used by Adobe and similar companies, in which
+	  new tools for thought are a central part of the company's
+	  operations, but not the core to their competitive moat. That
+	  moat may instead be built around training, marketing,
+	    documentation, and so on.
+	  </lI>
+	</ul>
+      </p>
+
+
+      <h3>Questioning our basic premises</h3>
+
+      <p>
+	There are two important premises we've been taking for granted
+	up to now. The first is the assertion that there are many more
+	transformative tools for thought, just waiting to be
+	discovered, that we're still in the early days. And second is
+	the assertion that work on tools for thought really is
+	somewhat stalled, that there's not tonnes of interesting work
+	going on.
+      </p>
+
+      <p>
+	Are these premises true? In fact, there are important caveats
+	to both.
+      </p>
+
+      <p>
+	<strong>What if the reason we've seen so few new tools for
+	thought is because all the best ideas have already been
+	discovered?</strong> In this account, the 1960s and 1970s were
+	an unrepeatable golden age, and all we can expect from now is
+	gradual incremental improvement, and perhaps the occasional
+	major breaktrough, at a gradually decreasing frequency.
+      </p>
+
+      <p>
+	There's certainly a plausible story suggesting this is
+	true. Tech is an enormous industry, incredibly well funded,
+	with many bright, ambitious, talented people. Surely, if there
+	were major ideas to discover, people would do so?  This
+	argument is reinforced by the fact that, at the individual
+	level, we meet many brilliant people who are fascinated by
+	(and often working on) tools for thought, but who nonetheless
+	seem to be making slow progress.
+      </p>
+
+      <p>
+	But while this story has a superficial appeal, it's
+	misleading. Really difficult problems &ndash; problems like
+	inventing arabic numerals &ndash; aren't solved by good
+	intentions and interest alone. A major thing missing is
+	foundational ideas powerful enough to make progress. In the
+	earliest days of a discipline &ndash; the proto-disciplinary
+	stage &ndash; a few extraordinary people &ndash; people like
+	Ivan Sutherland, Doug Engelbart, Alan Kay, Bret Victor &ndash;
+	may be able to make progress. But it's a very bespoke,
+	individual progress, difficult to transfer to others, or to
+	scale out to a community. It's not yet really a
+	discipline. What's needed for that to happen is complicated
+	&ndash; we don't get into a full list here! But it certainly
+	requires the development of a powerful praxis, a set of core
+	ideas powerful enough that new people can rapidly assimilate
+	them, and begin to develop their own practice. We're not yet
+	at that stage with tools for thought. But, perhaps, we're not
+	so far away either.
+      </p>
+
+      <p>
+	While that argument is helpful, it still doesn't address the
+	core point: it doesn't mean there are a lot of new
+	transformative tools for thought waiting to be discovered!
+	Again: maybe all the good tools for thought have already been
+	discovered?
+      </p>
+
+      <p>
+	Of course, we can't predict the future. So it's an impossible
+	question to answer. But it seems to us that the human race
+	just hasn't really tried very hard yet. When small groups of
+	motivated people do &ndash; as in DynamicLand, or at PARC, or
+	SRI and DARPA's early program &ndash; they start to make
+	intriguing progress, very rapidly. It's extremely encouraging
+	that those efforts &ndash; tiny efforts, in the scheme of
+	research &ndash; made as much progress as they did. To us,
+	that suggests scaling them up, becoming much more ambitious.
+      </p>
+
+      <p>
+	<strong>Is it really true there haven't been so many new tools
+	  for thought? Maybe they're alive and well?</strong> In fact,
+	  in many narrow verticals there has been a lot of change. In
+	  many professions &ndash; architecture, animation, computer
+	  programming, for instance &ndash; there is constant change
+	in the tools that are used.
+      </p>
+
+      <p>
+	For example, in the field of programming it's striking how
+	much programmer practice has changed over the past decade. Ten
+	years ago, the following were used only by specialized slices
+	of the programmer population: functional programming;
+	closures; distributed version control; coroutines; immutable
+	state. Today, each of these (and many more ideas and tools) is
+	extremely widely used. Although not all programmers use all
+	these ideas, it's expected that any competent programmer knows
+	many of them, and would quickly be able to master the rest. In
+	short, the set of tools for thought which programmers
+	collectively use &ndash; as a culture &ndash; has changed a
+	great deal over the past decade. And broader practices also
+	continue to rapidly change: the type of editors they use; the
+	rise of question-asking sites, especially StackOverflow; of
+	methodologies for programming work.
+      </p>
+
+      <p>
+	One interesting barometer for change is that many individual
+	working programmers feel overwhelmed by the rate of industry
+	change. There's a kind of &ldquo;future shock&rdquo;, to use
+	Alvin Toffler's great phrase, where programmers constantly
+	have to be living in the future to remain professionally
+	competitive, mastering new technologies over and over and
+	over.
+      </p>
+
+      <p>
+	Experienced researchers may respond skeptically to this
+	story. After all, most of these ideas &ndash; the benefits of
+	immutable state, for instance, or of closures &ndash; have
+	been known for decades. But while this is true, it's beside
+	the point. A single researcher or research group can explore
+	the basic contours of a great new idea &ndash; say, coroutines
+	&ndash; relatively quickly. But it inherently takes a long
+	time &ndash; decades &ndash; for those ideas to spread through
+	the entire programming culture. It's just a much, much, much
+	larger group of people. And so there's only so fast
+	programming culture, collectively, can change. That means
+	there's a kind of maximum rate at which new tools for thought
+	can spread through and become ambient in that culture. Unless
+	you break that culture into separate shards (which does, to
+	seem extent, happen in programming), it's challenging to speed
+	this up. The bottleneck isn't in the creation of
+	transformative new toolsf for thought; it's in the rate at
+	which they can spread and become ambient, just part of what a
+	participant in that culture is expected to know. And perhaps
+	something similar is going on in other fields &ndash; in
+	architecture, and animation, and so on.
+      </p>
+
+      <p>
+	This is a striking argument. Nonetheless, we can't help but
+	feel that it's only a small part of the overall
+	picture. Certainly, the quality of the new tools is affect by
+	the arguments we made earlier: by the pre-disciplinary nature
+	of the field; and by the public goods argument. This means
+	many imaginative and ambitious people go into other lines of
+	work; and it limits how central this kind of work can be in
+	the business model of most organizations. The result is that
+	innovation still comes mostly out of the bespoke ideas of a
+	small number of brilliant people.
+      </p>
+
+      <p>
+	We've been focusing on tools for thought that are used in
+	narrow areas. What about more broadly applicable tools for
+	thought? The fundamentals of many of the most widely used
+	&ndash; tools such as word processors, interactive graphics,
+	and spreadsheets &ndash; were all invented in short order in
+	the 1960s and 1970s. Although the tech industry has grown more
+	than a hundred-fold since then, there hasn't been a
+	concomitant explosion in tools for thought. Perhaps the most
+	remarkable innovations have been tools like Google Search, and
+	collective collaboration tools like Google Docs, Slack, and so
+	on. These are certainly useful, but overall it seems like very
+	rapidly diminishing returns. We believe it's for the same
+	reasons mentioned above: lack of a powerful disciplinary
+	praxis, and the public goods problem.
+      </p>
+
+      <p>
+	<strong>What's the connection to artificial general
+	intelligence (AGI) and brain-computer interfaces
+	(BCI)?</strong> One challenge in doing this kind of work is
+	that it seems rather poorly-specced, compared to fashionable
+	goals such as artificial general intelligence and
+	brain-computer interfaces. We're commonly asked: why don't you
+	work on AGI or BCI instead? Aren't those more important and
+	exciting? They certainly are important and exciting, and it's
+	worth thinking about the comparison.
+      </p>
+
+      <p>
+	One striking difference is that AGI and BCI are based on
+	specific, well-defined goals. By contrast, work on tools for
+	thought is not based on a specific goal, but rather on
+	exploration of an open-ended question: how can we develop
+	tools that change and expand the range of thoughts human
+	beings think?
+      </p>
+
+      <p>
+	Now, culturally, tech is dominated by an engineering,
+	goal-driven mindset. It's much easier to set KPIs, evaluate
+	OKRs, and manage deliverables, when you have a very specific
+	end-goal in mind.
+      </p>
+
+      <p>
+	But in the larger view of history it's not the case that
+	humanity's biggest breakthroughs have come about mostly in
+	this goal-driven way. The creation of language &ndash; the ur
+	tool for thought &ndash; is perhaps the most important
+	occurrence in human history. And the invention of other tools
+	for thought &ndash; writing, the printing press, and so on
+	&ndash; are certainly among our greatest ever breakthroughs.
+      </p>
+
+      <p>
+	Even the computer itself came out an exploration that would be
+	regarded as ridiculously speculative and poorly-defined in
+	tech today. Someone didn't sit down and think &ldquo;I need to
+	invent the computer&rdquo;; that's not a thought they had any
+	frame of reference to have. Rather, pioneers like Alan Turing
+	and Alonzo Church were asking extremely basic and fundamental
+	(and what would have seemed esoteric, at the time) questions
+	about logic, mathematics, and the nature of what is
+	provable. Out of those explorations the idea of a computer
+	eventually emerged; it was a discovered concept, not a goal.
+	Empirically, fundamental, open-ended questions seem to be at
+	least as good as a source of breakthroughs as any number of
+	goals, no matter how ambitious.
+      </p>
+
+      <p>
+	It seems at least plausible to us that work on tools for
+	thought will be, over the next few decades, more important
+	than work on AGI and BCI. And, given how fashionable work on
+	AGI and BCI is, it seems nearly certain that work on tools for
+	thought will be far more important, relative to the effort
+	being expended.
+      </p>
+
+      <p>
+	Over the long run, the three fields seem likely to merge, or
+	at least feed strongly into one another. Together with Shan
+	Carter, one of us (MN) has argued that one of the most
+	promising applications for AI is as a way of discovering new
+	tools for thought*<span class="marginnote">* Shan Carter and
+	Michael Nielsen, <a href="https://distill.pub/2017/aia/">Using
+	Artificial Intelligence to Augment Human Intelligence</a>
+	  (2017).</span>.
+      </p>
+
+      <p>
+	BCI seems likely to be even more closely related. BCI is
+	sometimes described using ideas like a memory chip for
+	long-term memories, or some way of increasing short-term
+	working memory. Such ideas may well become important. But it
+	also seems possible that BCIs will be used to design new
+	mental operations, new mental representations, and new
+	affordances for thought; in short, the same kind of things as
+	are involved in developing non-BCI tools for thought. Perhaps
+	we'll develop the capacity to directly imagine ourselves in 4
+	or 5 or more dimensions; or traversing a Riemann manifold; or
+	the ability have multiple tracks of conscious attention. And
+	so, it seems plausible that work on tools for thought today
+	will help prepare the way for BCIs in the future.
+      </p>
+	
+	
+      <h3>Executable books</h3>
+
+      <blockquote>
+	The skill of writing is to create a context in which other
+	people can think. &ndash; Edwin Schlossberg
+      </blockquote>
+
+      <p>
+	The computer scientist Peter Norvig has written an
+	excellent <a href="">interactive essay</a> discussing the
+	distribution of wealth in society. Norvig's essay is a Jupyter
+	notebook which expresses many of the ideas in running Python
+	code. That code sets up a population of agents, with an
+	initial distribution of wealth. Agents randomly (and
+	repeatedly) meet one another in pairs, and engage in simple
+	economic transactions. A little more concretely: a very simple
+	transaction model could be that when two people meet, their
+	joint wealth is pooled, and then randomly divided between the
+	two of them. That's a very simple model, just to give you the
+	gist &ndash; more complex transation models are, of course,
+	possible. The notebook simulates how the distribution of
+	wealth evolves over time.
+      </p>
+
+      <p>
+	Part of what makes the essay beautiful is that with just a few
+	lines of Python code Norvig is able to show some surprising
+	results about wealth inequality. For instance, his results
+	suggest that the initial distribution of wealth in the economy
+	doesn't much affect the long-run distribution of
+	wealth. Rather, it's the nature of the transactions which
+	determines the long-run distribution of wealth. This likely
+	violates at least some people's intuitions. As another
+	example, his results also suggest that constraining agents to
+	trade only with people geographically near them makes little
+	difference to the final distribution of wealth.
+      </p>
+
+      <p>
+	Results like these will challenge the intuition of some
+	users. But instead of those challenges being on the basis of
+	easily-ignored abstract arguments*<span class="marginnote">*
+	Sufficiently motivated reasoners will, of course, ignore any
+	conclusion they don't like. Such people seem likely a lost
+	cause to serious thought.</span>, users can immediately engage
+	with Norvig's model. Suppose someone doesn't like the idea
+	that the initial distribution of wealth doesn't affect
+	long-run wealth inequality. They're challenged to find a
+	counterexample, an initial distribution of wealth which does
+	affect the long-run level of wealth inequality. The can
+	experiment easily, making simple modifications to just one or
+	a few lines of Python code, trying to find instances where the
+	initial distribution of wealth does matter. No matter whether
+	they succeed or fail, they will build a better understanding
+	of the problem.
+      </p>
+
+      <p>
+	Norvig's essay is one millions of notebooks that have been
+	created. Of course, most examples are poorly written. But in
+	the hands of an excellent writer and thinker like Norvig,
+	notebooks can become remarkable environments for thought, both
+	individual and shared. It's tempting to regard them as merely
+	a mashup of essay and code. But really they're a new media
+	form, with different possibilities from either essays or code,
+	and with striking opportunities to go much further. In this
+	section we explore those opportunities.
+      </p>
+
+      <p>
+	We described Norvig's essay as an &ldquo;interactive
+	essay&rdquo;. It's useful to have a more specific term, to
+	distinguish it from other interactive forms, like the mnemonic
+	essay. For now, we'll use the term &ldquo;executable
+	book&rdquo;. We won't try to define this precisely here;
+	definition is not the point. Rather, the point is to
+	imaginatively understand the potential of media forms which
+	combine prose and code.
+      </p>
+
+      <p>
+	<strong>Real problems, canonical content:</strong> Seymour
+	Papert, one of the principal creators of the Logo programming
+	language, had a remarkable aspiration for Logo. Logo is
+	sometimes described as a &ldquo;programming language for
+	children&rdquo;, and people sometimes think Papert was trying
+	to help children learn how to program. But that wasn't
+	Papert's intent. Rather, Papert wanted to create an immersive
+	environment &ndash; a kind of &ldquo;Mathworld&rdquoo; &ndash;
+	in which children could be immersed in mathematical ideas. In
+	essence, children could learn differential geometry by going
+	to Mathworld.
+      </p>
+
+      <p>
+	It's a beautiful aspiration, and Logo has many striking ideas
+	in it. But as far as we know, no professional differential
+	geometer uses Logo seriously as a tool in their work. And upon
+	reflection that seems worthy of investigation. If Logo
+	genuinely expresses the ideas of differential geometry, why
+	don't differential geometers use it? You start to wonder:
+	might it be that Logo leaves out important ideas about
+	differential geometry, maybe even the most important ideas
+	about differential geometry? After all, while mathematically
+	trained, Papert wasn't himself an accomplished differential
+	geometer. How would he even have known what to include? And
+	certainly most of the people interested in Logo aren't
+	qualified to make that judgement either.
+      </p>
+
+      <p>
+	There's a standard retort to this, which we've heard from
+	people in the Logo community. It's to talk about the
+	&ldquo;floor&rdquo; and &ldquoceiling&rdquo; of different
+	environments for thought. In this account, Logo has a low
+	floor (meaning anyone can use it) and a low ceiling (so it's
+	not well adapted for thxe sort of advanced work a profesional
+	would want to do).
+      </p>
+
+      <p>
+	At first this sounds plausible. But it's difficult to make
+	much sense of it. Do the creators of Logo actually know that
+	the work children do mastering Logo helps later with
+	understanding real (forgive us!) differential geometry? What's
+	the criterion for success here? One of us (MN) worked for
+	several years doing research in the related field of
+	Riemannian geometry. While Logo has many fun ideas in it, MN
+	has trouble seeing that learning Logo would genuinely help all
+	that much in learning differential geometry.
+      </p>
+
+      <p>
+	At the end of Norvig's essay, Norvig has a short afterword
+	explaining how he came to write the essay. Shortly before
+	writing the essay he'd heard about the kinds of economic
+	models eventually discussed in the notebook, and he wanted to
+	explore several questions about them. After talking it over
+	with some colleagues they decided to each independently attack
+	the problems, and to compare notes. Although Norvig's essay
+	is, in some sense, &ldquo;educational&rdquo;, Norvig's intent
+	was in large point to explore a set of problems he himself was
+	genuinely curious about. The educational aspect was a
+	byproduct.
+      </p>
+
+      <p>
+	And so what you have is a world-class research scientist who
+	wanted to explore a set of questions. He used the Jupyer
+	medium to do those explorations, and then to share that
+	exploration with the world. And he shared it in a form where
+	others could immediately build upon and extend his thinking.
+      </p>
+
+      <p>
+	There's a lot of work on tools for thought that takes the form
+	of toys, or &ldquo;educational&rdquo; environments. Tools for
+	writing that aren't used by actual writers. Tools for
+	mathematics that aren't used by mathematicians. And so on.
+      </p>
+
+      <p>
+	Even though the creators of these tools often have the best
+	intentions in the world, it's difficult not to be suspiciou of
+	this pattern. It's very easy to slip into a kind of cargo cult
+	mode, doing work that seems mathematical, but which actually
+	avoids engagement with the heart of a subject. Indeed, often
+	the creators of these toys have not themselves ever done
+	serious original work in the subjects for which they are
+	(supposedly) building tools.
+      </p>
+
+      <p>
+	Concretely: suppose you want to build tools for subject X (say
+	X = differential goemetry). Unless you are deeply, deeply
+	engaged with actually practicing that subject, it's going to
+	be extremely difficult, like trying to build new tools for
+	carpentry without actually doing any carpentry yourself. This
+	is perhaps part of why tools like <em>Mathematica</em> work
+	quite well &ndash; the principal designer, Stephen Wolfram,
+	has genuine research interests in mathematics and physics. Of
+	course, not all parts of <em>Mathematica</em> work equally
+	well; some feel like toys, and it seems likely those are the
+	ones <em>not</em> being used seriously internal to the
+	company.
+      </p>
+
+      <P>
+	There's a general principle here: <em>good tools for thought
+	  arise mostly as a byproduct of doing serious original work
+	  on problems</em>. They thend either be created by the people
+	  doing that work, or by people working very closely to them,
+	  people who are genuinely bought
+	  in*<span class="marginnote">* A related argument has been
+	  made in Eric von Hippel's book &ldquo;Democratizing
+	  Innovation&rdquo; (2005), which identifies many instances
+	  where what appears to be commercial product development is
+	  based in large or considerable part on innovations from
+	  users.</span>. Furthermore, the problems themselves are
+	  typically not of deep, deep personal interest to the
+	  problem-solvers. They're not working on the problem for a
+	  paycheck; they're working on it because they desparately
+	  want to know the answer.
+      </P>
+
+      <p>
+	Many people have asked why we wrote our first mnemonic essay
+	about quantum computing. If we'd chosen an easier subject we
+	could have attracted a much larger audience. But we also
+	wanted the essay to be authentic, to be about problems we
+	wanted to solve. One of us (MN) has done a lot of original
+	research work on quantum computing. The essay reflects that
+	thinking. And, to some extent, the essay is answering a
+	question MN personally wanted to answer: if we ever discovered
+	aliens, would they have computers, and if so, what types of
+	computer would they have? This perhaps sounds like a contrived
+	question, but it's quite serious, and turns out to be an
+	extremely deep question with a nontrivial answer: writing the
+	essay helped MN substantially deepen his understanding of the
+	question.
+      </p>
+
+      <p>
+	That said, answering that question wasn't the principal point
+	of the essay: making the mnemonic medium was. And for future
+	work on tools for thought, we believe it'd be valuable to push
+	harder on questions we'd really like to answer
+	ourselves. That's a way of keeping your medium honest,
+	ensuring that it's not just a flashy toy, but is genuinely
+	useful for solving real problems, of independent interest.
+      </p>
+
+      <p>
+	In serious mediums, there's a notion of <em>canonical
+	  media</em>. By this, we mean uses of the medium that really
+	  expand its range, that sets a new standard. For
+	  instance, <em>Citizen Kane</em>, <em>The Godfather</em>,
+	  and <em>2001</em> all expanded the range of film. It's also
+	  true in new media. YouTubers like Grant Sanderson and Vi
+	  Hart have created videos that we think should be regarded as
+	  canonical: they expanded the range of what people think is
+	  possible in the video form. And something like
+	  the <em>Feynman Lectures on Physics</em> does it for
+	  textbooks. Curious, in each of these cases one again gets
+	  the sense of people deeply, deeply committed to what they're
+	  doing. In many of his lectures it's obvious htat Feynman
+	  isn't just educating: he's reporting the results of a
+	  lifelong personal obsession with understanding how the world
+	  works. It's thrilling, and it expands the form.
+      </p>
+
+      <p>
+	We've been disappointed by how unambitious people are with
+	this in the case of <em>Jupyter</em>. They simply haven't
+	pushed all that hard; there is no <em>Citizen Kane</em> of
+	Jupyter notebooks; indeed, we're barely beyond the Lumière
+	brothers. One fun project would be to take the IPCC report
+	(perhaps starting with a small part), and provide a version
+	which is executable. Instead of being full of assertions and
+	references, you'd have a live climate model &ndash; actually,
+	many many models &ndash; for people to explore. If it was good
+	enough, people would teach classes from it; if it was really
+	really good, not only would they teach classes from it, it
+	would become the creative working environment for many climate
+	scientists.
+      </p>
+
+      <p>
+	One promising exploration in this direction
+	in <a href="https://mitpress.mit.edu/sites/default/files/titles/content/sicm_edition_2/book.html">The
+	Structure and Interpretation of Classical Mechanics</a>, a
+	beautiful executable book building up classical
+	mechanics. Many theorems of classical mechanics aren't just
+	expressed in static form, on the page, but live, as
+	code. Theorems become APIs, which can literally be applied to
+	other objects, and chained together. It uses a much more
+	powerful underlying model thatn. It has many flaws &ndash;
+	among them, the authors perhaps do not deeply enough
+	understand classical mechanics. But it's an extraordinary,
+	inspiring evocation of what is possible.
+      </p>
+
+      <p>
+	<strong>XXX: Finish this section! Several substantive points
+	are missing. Still, there is much that is good here.</strong>
+      </p>
+      
+
+      <h3>Summary</h3>
+
+      <p>
+	<strong>XXX: This section I just strated to sketch. It seems
+	  like something that'd be good to write together.</strong>
+      </p>
+	  
+      <p>
+	We've covered a lot of ground, and it's useful to sum up the
+	main takeaways from our discussion and analysis &ndash;
+	general principles, questions, beliefs, and aspirations. 
+      </p>
+
+      <p>
+      On memory systems, particularly the mnemonic medium:
+      </p>
+      
+      <ul>
+
+	<li><strong>Memory systems are in their infancy:</strong> we
+	  believe it is likely possible to increase effective human
+	  memory by an order of magnitude; and that systems such as
+	  the mnemonic medium may be able to help expand the range of
+	  subjects users can comprehend at all.
+	</li>
+
+	<li><strong>Memory systems can be used to make memory into a
+	    choice:</strong> This changes the relationship to what
+	    we're learning, reduces worry, and frees up attention to
+	    focus on other kinds of learning (conceptual,
+	    problem-solving, creative).
+	</li>
+
+	<li><strong>Memory systems can be used to learn abstract,
+      	    conceptual knowledge, not just simple declarative
+      	    knowledge:</strong> <em>Quantum Country</em> achieves this
+      	    in part through new card-writing strategies, and in part
+      	    through a narrative embedding of spaced repetition that
+      	    gradually builds context and understanding.
+	</li>
+
+
+	<li><strong>Toward a virtuoso use of the mnemonic
+	    medium:</strong> There's some sense in which the mnemonic
+	  medium is &ldquo;just&rdquo; flash cards. The right conclusion
+	  isn't that it's therefore trivial; it's that flash cards are
+	  greatly underrated. What would it look like to develop
+	  virtuoso skill in writing flash cards?  What would a virtuoso
+	  use of the mnemonic medium look like?
+	</li>
+	
+      <li><strong>The limits and benefits of mnemonic techniques such
+	  as memory palaces:</strong> they're highly specialized; they
+	  focus on artificial connections, not the natural connections
+	  which are most powerful; but they are extremely useful for
+	  bootstrapping knowledge with an <em>ad hoc</em> structure.
+      </li>
+      
+      </ul>
+
+      <p>
+	What's the bridge here?
+      </p>
+      
+      <ul>
+	<li><strong>What practices would lead to tools for thought
+	    as transformative as Arabic numerals?</strong> And in what
+	  ways does modern design practice and tech industry product
+	  practice fall short?
+	</li>
+	
+  	<li><strong>Tools for thought are (mostly) public goods, and
+	    as a result are undersupplied</strong>
+	</li>
+
+	<li><strong>Transformative tools for thought require low cost
+	    changes in practice, but produce transformative changes in
+	    outcome:</strong> Usually, when we make a small change in
+	    practice we get a small change in results. But
+	    transformative tools for though may deliver non-linear
+	  returns, and qualitative shifts in thinking.
+	</li>
+      </ul>
+      
+      <p>
+	<strong>Acknowledgments:</strong> This essay is based on
+	conversations with many people over many years. Particular
+	thanks to David Albert, May-Li Khoe, Robert Ochshorn, Grant
+	Sanderson, Caitlin Sikora, and Bret Victor. MN's work was
+	supported by YC Research.
+      </p>
+      
+<script src="../assets/adjust_marginnotes.js" type="text/javascript">
+</script>
+
+</body>
+</html>
